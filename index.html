@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- 電話番号が自動的にリンク扱いにされるのを防ぐ。 -->
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- ファビコン画像の指定。 -->
+    <link rel="icon" href="/cfb/favicon.ico" />
+
+    <!-- スマホでホームにサイトを追加したときに表示するアイコン画像の指定。 
+    <link rel="apple-touch-icon" sizes="180x180" href="icon.png" />-->
+
+    <!--SNS共有関係-->
+    <meta property="og:url" content="https://ss935110.stars.ne.jp/cfb/" />
+    <meta property="og:title" content="松本農園" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="愛媛県松山市の離島中島にある樹上完熟のみかん農家です。" />
+    <meta property="og:image" content="https://ss935110.stars.ne.jp/cfb/image/top_image/ogp.jpg" />
+
+    <!--【開発用】検索除外　本番公開したら必ず削除すること！-->
+    <meta name="robots" content="noindex,nofollow" />
+    <!-- フォントの読み込み -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Sans+JP:wght@100..900&display=swap"
+        rel="stylesheet">
+    <!--ブラウザのスタイルの削除-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/destyle.css@4.0.1/destyle.css" />
+    <!--ベースのスタイルの設置-->
+    <link rel="stylesheet" href="./css/base.css" />
+    <!--基本のスタイルの設置-->
+    <link rel="stylesheet" href="./css/top.css" />
+
+    <title>松本農園</title>
+    <meta name="description" content="松本農園サイト" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+    <script src="./js/menu.js" defer></script>
+    <script src="./js/slider.js" defer></script>
+</head>
+
+<body>
+    <!-- ここからMVセクション -->
+    <section class="main_section">
+        <header class="header">
+            <h1 class="logo_container">
+                <img src="./image/top_image/logo-pink.png" alt="松本農園のロゴ" width="137" height="60">
+            </h1>
+            <!-- ハンバーガーメニューのボタン -->
+            <div class="hamburger" id="hamburger">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <!-- ナビゲーションメニュー -->
+            <nav class="hamburger_nav" id="nav">
+                <ul class="nav_title">
+                    <li><a href="./index.html">ホーム</a></li>
+                    <li><a href="./aboutus/index.html">私達のこと</a></li>
+                    <li><a href="./course/index.html">コース</a></li>
+                    <li><a href="./school/index.html">本校の特徴</a></li>
+                    <li><a href="./info/index.html">入学案内</a></li>
+                    <li><a href="./interview/index.html">在校生・卒業生の声</a></li>
+                    <li><a href="./faq/index.html">よくあるご質問</a></li>
+                    <li><a href="./news/index.html">ニュース一覧</a></li>
+                    <li><a href="./opencampus/index.html">オープンキャンパス参加申込</a></li>
+                    <li><a href="./request/index.html">資料請求</a></li>
+                    <li><a href="./contact/index.html">お問い合せ</a></li>
+                </ul>
+            </nav>
+        </header>
+        <!-- ここまでmenu -->
+
+        <div class="mv wrapper">
+            <!-- スライダー -->
+            <div class="slider_container">
+                <div class="slide active">
+                    <img class="pc_mv" src="./image/top_image/slide01.png" alt="女性モデルにメイクを施している女性" width="2720"
+                        height="1600">
+                    <img class="sp_mv active" src="./image/top_image/sp_mv.png" alt="女性モデルにメイクを施している女性" width="350"
+                        height="596">
+                    <div class="shine"></div>
+                </div>
+                <div class="slide">
+                    <img class="pc_mv" src="./image/top_image/slide02.png" alt="ハサミとコームを持ち、髪をカットしている女性" width="2720"
+                        height="1600">
+                    <img class="sp_mv" src="./image/top_image/sp_mv02.png" alt="ハサミとコームを持ち、髪をカットしている女性" width="350"
+                        height="596">
+                    <div class="shine"></div>
+                </div>
+                <div class="slide">
+                    <img class="pc_mv" src="./image/top_image/slide03.png" alt="女性客に全身エステを施している女性" width="2720"
+                        height="1600">
+                    <img class="sp_mv" src="./image/top_image/sp_mv03.png" alt="女性客に全身エステを施している女性" width="350"
+                        height="596">
+                    <div class="shine"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ここまでスライダー -->
+    <!-- ここからフロートボタン -->
+    <div class="fixedButton_container">
+        <div class="fixedButton">
+            <a href="./opencampus/index.html"><img src="./image/top_image/float01.png" alt="オープンキャンパス参加申込" width="100"
+                    height="100"></a>
+        </div>
+        <div class="fixedButton">
+            <a href="./request/index.html"><img src="./image/top_image/float02.png" alt="資料請求" width="100"
+                    height="100"></a>
+        </div>
+        <div class="fixedButton">
+            <a href="#"><img src="./image/top_image/float03.png" alt="ライン相談" width="100" height="100"></a>
+        </div>
+        <div class="fixedButton">
+            <a href="https://www.instagram.com/?locale=ja_JP" target="_blank"><img src="./image/top_image/float04.png"
+                    alt="インスタグラム" width="100" height="100"></a>
+        </div>
+        <div class="fixedButton_last">
+            <a href="./index.html"><img src="./image/top_image/float05.png" alt="一番上に戻る" width="80" height="80"></a>
+        </div>
+    </div>
+    <!-- ここまでフロートボタン -->
+    <!-- ここまでMVセクション -->
+    <!-- ここからイベントセクション -->
+    <section class="event_section">
+        <div class="event">
+            <div class="event wrapper">
+                <div class="event_title">
+                    <h2 class="white_title" lang="en">EVENT</h2>
+                    <p class="event_subtitle">イベント情報</p>
+                </div>
+                <div class="event_item">
+                    <div class="event_item01">
+                        <a href="./opencampus/index.html"><img src="./image/top_image/event01.png"
+                                alt="オープンキャンパス時、校内の展示物を見る沢山の来場者" width="600" height="312">
+                        </a>
+                        <p class="event_item_title">＃オープンキャンパス</p>
+                        <p class="event_item_text">
+                            学校説明会、施設見学、ミニ体験授業（簡単ヘアアレンジ・ネイルアート体験など）、在校生とのフリートークコーナー、個別相談会などを実施しています。年度によって実施内容、回数・日程等は変更する場合があります。詳細はお問い合わせください。
+                        </p>
+                    </div>
+                    <div class="event_item02">
+                        <a href="./contact/index.html"><img src="./image/top_image/event02.png" alt="先生と面談している女子高生と母親"
+                                width="600" height="312">
+                        </a>
+                        <p class="event_item_title">＃保護者説明会</p>
+                        <p class="event_item_text">
+                            保護者様やご家族が一緒に参加できる来校型の説明会を実施しています。学校の教育方針・就職実績・学費サポートなどを直接ご説明いたします。オンライン説明会についてはお問い合わせください。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ここまでイベントセクション -->
+    <!-- ここからabout us -->
+    <section class="aboutus_section">
+        <div class="aboutus">
+            <div class="aboutus wrapper">
+                <div class="aboutus_title">
+                    <h2 class="content_rabel" lang="en">ABOUT US</h2>
+                    <p class="aboutus_subtitle">本校の特徴</p>
+                </div>
+                <div class="aboutus_imgcontainer">
+                    <div class="row">
+                        <img src="./image/top_image/aboutus_01.png" alt="美容師コースの授業中にメモを取る女子生徒" width="438" height="250">
+                        <img src="./image/top_image/aboutus_02.png" alt="ホワイトボードの前で話している女教師" width="438" height="250">
+                    </div>
+                    <div class="row">
+                        <img src="./image/top_image/aboutus_03.png" alt="教室でパソコンを見ながら笑顔で相談している二人の女子生徒" width="438"
+                            height="250">
+                        <img src="./image/top_image/aboutus_04.png" alt="こちらを見て微笑んでいる二人の女子生徒" width="438" height="250">
+                        <img src="./image/top_image/aboutus_05.png" alt="マネキンの頭部を使ってカットの練習をしている男子生徒" width="438"
+                            height="250">
+                    </div>
+                </div>
+                <div class="aboutus_button_container">
+                    <p>選ばれる理由を見る</p>
+                    <a class="aboutus_button" href="./school/index.html"><img src="./image/top_image/button.png"
+                            alt="黄色の矢印" width="60" height="60">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ここまでabout us -->
+    <!-- ここからコース -->
+    <section class="couse">
+        <div class="aboutus_title">
+            <h2 class="content_rabel" lang="en">COURSE</h2>
+            <p class="aboutus_subtitle">コース</p>
+        </div>
+        <div class="couse_content">
+            <div class="couse_item">
+                <div class="couse_item01">
+                    <a href="./course/index.html"><img class="couse_item01_img" src="./image/top_image/stylist_01.png"
+                            alt="シャンプー後に髪を櫛で梳かされている女性" width="1440" height="500"></a>
+                    <div class="couse_text_overlay">
+                        <p class="couse_title" lang="en">Hair stylist Course</p>
+                        <p class="couse_text">美容師国家資格の取得を目指し、サロンワーク全般を学びたい方<br>
+                            働きながら通える夜間・週末コースあり</p>
+                        <p class="couse_button"><img src="./image/top_image/button_round.png" alt="" width="40"
+                                height="40">
+                        </p>
+                    </div>
+                </div>
+                <div class="couse_item02">
+                    <a href="./course/index.html"><img class="couse_item02_img" src="./image/top_image/makeup_01.png"
+                            alt="化粧をされている女性の口元" width="1440" height="500"></a>
+                    <div class="couse_text_overlay">
+                        <p class="couse_title" lang="en">art</p>
+                        <p class="couse_text">メイクアップアーティストやネイリストを目指し、トレンド技術を習得したい方</p>
+                        <p class="couse_button"><img src="./image/top_image/button_round.png" alt="コースページへ飛ぶボタン"
+                                width="40" height="40">
+                        </p>
+                    </div>
+                </div>
+                <div class="couse_item03">
+                    <a href="./course/index.html"><img class="couse_item03_img"
+                            src="./image/top_image/esthetic-image01.png" alt="エステの施術を受ける女性の背中" width="1440"
+                            height="500"></a>
+                    <div class="couse_text_overlay">
+                        <p class="couse_title" lang="en">Esthetic Course</p>
+                        <p class="couse_text">エステサロン就職やリラクゼーション施術のプロを目指す方</p>
+                        <p class="couse_button"><img src="./image/top_image/button_round.png" alt="コースページへ飛ぶボタン"
+                                width="40" height="40">
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ここまでコース -->
+    <!-- ここから実績紹介 -->
+    <section class="achievement_section">
+        <div class="achievement">
+            <div class="achievement_title">
+                <h2 class="content_rabel" lang="en">ACHIEVEMENT</h2>
+                <p class="achievement_subtitle">実績紹介</p>
+            </div>
+            <div class="achievement_content_title">
+                <p class="achievement_content_title_icon">＃</p>
+                <h3 class="achievement_content_title_item">受賞歴</h3>
+            </div>
+            <div class="achievement_content">
+                <div class="achievement_content_item wrapper">
+                    <div class="achievement_content_item01">
+                        <div class="achievement_content_item01_slide">
+                            <img class="achievement_content_item01_slide_img" src="./image/top_image/achievement_01.png"
+                                alt="ヘアアレンジをされた女性の正面" width="500" height="700">
+                            <img class="achievement_content_item01_slide_img" src="./image/top_image/achievement_02.png"
+                                alt="ヘアアレンジをされた女性の後頭部" width="500" height="700">
+                            <div class="pagination"></div>
+                        </div>
+                        <div class="achievement_image">
+                            <p class="achievement_image_title">第10回全国ヘアスタイリングコンテスト（2023）<br>
+                                日本ヘアスタイリング協会主催</p>
+                            <p class="achievement_image_text">準優勝</p>
+                            <p class="achievement_image_text">佐藤 真由さん（ヘアスタイリストコース ）</p>
+                        </div>
+                    </div>
+                    <div class="achievement_content_item02">
+                        <div class="achievement_content_column">
+                            <img src="./image/top_image/achievement06.png" alt="ヘアアレンジをされた女性の横顔" width="500"
+                                height="250">
+                            <div class="achievement_image">
+                                <p class="achievement_image_title">第12回 Tokyo Hair Creators Contest（2023）<br>
+                                    Tokyo Hair Creators Associations主催</p>
+                                <p class="achievement_image_text">優秀スタイルデザイン賞</p>
+                                <p class="achievement_image_text">橋本 拓海さん（ヘアスタイリストコース）</p>
+                            </div>
+                            <div class="achievement_03">
+                                <img class="achievement_03_img" src="./image/top_image/achievement_03.png"
+                                    alt="ヘアアレンジされたロングヘアの女性の右後ろ姿" width="500" height="250">
+                                <img class="achievement_03_img" src="./image/top_image/achievement_04.png"
+                                    alt="ヘアアレンジされたボブヘアの女性の後頭部" width="500" height="250">
+                                <div class="pagination">
+                                </div>
+                            </div>
+                            <div class="achievement_image">
+                                <p class="achievement_image_title">Tokyo Beauty Convention 2023（学生ヘア部門）（2023）<br>
+                                    Beauty Creative Council主催</p>
+                                <p class="achievement_image_text">奨励賞</p>
+                                <p class="achievement_image_text">大村 菜々美さん（ヘアスタイリストコース）</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="achievement_content_title">
+            <p class="achievement_content_title_icon">＃</p>
+            <h3 class="achievement_content_title_item">学生作品・イベント風景</h3>
+        </div>
+        <div class="swiper-container">
+            <!-- 上段（右流れ） -->
+            <div class="swiper swiper-top">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="./image/top_image/slider_top01.png" alt="画像1" width="300"
+                            height="300"></div>
+                    <div class="swiper-slide"><img src="./image/top_image/slider_top02.png" alt="画像2" width="300"
+                            height="300"></div>
+                    <div class="swiper-slide"><img src="./image/top_image/slider_top03.png" alt="画像3" width="300"
+                            height="300"></div>
+                    <div class="swiper-slide"><img src="./image/top_image/slider_top04.png" alt="画像4" width="300"
+                            height="300"></div>
+                    <div class="swiper-slide"><img src="./image/top_image/slider_top05.png" alt="画像5" width="300"
+                            height="300"></div>
+                </div>
+            </div>
+            <!-- 下段（左流れ） -->
+            <div class="swiper swiper-bottom">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="./image/top_image/slider_bottom01.png" alt="画像6" width="300"
+                            height="300"></div>
+                    <div class="swiper-slide"><img src="./image/top_image/slider_bottom02.png" alt="画像7" width="300"
+                            height="300"></div>
+                    <div class="swiper-slide"><img src="./image/top_image/slider_bottom03.png" alt="画像8" width="300"
+                            height="300"></div>
+                    <div class="swiper-slide"><img src="./image/top_image/slider_bottom04.png" alt="画像9" width="300"
+                            height="300"></div>
+                    <div class="swiper-slide"><img src="./image/top_image/slider_bottom05.png" alt="画像10" width="300"
+                            height="300"></div>
+                </div>
+            </div>
+        </div>
+        <div class="table wrapper">
+            <!-- PC用画像 -->
+            <p class="table_pc_image">
+                <a href="./school/index.html"><img src="./image/top_image/table.png" alt="資格取得状況の図" width="1300"
+                        height="480"></a>
+            </p>
+            <!-- SP用画像（スマホでだけ表示）-->
+            <p class="table_sp_image">
+                <a href="./school/index.html"><img src="./image/top_image/sp_table.png" alt="資格取得状況の図" width="380"
+                        height="852"></a>
+            </p>
+        </div>
+    </section>
+    <!-- ここまで実績紹介 -->
+    <!-- ここからクリエイターズボイス -->
+    <section class="voice_section">
+        <div class="voice wrapper">
+            <div class="voice_title">
+                <h2 class="content_rabel" lang="en">CREATOR’S VOICE</h2>
+                <p class="voice_subtitle">在校生・卒業生の声</p>
+            </div>
+            <div class="voice_content01">
+                <!-- 1枚目 -->
+                <p class="voice_pc_image voice_content_item">
+                    <a href="./interview/index.html"><img src="./image/top_image/voice_01.png" alt="腕を組んで微笑む女性"
+                            width="1300" height="300"></a>
+                </p>
+                <p class="voice_sp_image voice_content_item">
+                    <a href="./interview/index.html"><img src="./image/top_image/sp_voice01.png" alt="腕を組んで微笑む女性（スマホ用）"
+                            width="350" height="350"></a>
+                </p>
+                <!-- 2枚目 -->
+                <p class="voice_pc_image voice_content_item">
+                    <a href="./interview/index.html"><img src="./image/top_image/voice_02.png" alt="美容師さん" width="1300"
+                            height="300"></a>
+                </p>
+                <p class="voice_sp_image voice_content_item">
+                    <a href="./interview/index.html"><img src="./image/top_image/sp_voice02.png" alt="美容師さん（スマホ用）"
+                            width="350" height="350"></a>
+                </p>
+                <!-- 3枚目 -->
+                <p class="voice_pc_image voice_content_item">
+                    <a href="./interview/index.html"><img src="./image/top_image/voice_03.png" alt="マニキュア" width="1300"
+                            height="300"></a>
+                </p>
+                <p class="voice_sp_image voice_content_item">
+                    <a href="./interview/index.html"><img src="./image/top_image/sp_voice03.png" alt="マニキュア（スマホ用）"
+                            width="350" height="350"></a>
+                </p>
+            </div>
+            <div class="voice_text">
+                <p class="voice_box"><a href="./interview/index.html"><img src="./image/top_image/voice_04.png"
+                            alt="ヘアスタイリストコース在籍者の声" width="400" height="400"></a></p>
+                <p class="voice_box"><a href="./interview/index.html"><img src="./image/top_image/voice_05.png"
+                            alt="ヘアスタイリストコース在籍者の声" width="400" height="400"></a></p>
+                <p class="voice_box"><a href="./interview/index.html"><img src="./image/top_image/voice_06.png"
+                            alt="エステティックコース在学生の保護者の声" width="400" height="400"></a></p>
+            </div>
+            <div class="voice_container">
+                <div class="swiper voice_swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <a class="voice_sp_box" href="./interview/index.html"><img
+                                    src="./image/top_image/sp_slide_voice01.png" alt="ヘアスタイリストコース在籍者の声" width="400"
+                                    height="400">
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a class="voice_sp_box" href="./interview/index.html"><img
+                                    src="./image/top_image/sp_slide_voice02.png" alt="ヘアスタイリストコース在籍者の声" width="400"
+                                    height="400">
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a class="voice_sp_box" href="./interview/index.html"><img
+                                    src="./image/top_image/sp_slide_voice03.png" alt="エステティックコース在学生の保護者の声" width="400"
+                                    height="400">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- ページネーション -->
+                <div class="swiper-pagination voice_swiper-pagination"></div>
+
+                <!-- 前後の矢印 -->
+                <div class="swiper-button-prev voice_swiper-button-prev"></div>
+                <div class="swiper-button-next voice_swiper-button-next"></div>
+            </div>
+
+        </div>
+        <div class="school">
+            <a href="./aboutus/index.html"><img src="./image/top_image/school.png" alt="学校案内" width="1440"
+                    height="720"></a>
+            <a href="./info/index.html"><img src="./image/top_image/admission.png" alt="入試案内" width="1440"
+                    height="720"></a>
+        </div>
+    </section>
+    <!-- ここまでクリエイターズボイス -->
+    <!-- ここからよくある質問 -->
+    <div class="question_button_container">
+        <a class="question_button" href="./faq/index.html">よくあるご質問</a>
+    </div>
+    <!-- ここまでよくある質問 -->
+    <!-- ここからニュース -->
+    <section class="news_section">
+        <div class="news wrapper">
+            <div class="news_title">
+                <h2 class="content_rabel" lang="en">NEWS</h2>
+                <p class="voice_subtitle">ニュース</p>
+            </div>
+            <div class="news_container">
+                <div class="news_item examinfo">
+                    <div><img class="info_icon" src="./image/top_image/examinfo.png" alt="入試情報アイコン" width="150"
+                            height="40">
+                    </div>
+                    <!--入試情報アイコン -->
+                    <div class="sp_news">
+                        <p class="news-date">2025.04.01</p>
+                        <h3 class="news_info_title">ダミーですダミーですダミーですダミーですダミーですダミーですダミーですダミー</h3>
+                        <a class="news_button" href="./news/index.html"><img src="./image/top_image/button_round.png"
+                                alt="矢印ボタン" width="40" height="40"></a>
+                    </div>
+                </div>
+                <div class="news_item eventinfo">
+                    <img class="info_icon" src="./image/top_image/eventinfo.png" alt="イベントアイコン" width="150" height="40">
+                    <!-- イベントアイコン -->
+                    <div class="sp_news">
+                        <p class="news-date">2025.04.01</p>
+                        <h3 class="news_info_title">ダミーですダミーですダミーですダミーですダミーですダミーですダミーですダミーですダミーです
+                        </h3>
+                        <a class="news_button" href="./news/index.html"><img src="./image/top_image/button_round.png"
+                                alt="矢印ボタン" width="40" height="40"></a>
+                    </div>
+                </div>
+                <div class="news_item schoolinfo">
+                    <img class="info_icon" src="./image/top_image/schoolinfo.png" alt="お知らせアイコン" width="150"
+                        height="40">
+                    <!-- お知らせアイコン -->
+                    <div class="sp_news">
+                        <p class="news-date">2025.04.01</p>
+                        <h3 class="news_info_title">ダミーですダミーですダミーですダミーですダミーですダミーですダミーですダミーですダミーです
+                        </h3>
+                        <a class="news_button" href="./news/index.html"><img src="./image/top_image/button_round.png"
+                                alt="矢印ボタン" width="40" height="40"></a>
+                    </div>
+                </div>
+                <div class="news_item examinfo">
+                    <div><img class="info_icon" src="./image/top_image/examinfo.png" alt="入試情報アイコン" width="150"
+                            height="40">
+                    </div><!--入試情報アイコン -->
+                    <div class="sp_news">
+                        <p class="news-date">2025.04.01</p>
+                        <h3 class="news_info_title">ダミーですダミーですダミーですダミーですダミーですダミーですダミーですダミー</h3>
+                        <a class="news_button" href="./news/index.html"><img src="./image/top_image/button_round.png"
+                                alt="矢印ボタン" width="40" height="40"></a>
+                    </div>
+                </div>
+                <div class="news_item examinfo">
+                    <div><img class="info_icon" src="./image/top_image/examinfo.png" alt="入試情報アイコン" width="150"
+                            height="40">
+                    </div><!--入試情報アイコン -->
+                    <div class="sp_news">
+                        <p class="news-date">2025.04.01</p>
+                        <h3 class="news_info_title">ダミーですダミーですダミーですダミーですダミーですダミーですダミーですダミー</h3>
+                        <a class="news_button" href="./news/index.html"><img src="./image/top_image/button_round.png"
+                                alt="矢印ボタン" width="40" height="40"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ここまでニュース -->
+    <!-- ここからアクセス -->
+    <section class="access_section">
+        <div class="access wrapper">
+            <div class="access_title">
+                <h2 class="content_rabel" lang="en">ACCESS</h2>
+                <p class="voice_subtitle">アクセス</p>
+            </div>
+        </div>
+        <div class="access_item">
+            <div class="access_item_map">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.69322538239!2d139.69827897605776!3d35.65992917259418!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188ca8030de625%3A0xe4d0309a6ef12fdf!2z44CSMTUwLTAwNDEg5p2x5Lqs6YO95riL6LC35Yy656We5Y2X77yR5LiB55uu77yS77yT!5e0!3m2!1sja!2sjp!4v1743338919922!5m2!1sja!2sjp"
+                    width="520" height="380" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade" title="Create Beauty Collegeの所在地マップ"></iframe>
+            </div>
+            <div class="access_item_text">
+                <p class="access_item_text_title">住所</p>
+                <p class="access_item_text_item">〒150-0041 東京都渋谷区神南1-23-4</p>
+                <p class="access_item_text_title">アクセス</p>
+                <p class="access_item_text_item">JR渋谷駅 A12出口より徒歩5分</p>
+                <p class="access_item_text_title">所要時間</p>
+                <p class="access_item_text_item">東京駅よりJR山手線で26分</p>
+            </div>
+        </div>
+    </section>
+    <!-- ここまでアクセス -->
+    <!-- ここからコンタクト -->
+    <section class="contact_section">
+        <div class="contact">
+            <div class="contact wrapper">
+                <div class="contact_title">
+                    <h2 class="content_rabel" lang="en">CONTACT</h2>
+                    <p class="contact_subtitle">お問合せ</p>
+                </div>
+            </div>
+            <div class="contact_item">
+                <a href="./opencampus/index.html"><img src="./image/top_image/contact01.png" alt="オープンキャンパスお問い合わせ"
+                        width="200" height="200"></a>
+                <a href="./request/index.html"><img src="./image/top_image/contact02.png" alt="資料請求" width="200"
+                        height="200"></a>
+                <a href="https://www.line.me/ja/" target="_blank"><img src="./image/top_image/contact03.png" alt="ライン相談"
+                        width="200" height="200">
+                </a>
+                <a href="./contact/index.html"><img src="./image/top_image/contact04.png" alt="お問い合わせ" width="200"
+                        height="200"></a>
+            </div>
+        </div>
+    </section>
+    <!-- ここまでコンタクト -->
+    <!-- ここからフッター -->
+    <footer class="footer">
+        <div class="footer_container">
+            <div class="footer_info">
+                <img class="footer_logo" src="./image/top_image/logo_white.png" alt="クリエイト美容専門学校のロゴ" width="313"
+                    height="60">
+                <p>〒150-0041 東京都渋谷区神南1-23-4</p>
+                <p>電話：03-5678-9101</p>
+                <p>メール：<a href="mailto:info@createbeauty.ac.jp">info@createbeauty.ac.jp</a></p>
+                <div class="sosial_icon">
+                    <a href="https://www.line.me/ja/" target="_blank"><img src="./image/top_image/line_icon.png"
+                            alt="ラインのアイコン" width="32" height="32"></a>
+                    <a href="https://www.instagram.com/?locale=ja_JP" target="_blank"><img
+                            src="./image/top_image/Instagram_icon.png" alt="インスタグラムのアイコン" width="32" height="32"></a>
+                </div>
+            </div>
+            <div class="footer_link">
+                <div class="column01">
+                    <p class="column_title"><a href="./aboutus/index.html">学校紹介</a></p>
+                    <ul>
+                        <li><a href="./aboutus/index.html">校長あいさつ</a></li>
+                        <li><a href="./aboutus/index.html">教育方針</a></li>
+                        <li><a href="./aboutus/index.html">講師紹介</a></li>
+                        <li><a href="./aboutus/index.html">施設紹介</a></li>
+                    </ul>
+                    <div class="columun_bottom">
+                        <p class="column_title"><a href="./school/index.html">本校の特徴</a></p>
+                    </div>
+                </div>
+                <div class="column02">
+                    <p class="column_title"><a href="./course/index.html">コース</a></p>
+                    <ul>
+                        <li><a href="./course/index.html">ヘアスタイリストコース</a></li>
+                        <li><a href="./course/index.html">夜間・週末コース</a></li>
+                        <li><a href="./course/index.html">メイク・ネイルアートコース</a></li>
+                        <li><a href="./course/index.html">エステティックコース</a></li>
+                    </ul>
+                    <div class="columun_bottom">
+                        <p class="column_title"><a href="./info/index.html">入学案内</a></p>
+                        <ul>
+                            <li><a href="./info/index.html">募集要項</a></li>
+                            <li><a href="./info/index.html">奨学金制度・特待生制度</a></li>
+                            <li><a href="./info/index.html">学費分割納入制度</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="column03">
+                    <p class="column_title"><a href="./interview/index.html">在校生・卒業生の声</a></p>
+                    <p class="column_title"><a href="./faq/index.html">よくあるご質問</a></p>
+                    <p class="column_title"><a href="./news/index.html">ニュース一覧</a></p>
+                    <p class="column_title"><a href="./opencampus/index.html">オープンキャンパス参加申込</a></p>
+                    <p class="column_title"><a href="./request/index.html">資料請求</a></p>
+                    <p class="column_title"><a href="./contact/index.html">お問合せ</a></p>
+                    <p class="column_title"><a href="#">プライバシーポリシー</a></p>
+                </div>
+            </div>
+        </div>
+        <small class="copyright">© Create Beauty College. All rights reserved.</small>
+    </footer>
+    <!-- ここまでフッター -->
+
+</body>
+
+</html>
