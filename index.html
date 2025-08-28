@@ -44,29 +44,29 @@
     <script src="./js/slider.js" defer></script>
 </head>
 
-<body id=top>
+<body id="top">
     <!-- ここからMVセクション -->
-    <section class="main_section">
+    <section class="main__section">
         <header class="header">
-            <h1 class="logo_container">
+            <h1 class="header__logo">
                 <img src="./image/top_image/logo-pink.png" alt="松本農園のロゴ" width="137" height="60">
             </h1>
             <!-- ハンバーガーメニューのボタン -->
-            <button type="button" class="hamburger" id="hamburger" aria-controls="nav" aria-expanded="false">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="menu">menu</span>
+            <button type="button" class="header__hamburger" aria-controls="nav" aria-expanded="false">
+                <span class="header__hamburger-bar"></span>
+                <span class="header__hamburger-bar"></span>
+                <span class="header__hamburger-bar"></span>
+                <span class="header__hamburger-label">menu</span>
             </button>
             <!-- ナビゲーションメニュー -->
-            <nav class="hamburger_nav" id="nav" hidden>
-                <ul class="nav_title">
-                    <li><a href="./index.html">ホーム</a></li>
-                    <li><a href="./aboutus/index.html">私達のこと</a></li>
-                    <li><a href="./product/index.html">商品紹介</a></li>
-                    <li><a href="./cafe/index.html">風早珈琲焙煎所BOWEN</a></li>
-                    <li><a href="./shop/index.html">オンラインショップ</a></li>
-                    <li><a href="./contact/index.html">お問い合せ</a></li>
+            <nav class="header__nav" id="nav" hidden>
+                <ul class="header__nav-list">
+                    <li class="header__nav-item"><a href="./index.html" aria-current="page">ホーム</a></li>
+                    <li class="header__nav-item"><a href="./aboutus/index.html">私達のこと</a></li>
+                    <li class="header__nav-item"><a href="./product/index.html">商品紹介</a></li>
+                    <li class="header__nav-item"><a href="./cafe/index.html">風早珈琲焙煎所BOWEN</a></li>
+                    <li class="header__nav-item"><a href="./shop/index.html">オンラインショップ</a></li>
+                    <li class="header__nav-item"><a href="./contact/index.html">お問い合せ</a></li>
                 </ul>
             </nav>
         </header>
@@ -74,16 +74,15 @@
 
         <div class="mv wrapper">
             <!-- スライダー -->
-            <div class="slider_container">
-                <div class="slide">
-                    <img class="pc_mv" src="./image/top_image/slide01.png" alt="農園と海の風景写真" width="1440" height="770">
+            <div class="slider__container">
+                <div class="slider__slide">
+                    <img src="./image/top_image/slide01.png" alt="農園と海の風景写真" width="1440" height="770">
                 </div>
-                <div class="slide">
-                    <img class="pc_mv" src="./image/top_image/slide02.png" alt="みかん畑収穫の様子" width="1440" height="770">
+                <div class="slider__slide">
+                    <img src="./image/top_image/slide02.png" alt="みかん畑収穫の様子" width="1440" height="770">
                 </div>
-                <div class="slide">
-                    <img class="pc_mv" src="./image/top_image/slide03.png" alt="収穫を手伝うおばあちゃん達" width="1440"
-                        height="770">
+                <div class="slider__slide">
+                    <img src="./image/top_image/slide03.png" alt="収穫を手伝うおばあちゃん達" width="1440" height="770">
                 </div>
             </div>
         </div>
@@ -91,18 +90,18 @@
     <!-- ここまでスライダー -->
 
     <!-- ここからフローティングボタン -->
-    <div class="fixed-button_container">
+    <div class="fixed-button__container">
 
-        <div class="fixed-button">
-            <a href="./opencampus/index.html"><img src="./image/top_image/float01.png" alt="インスタグラムのアイコン" width="45"
+        <div class="fixed-button__item">
+            <a href="./opencampus/index.html"><img src="./image/top_image/float01.png" alt="松本農園のInstagramへ" width="45"
                     height="49"></a>
         </div>
 
-        <div class="fixed-button">
-            <a href="#"><img src="./image/top_image/float03.png" alt="公式ラインのアイコン" width="100" height="100"></a>
+        <div class="fixed-button__item">
+            <a href="#"><img src="./image/top_image/float03.png" alt="松本農園の公式ラインへ" width="100" height="100"></a>
         </div>
 
-        <div class="fixed-button_pagetop">
+        <div class="fixed-button__item fixed-button__item--pagetop">
             <a href="#top"><img src="./image/top_image/float05.png" alt="一番上に戻る" width="80" height="80"></a>
         </div>
 
@@ -114,7 +113,8 @@
     <section class="furusato-tax wrapper">
         <div class="furusato-tax__title">
             <div>
-                <img class="leaf_image" src="./image/top_image/slide03.png" alt="葉" width="70" height="70">
+                <img class="furusato-tax__leaf-image" src="./image/top_image/slide03.png" alt="葉" width="70"
+                    height="70">
             </div>
             <p class="event_subtitle">2025年冬～2026年春収穫分先行予約受付が始まりました!</p>
         </div>
@@ -122,45 +122,49 @@
     <!-- ここまでふるさと納税セクション -->
 
     <!-- ここからabout us -->
-    <section class="aboutus wrapper">
-        <div class="aboutus__inner">
+    <section class="aboutus">
+        <div class="aboutus__wrapper">
+            <div class="aboutus__content">
 
-            <div class="aboutus__title">
-                <h2 class="aboutus__title-jp">松本農園のこと</h2>
-                <h3 class="aboutus__title-en" lang="en">About us</h3>
-            </div>
-
-            <div class="aboutus_container01">
-                <div class="aboutus_place">
-                    <img src="./image/top_image/aboutus_01.png" alt="手にみかんを持つ女の子" width="326" height="319">
-                    <img src="./image/top_image/aboutus_02.png" alt="愛媛県中島町の地図" width="363" height="420">
+                <div class="aboutus__title">
+                    <h2 class="aboutus__title--jp">松本農園のこと</h2>
+                    <h3 class="aboutus__title--en" lang="en">About us</h3>
                 </div>
-                <div class="aboutus__inner">
-                    <p class="aboutus__subtitle">愛媛県中島</p>
-                    <div class="aboutus__text">
-                        <p>松山市からフェリーで約1時間、豊かな自然に囲まれた瀬戸内海の離島です。
-                            全国でも有数のみかんの産地として知られ、海から吹く潮風が畑にミネラルを運び、温暖な気候と相まって、甘くて濃厚なみかんを育てています。
-                            かつて15,000人以上が暮らしていたこの島も、いまでは人口が約3,000人と5分の1にまで減少。
-                            過疎化が進むなかでも、この地で代々みかん作りを続けてきたのが、私たち松本農園です。</p>
+
+                <div class="aboutus__container">
+                    <div class="aboutus__container aboutus__container--location">
+                        <div class="aboutus__place">
+                            <img src="./image/top_image/aboutus_01.png" alt="手にみかんを持つ女の子" width="326" height="319">
+                            <img src="./image/top_image/aboutus_02.png" alt="愛媛県中島町の地図" width="363" height="420">
+                        </div>
+                        <div class="aboutus__inner">
+                            <p class="aboutus__subtitle">愛媛県中島</p>
+                            <div class="aboutus__text">
+                                <p>松山市からフェリーで約1時間、豊かな自然に囲まれた瀬戸内海の離島です。
+                                    全国でも有数のみかんの産地として知られ、海から吹く潮風が畑にミネラルを運び、温暖な気候と相まって、甘くて濃厚なみかんを育てています。
+                                    かつて15,000人以上が暮らしていたこの島も、いまでは人口が約3,000人と5分の1にまで減少。
+                                    過疎化が進むなかでも、この地で代々みかん作りを続けてきたのが、私たち松本農園です。</p>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
 
-            <div class="aboutus_container02">
-                <div class="aboutus_place">
-                    <img src="./image/top_image/aboutus_03.png" alt="レモンを収穫する男の子" width="421" height="413">
-                    <img src="./image/top_image/aboutus_04.png" alt="松本農園の家族集合写真" width="780" height="766">
-                </div>
-                <div class="aboutus__inner">
-                    <p class="aboutus__subtitle">気軽に買える 美味しいみかんを目指して</p>
-                    <div class="aboutus__text">
-                        <p>冬のぬくもりといえば、やっぱり「こたつとみかん」。
-                            昔ながらの、でもどこか新しい、そんな心温まる時間がそこにあります。
-                            松本農園は、100年以上続くみかん農家。
-                            父から娘へと受け継がれ、今は姉妹ふたりで力を合わせて、みかんづくりに取り組んでいます。
-                            私たちが届けたいのは、「気軽に買える、美味しいみかん」。
-                            自然の恵みと家族の絆に育まれた「樹上完熟みかん」は、まさに冬のこたつ時間にぴったりです。
-                        </p>
+                    <div class="aboutus__container aboutus__container--family">
+                        <div class="aboutus__place">
+                            <img src="./image/top_image/aboutus_03.png" alt="レモンを収穫する男の子" width="421" height="413">
+                            <img src="./image/top_image/aboutus_04.png" alt="松本農園の家族集合写真" width="780" height="766">
+                        </div>
+                        <div class="aboutus__inner">
+                            <p class="aboutus__subtitle">気軽に買える 美味しいみかんを目指して</p>
+                            <div class="aboutus__text">
+                                <p>冬のぬくもりといえば、やっぱり「こたつとみかん」。
+                                    昔ながらの、でもどこか新しい、そんな心温まる時間がそこにあります。
+                                    松本農園は、100年以上続くみかん農家。
+                                    父から娘へと受け継がれ、今は姉妹ふたりで力を合わせて、みかんづくりに取り組んでいます。
+                                    私たちが届けたいのは、「気軽に買える、美味しいみかん」。
+                                    自然の恵みと家族の絆に育まれた「樹上完熟みかん」は、まさに冬のこたつ時間にぴったりです。
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -192,50 +196,52 @@
     <!-- ここまでスライダー右から流れ--->
 
     <!-- ここからcare about -->
-    <section class="careabout wrapper">
+    <section class="careabout">
+        <div class="careabout__wrapper">
 
-        <div class="careabout__title">
-            <h2 class="careabout__title-jp">私たちのこだわり</h2>
-            <h3 class="careabout__title-en" lang="en">What We Care About</h3>
-        </div>
-
-        <div class="careabout__box">
-            <div class="careabout__item">
-                <div><img class="careabout__img careabout__img--01" src="./image/top_image/stylist_01.png"
-                        alt="みかんを収穫している手元のアップ" width="770" height="462"></div>
-                <p class="careabout__overlay-title">樹の上でじっくり完熟</p>
+            <div class="careabout__title">
+                <h2 class="careabout__title--jp">私たちのこだわり</h2>
+                <h3 class="careabout__title--en" lang="en">What We Care About</h3>
             </div>
 
-            <div class="careabout__desc">
-                <h3 class="careabout__subtitle">樹上完熟</h3>
-                <p class="careabout__text">樹上完熟とは、みかんを木になったまま完熟させてから収穫する方法です。</p>
-                <p class="careabout__text">一般的なみかんは、市場への出荷を考えて少し早めに収穫されますが、樹上完熟みかんは太陽の光をたっぷり浴び、樹の上でじっくりと甘さを蓄えます。
-                </p>
-                <p class="careabout__text">その結果、糖度が高く、酸味とのバランスが絶妙な、濃厚な味わいのみかんが生まれます。</p>
-            </div>
-        </div>
+            <div class="careabout__box">
+                <div class="careabout__item">
+                    <div><img class="careabout__img careabout__img--harvest" src="./image/top_image/stylist_01.png"
+                            alt="みかんを収穫している手元のアップ" width="770" height="462"></div>
+                    <p class="careabout__overlay-title">樹の上でじっくり完熟</p>
+                </div>
 
-        <div class="careabout__box">
-            <div class="careabout__item">
-                <div><img class="careabout__img careabout__img--02" src="./image/top_image/stylist_01.png"
-                        alt="みかんの花のアップ写真" width="770" height="462"></div>
-                <p class="careabout__overlay-title">濃縮された甘みと酸味のバランス</p>
+                <div class="careabout__desc">
+                    <h3 class="careabout__subtitle">樹上完熟</h3>
+                    <p class="careabout__text">樹上完熟とは、みかんを木になったまま完熟させてから収穫する方法です。</p>
+                    <p class="careabout__text">一般的なみかんは、市場への出荷を考えて少し早めに収穫されますが、樹上完熟みかんは太陽の光をたっぷり浴び、樹の上でじっくりと甘さを蓄えます。
+                    </p>
+                    <p class="careabout__text">その結果、糖度が高く、酸味とのバランスが絶妙な、濃厚な味わいのみかんが生まれます。</p>
+                </div>
             </div>
-            <div class="careabout__desc">
-                <h3 class="careabout__subtitle">自然の降雨で育てる</h3>
-                <p class="careabout__text">私たちの園では、できる限り人工的な灌水を行わず、自然の降雨だけを頼りに栽培しています。
-                    自然の水分だけで育つみかんは、必要な水を根からしっかり吸収しようと、地中深くまで根を張るようになります。
-                    その結果、土壌中のミネラル分や栄養をたっぷりと取り込み、味に深みとコクが生まれます。
-                    また、水を絞って育てることで、果実の糖度が高まり、ぎゅっと凝縮された甘みと酸味のバランスが絶妙なみかんに仕上がります。
-                    余分な水分がない分、果肉もしっかりとしていて、食べ応えがあります。</p>
+
+            <div class="careabout__box">
+                <div class="careabout__item">
+                    <div><img class="careabout__img careabout__img--flower" src="./image/top_image/stylist_01.png"
+                            alt="みかんの花のアップ写真" width="770" height="462"></div>
+                    <p class="careabout__overlay-title">濃縮された甘みと酸味のバランス</p>
+                </div>
+                <div class="careabout__desc">
+                    <h3 class="careabout__subtitle">自然の降雨で育てる</h3>
+                    <p class="careabout__text">私たちの園では、できる限り人工的な灌水を行わず、自然の降雨だけを頼りに栽培しています。
+                        自然の水分だけで育つみかんは、必要な水を根からしっかり吸収しようと、地中深くまで根を張るようになります。
+                        その結果、土壌中のミネラル分や栄養をたっぷりと取り込み、味に深みとコクが生まれます。
+                        また、水を絞って育てることで、果実の糖度が高まり、ぎゅっと凝縮された甘みと酸味のバランスが絶妙なみかんに仕上がります。
+                        余分な水分がない分、果肉もしっかりとしていて、食べ応えがあります。</p>
+                </div>
             </div>
         </div>
 
     </section>
     <!-- ここまでcare about -->
 
-    <!-- ここから実績紹介 -->
-    <section class="achievement_section">
+    <!-- ここからMy juicy crew -->
+    <section class="juicy crew_section">
         <div class="achievement">
             <div class="achievement_title">
                 <h2 class="content_rabel" lang="en">ACHIEVEMENT</h2>
