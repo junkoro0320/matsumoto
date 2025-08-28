@@ -44,7 +44,7 @@
     <script src="./js/slider.js" defer></script>
 </head>
 
-<body>
+<body id=top>
     <!-- ここからMVセクション -->
     <section class="main_section">
         <header class="header">
@@ -52,14 +52,14 @@
                 <img src="./image/top_image/logo-pink.png" alt="松本農園のロゴ" width="137" height="60">
             </h1>
             <!-- ハンバーガーメニューのボタン -->
-            <div class="hamburger" id="hamburger">
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <p class="menu">menu</p>
-            </div>
+            <button type="button" class="hamburger" id="hamburger" aria-controls="nav" aria-expanded="false">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="menu">menu</span>
+            </button>
             <!-- ナビゲーションメニュー -->
-            <nav class="hamburger_nav" id="nav">
+            <nav class="hamburger_nav" id="nav" hidden>
                 <ul class="nav_title">
                     <li><a href="./index.html">ホーム</a></li>
                     <li><a href="./aboutus/index.html">私達のこと</a></li>
@@ -103,7 +103,7 @@
         </div>
 
         <div class="fixed-button_pagetop">
-            <a href="./index.html"><img src="./image/top_image/float05.png" alt="一番上に戻る" width="80" height="80"></a>
+            <a href="#top"><img src="./image/top_image/float05.png" alt="一番上に戻る" width="80" height="80"></a>
         </div>
 
     </div>
