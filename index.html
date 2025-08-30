@@ -110,13 +110,18 @@
     <!-- ここまでMVセクション -->
 
     <!-- ここからふるさと納税セクション -->
-    <section class="furusato-tax wrapper">
-        <div class="furusato-tax__title">
-            <div>
-                <img class="furusato-tax__leaf-image" src="./image/top_image/slide03.png" alt="葉" width="70"
-                    height="70">
+    <section class="furusatotax">
+        <div class="furusatotax__wrapper">
+            <div class="furusatotax__title">
+                <div>
+                    <img class="furusatotax__leaf" src="./image/top_image/slide03.png" alt="葉" width="70" height="70">
+                </div>
+                <p class="furusatotax__subtitle">2025年冬～2026年春収穫分先行予約受付が始まりました!</p>
             </div>
-            <p class="event_subtitle">2025年冬～2026年春収穫分先行予約受付が始まりました!</p>
+
+            <div class="furusatotax__btn-wrap">
+                <a class="furusatotax__btn furusatotax__btn--reservation" href=".reservation//index.html">予約はこちら</a>
+            </div>
         </div>
     </section>
     <!-- ここまでふるさと納税セクション -->
@@ -128,7 +133,7 @@
 
                 <div class="aboutus__title">
                     <h2 class="aboutus__title--jp">松本農園のこと</h2>
-                    <h3 class="aboutus__title--en" lang="en">About us</h3>
+                    <p class="aboutus__title--en" lang="en">About us</p>
                 </div>
 
                 <div class="aboutus__container">
@@ -174,7 +179,7 @@
     <div class="swiper-container">
         <!-- スライダー右から流れ --->
         <div class="swiper swiper-top">
-            <div class="swiper-wrapper">
+            <div class="swiper__wrapper">
                 <div class="swiper-slide"><img src="./image/top_image/slider_top01.png" alt="画像1" width="400"
                         height="300">
                 </div>
@@ -201,14 +206,14 @@
 
             <div class="careabout__title">
                 <h2 class="careabout__title--jp">私たちのこだわり</h2>
-                <h3 class="careabout__title--en" lang="en">What We Care About</h3>
+                <p class="careabout__title--en" lang="en">What We Care About</p>
             </div>
 
             <div class="careabout__box">
                 <div class="careabout__item">
                     <div><img class="careabout__img careabout__img--harvest" src="./image/top_image/stylist_01.png"
                             alt="みかんを収穫している手元のアップ" width="770" height="462"></div>
-                    <p class="careabout__overlay-title">樹の上でじっくり完熟</p>
+                    <p class="careabout__overlay--title">樹の上でじっくり完熟</p>
                 </div>
 
                 <div class="careabout__desc">
@@ -246,7 +251,7 @@
 
             <div class="careabout__title">
                 <h2 class="careabout__title--jp">育てているみかんたち</h2>
-                <h3 class="careabout__title--en" lang="en">My juicy crew</h3>
+                <p class="careabout__title--en" lang="en">My juicy crew</p>
             </div>
 
             <div class="careabout__gallery">
@@ -270,97 +275,75 @@
                     <div class="mikan-label">カラマンダリン</div>
                 </a>
             </div>
+
+            <div class="careabout__btn-wrap">
+                <a class="careabout__btn careabout__btn--other" href=".other//index.html">他のみかんを探す</a>
+            </div>
         </div>
     </section>
     <!-- ここまでMy juicy crew -->
 
 
-
-
-
-    <!-- ここからクリエイターズボイス -->
-    <section class="voice_section">
-        <div class="voice wrapper">
-            <div class="voice_title">
-                <h2 class="content_rabel" lang="en">CREATOR’S VOICE</h2>
-                <p class="voice_subtitle">在校生・卒業生の声</p>
+    <!-- ここからおいしいをつなぐ -->
+    <section class="cafe-intro">
+        <div class="cafe-intro__wrapper">
+            <div class="mikanmoments__title">
+                <h2 class="mikanmoments__title--jp">おいしいをつなぐ</h2>
+                <p class="mikanmoments__title--en" lang="en">Mikan Moments</p>
             </div>
-            <div class="voice_content01">
-                <!-- 1枚目 -->
-                <p class="voice_pc_image voice_content_item">
-                    <a href="./interview/index.html"><img src="./image/top_image/voice_01.png" alt="腕を組んで微笑む女性"
-                            width="1300" height="300"></a>
+
+            <figure class="cafe-intro__photo-container">
+                <img class="cafe-intro__photo" src="./image/top_image/voice_01.png" alt="店頭でコーヒーを入れている女性" width="714"
+                    height="487">
+                <figcaption class="cafe-intro__caption">風早珈琲焙煎所BOWEN</figcaption>
+            </figure>
+
+            <div class="cafe-intro__text-colum">
+                <h3 class="cafe-intro__headline">今日も、みかんとコーヒー</h3>
+                <p class="cafe-intro__description">松本農園のみかんは、松山市にある「風早珈琲焙煎所BOWEN」の店頭でも販売しています。</p>
+                <p>店内にはみかんのほか、自家焙煎の香り高いコーヒー豆や、心のこもったハンドメイドの小物を取り扱っています。店内には、どこかほっとするようなあたたかい空気が流れています。
                 </p>
-                <p class="voice_sp_image voice_content_item">
-                    <a href="./interview/index.html"><img src="./image/top_image/sp_voice01.png" alt="腕を組んで微笑む女性（スマホ用）"
-                            width="350" height="350"></a>
-                </p>
-                <!-- 2枚目 -->
-                <p class="voice_pc_image voice_content_item">
-                    <a href="./interview/index.html"><img src="./image/top_image/voice_02.png" alt="美容師さん" width="1300"
-                            height="300"></a>
-                </p>
-                <p class="voice_sp_image voice_content_item">
-                    <a href="./interview/index.html"><img src="./image/top_image/sp_voice02.png" alt="美容師さん（スマホ用）"
-                            width="350" height="350"></a>
-                </p>
-                <!-- 3枚目 -->
-                <p class="voice_pc_image voice_content_item">
-                    <a href="./interview/index.html"><img src="./image/top_image/voice_03.png" alt="マニキュア" width="1300"
-                            height="300"></a>
-                </p>
-                <p class="voice_sp_image voice_content_item">
-                    <a href="./interview/index.html"><img src="./image/top_image/sp_voice03.png" alt="マニキュア（スマホ用）"
-                            width="350" height="350"></a>
+                <p> コーヒーの香りに包まれながら、自然の力で育ったみかんを手にとってみませんか？
+                    季節の味わいを、ぜひお店で感じてみてください。
                 </p>
             </div>
-            <div class="voice_text">
-                <p class="voice_box"><a href="./interview/index.html"><img src="./image/top_image/voice_04.png"
-                            alt="ヘアスタイリストコース在籍者の声" width="400" height="400"></a></p>
-                <p class="voice_box"><a href="./interview/index.html"><img src="./image/top_image/voice_05.png"
-                            alt="ヘアスタイリストコース在籍者の声" width="400" height="400"></a></p>
-                <p class="voice_box"><a href="./interview/index.html"><img src="./image/top_image/voice_06.png"
-                            alt="エステティックコース在学生の保護者の声" width="400" height="400"></a></p>
-            </div>
-            <div class="voice_container">
-                <div class="swiper voice_swiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <a class="voice_sp_box" href="./interview/index.html"><img
-                                    src="./image/top_image/sp_slide_voice01.png" alt="ヘアスタイリストコース在籍者の声" width="400"
-                                    height="400">
-                            </a>
-                        </div>
-                        <div class="swiper-slide">
-                            <a class="voice_sp_box" href="./interview/index.html"><img
-                                    src="./image/top_image/sp_slide_voice02.png" alt="ヘアスタイリストコース在籍者の声" width="400"
-                                    height="400">
-                            </a>
-                        </div>
-                        <div class="swiper-slide">
-                            <a class="voice_sp_box" href="./interview/index.html"><img
-                                    src="./image/top_image/sp_slide_voice03.png" alt="エステティックコース在学生の保護者の声" width="400"
-                                    height="400">
-                            </a>
-                        </div>
+
+            <div class="cafe-intro__info-block">
+                <p class="cafe-intro__info-title">コーヒー豆焙煎のご予約もどうぞ</p>
+                <dl class="cafe-intro__info-list">
+                    <div class="cafe-intro__info-item">
+                        <dt class="cafe-intro__info-term">住所</dt>
+                        <dd class="cafe-intro__info-description">松山市北条辻1410</dd>
                     </div>
+
+                    <div class="cafe-intro__info-item">
+                        <dt class="cafe-intro__info-term">営業日</dt>
+                        <dd class="cafe-intro__info-description">木・金・土曜日</dd>
+                    </div>
+
+                    <div class="cafe-intro__info-item">
+                        <dt class="cafe-intro__info-term">営業時間</dt>
+                        <dd class="cafe-intro__info-description">10:00～17:00</dd>
+                    </div>
+
+                    <div class="cafe-intro__info-item">
+                        <dt class="cafe-intro__info-term">電話番号</dt>
+                        <dd class="cafe-intro__info-description">089-994-6370</dd>
+                    </div>
+                </dl>
+
+                <div class="">
+                    <img class="cafe-intro__img--beans" src="./image/top_image/voice_01.png" alt="コーヒー豆" width="81"
+                        height="98">
+                    <img class="cafe-intro__imgt--mikan" src="./image/top_image/voice_01.png" alt="みかん" width="133"
+                        height="99">
                 </div>
-                <!-- ページネーション -->
-                <div class="swiper-pagination voice_swiper-pagination"></div>
-
-                <!-- 前後の矢印 -->
-                <div class="swiper-button-prev voice_swiper-button-prev"></div>
-                <div class="swiper-button-next voice_swiper-button-next"></div>
             </div>
-
-        </div>
-        <div class="school">
-            <a href="./aboutus/index.html"><img src="./image/top_image/school.png" alt="学校案内" width="1440"
-                    height="720"></a>
-            <a href="./info/index.html"><img src="./image/top_image/admission.png" alt="入試案内" width="1440"
-                    height="720"></a>
         </div>
     </section>
+
+
+
     <!-- ここまでクリエイターズボイス -->
     <!-- ここからよくある質問 -->
     <div class="question_button_container">
