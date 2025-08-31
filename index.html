@@ -36,12 +36,13 @@
     <!--基本のスタイルの設置-->
     <link rel="stylesheet" href="./css/top.css" />
 
-    <title>松本農園</title>
-    <meta name="description" content="松本農園サイト" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
     <script src="./js/menu.js" defer></script>
     <script src="./js/slider.js" defer></script>
+
+    <title>松本農園 - 愛媛県中島の樹上完熟みかん</title>
+    <meta name="description" content="愛媛県松山市の離島中島で100年以上続くみかん農家。樹上完熟にこだわった甘くて濃厚なみかんをお届けします。" />
 </head>
 
 <body id="top">
@@ -49,7 +50,9 @@
     <section class="main__section">
         <header class="header">
             <h1 class="header__logo">
-                <img src="./image/top_image/logo-pink.png" alt="松本農園のロゴ" width="137" height="60">
+                <a href="/">
+                    <img src="./image/top_image/logo-pink.png" alt="松本農園" width="137" height="60">
+                </a>
             </h1>
             <!-- ハンバーガーメニューのボタン -->
             <button type="button" class="header__hamburger" aria-controls="nav" aria-expanded="false">
@@ -59,7 +62,7 @@
                 <span class="header__hamburger-label">menu</span>
             </button>
             <!-- ナビゲーションメニュー -->
-            <nav class="header__nav" id="nav" hidden>
+            <nav class="header__nav" id="nav" hidden aria-label="メインナビゲーション">
                 <ul class="header__nav-list">
                     <li class="header__nav-item"><a href="./index.html" aria-current="page">ホーム</a></li>
                     <li class="header__nav-item"><a href="./aboutus/index.html">私達のこと</a></li>
@@ -70,19 +73,19 @@
                 </ul>
             </nav>
         </header>
-        <!-- ここまでmenu -->
+
 
         <div class="mv wrapper">
             <!-- スライダー -->
             <div class="slider__container">
                 <div class="slider__slide">
-                    <img src="./image/top_image/slide01.png" alt="農園と海の風景写真" width="1440" height="770">
+                    <img src="./image/mv_01.png" alt="農園と海の風景写真" width="1440" height="770">
                 </div>
                 <div class="slider__slide">
-                    <img src="./image/top_image/slide02.png" alt="みかん畑収穫の様子" width="1440" height="770">
+                    <img src="./image/mv_02.png" alt="みかん畑収穫の様子" width="1440" height="770">
                 </div>
                 <div class="slider__slide">
-                    <img src="./image/top_image/slide03.png" alt="収穫を手伝うおばあちゃん達" width="1440" height="770">
+                    <img src="./image/mv_03.png" alt="収穫を手伝うおばあちゃん達" width="1440" height="770">
                 </div>
             </div>
         </div>
@@ -90,19 +93,18 @@
     <!-- ここまでスライダー -->
 
     <!-- ここからフローティングボタン -->
-    <div class="fixed-button__container">
+    <div class="fixed-buttons">
 
-        <div class="fixed-button__item">
-            <a href="./opencampus/index.html"><img src="./image/top_image/float01.png" alt="松本農園のInstagramへ" width="45"
-                    height="49"></a>
+        <div class="fixed-buttons__item">
+            <a href="#"><img src="./image/instagram_icon.svg" alt="Instagram" width="45" height="49"></a>
         </div>
 
-        <div class="fixed-button__item">
-            <a href="#"><img src="./image/top_image/float03.png" alt="松本農園の公式ラインへ" width="100" height="100"></a>
+        <div class="fixed-buttons__item">
+            <a href="#"><img src="./image/line_icon.svg" alt="公式ライン" width="100" height="100"></a>
         </div>
 
-        <div class="fixed-button__item fixed-button__item--pagetop">
-            <a href="#top"><img src="./image/top_image/float05.png" alt="一番上に戻る" width="80" height="80"></a>
+        <div class="fixed-buttons__item fixed-button__item--pagetop">
+            <a href="#top"><img src="./image/top_image/float05.png" alt="ページトップへ" width="80" height="80"></a>
         </div>
 
     </div>
@@ -114,53 +116,58 @@
         <div class="furusatotax__wrapper">
             <div class="furusatotax__title">
                 <div>
-                    <img class="furusatotax__leaf" src="./image/top_image/slide03.png" alt="葉" width="70" height="70">
+                    <img class="furusatotax__leaf" src="./image/leaf.svg" alt="葉" width="70" height="70">
                 </div>
                 <p class="furusatotax__subtitle">2025年冬～2026年春収穫分先行予約受付が始まりました!</p>
             </div>
 
-            <div class="furusatotax__btn-wrap">
-                <a class="furusatotax__btn furusatotax__btn--reservation" href=".reservation//index.html">予約はこちら</a>
+            <div class="furusatotax__image">
+                <img src="./image/furusatotax_01.png" alt="みかんのアップの写真" width="421" height="413" loading="lazy">
+                <img src="./image/furusatotax_02.png" alt="ふるさと納税のマーク" width="780" height="766" loading="lazy">
+            </div>
+
+            <div>
+                <a class="btn btn--primary" href=".reservation//index.html">予約はこちら</a>
             </div>
         </div>
     </section>
     <!-- ここまでふるさと納税セクション -->
 
     <!-- ここからabout us -->
-    <section class="aboutus">
-        <div class="aboutus__wrapper">
-            <div class="aboutus__content">
+    <section class="about">
+        <div class="about__wrapper">
+            <div class="about__content">
 
-                <div class="aboutus__title">
-                    <h2 class="aboutus__title--jp">松本農園のこと</h2>
-                    <p class="aboutus__title--en" lang="en">About us</p>
-                </div>
+                <header class="section__title">
+                    <p class="section__title--en" lang="en">About us</p>
+                    <h2 class="section__title--jp">松本農園のこと</h2>
+                </header>
 
-                <div class="aboutus__container">
-                    <div class="aboutus__container aboutus__container--location">
-                        <div class="aboutus__place">
-                            <img src="./image/top_image/aboutus_01.png" alt="手にみかんを持つ女の子" width="326" height="319">
-                            <img src="./image/top_image/aboutus_02.png" alt="愛媛県中島町の地図" width="363" height="420">
+                <div class="about__container">
+                    <article class="about__item">
+                        <div class="about__place">
+                            <img src="./image/aboutus_01.png" alt="手にみかんを持つ女の子" width="326" height="319" loading="lazy">
+                            <img src="./image/aboutus_02.png" alt="愛媛県中島町の地図" width="363" height="420" loading="lazy">
                         </div>
-                        <div class="aboutus__inner">
-                            <p class="aboutus__subtitle">愛媛県中島</p>
-                            <div class="aboutus__text">
+                        <div class="about__inner">
+                            <p class="about__subtitle">愛媛県中島</p>
+                            <div class="about__text">
                                 <p>松山市からフェリーで約1時間、豊かな自然に囲まれた瀬戸内海の離島です。
                                     全国でも有数のみかんの産地として知られ、海から吹く潮風が畑にミネラルを運び、温暖な気候と相まって、甘くて濃厚なみかんを育てています。
                                     かつて15,000人以上が暮らしていたこの島も、いまでは人口が約3,000人と5分の1にまで減少。
                                     過疎化が進むなかでも、この地で代々みかん作りを続けてきたのが、私たち松本農園です。</p>
                             </div>
                         </div>
-                    </div>
+                    </article>
 
-                    <div class="aboutus__container aboutus__container--family">
-                        <div class="aboutus__place">
-                            <img src="./image/top_image/aboutus_03.png" alt="レモンを収穫する男の子" width="421" height="413">
-                            <img src="./image/top_image/aboutus_04.png" alt="松本農園の家族集合写真" width="780" height="766">
+                    <article class="about__item">
+                        <div class="about__place">
+                            <img src="./image/aboutus_03.png" alt="レモンを収穫する男の子" width="421" height="413" loading="lazy">
+                            <img src="./image/aboutus_04.png" alt="松本農園の家族集合写真" width="780" height="766" loading="lazy">
                         </div>
-                        <div class="aboutus__inner">
-                            <p class="aboutus__subtitle">気軽に買える 美味しいみかんを目指して</p>
-                            <div class="aboutus__text">
+                        <div class="about__inner">
+                            <p class="about__subtitle">気軽に買える 美味しいみかんを目指して</p>
+                            <div class="about__text">
                                 <p>冬のぬくもりといえば、やっぱり「こたつとみかん」。
                                     昔ながらの、でもどこか新しい、そんな心温まる時間がそこにあります。
                                     松本農園は、100年以上続くみかん農家。
@@ -170,30 +177,27 @@
                                 </p>
                             </div>
                         </div>
-                    </div>
+                    </article>
                 </div>
             </div>
         </div>
-    </section><!-- ここまでabout us -->
+    </section>
+    <!-- ここまでabout us -->
 
+
+    <!-- スライダー右から流れ --->
     <div class="swiper-container">
-        <!-- スライダー右から流れ --->
         <div class="swiper swiper-top">
             <div class="swiper__wrapper">
-                <div class="swiper-slide"><img src="./image/top_image/slider_top01.png" alt="画像1" width="400"
-                        height="300">
+                <div class="swiper-slide"><img src="./image/slider_01.png" alt="画像1" width="400" height="300">
                 </div>
-                <div class="swiper-slide"><img src="./image/top_image/slider_top02.png" alt="画像2" width="400"
-                        height="400">
+                <div class="swiper-slide"><img src="./image/slider_02.png" alt="画像2" width="400" height="400">
                 </div>
-                <div class="swiper-slide"><img src="./image/top_image/slider_top03.png" alt="画像3" width="400"
-                        height="400">
+                <div class="swiper-slide"><img src="./image/slider_03.png" alt="画像3" width="400" height="400">
                 </div>
-                <div class="swiper-slide"><img src="./image/top_image/slider_top04.png" alt="画像4" width="400"
-                        height="400">
+                <div class="swiper-slide"><img src="./image/slider_04.png" alt="画像4" width="400" height="400">
                 </div>
-                <div class="swiper-slide"><img src="./image/top_image/slider_top05.png" alt="画像5" width="400"
-                        height="400">
+                <div class="swiper-slide"><img src="./image/slider_05.png" alt="画像5" width="400" height="400">
                 </div>
             </div>
         </div>
@@ -204,17 +208,17 @@
     <section class="careabout">
         <div class="careabout__wrapper">
 
-            <div class="careabout__title">
-                <h2 class="careabout__title--jp">私たちのこだわり</h2>
-                <p class="careabout__title--en" lang="en">What We Care About</p>
-            </div>
+            <header class="section__title">
+                <p class="section__title--en" lang="en">What We Care About</p>
+                <h2 class="section__title--jp">私たちのこだわり</h2>
+            </header>
 
             <div class="careabout__box">
-                <div class="careabout__item">
-                    <div><img class="careabout__img careabout__img--harvest" src="./image/top_image/stylist_01.png"
-                            alt="みかんを収穫している手元のアップ" width="770" height="462"></div>
+                <figure class="careabout__item">
+                    <img class="careabout__img careabout__img--harvest" src="./image/careabout_01.png"
+                        alt="みかんを収穫している手元のアップ" width="770" height="462" loading="lazy">
                     <p class="careabout__overlay--title">樹の上でじっくり完熟</p>
-                </div>
+                </figure>
 
                 <div class="careabout__desc">
                     <h3 class="careabout__subtitle">樹上完熟</h3>
@@ -226,19 +230,19 @@
             </div>
 
             <div class="careabout__box">
-                <div class="careabout__item">
-                    <div><img class="careabout__img careabout__img--flower" src="./image/top_image/stylist_01.png"
-                            alt="みかんの花のアップ写真" width="770" height="462"></div>
+                <figure class="careabout__item">
+                    <img class="careabout__img careabout__img--flower" src="./image/careabout_02.png" alt="みかんの花のアップ写真"
+                        width="770" height="462" loading="lazy">
                     <p class="careabout__overlay-title">濃縮された甘みと酸味のバランス</p>
-                </div>
-                <div class="careabout__desc">
-                    <h3 class="careabout__subtitle">自然の降雨で育てる</h3>
-                    <p class="careabout__text">私たちの園では、できる限り人工的な灌水を行わず、自然の降雨だけを頼りに栽培しています。
-                        自然の水分だけで育つみかんは、必要な水を根からしっかり吸収しようと、地中深くまで根を張るようになります。
-                        その結果、土壌中のミネラル分や栄養をたっぷりと取り込み、味に深みとコクが生まれます。
-                        また、水を絞って育てることで、果実の糖度が高まり、ぎゅっと凝縮された甘みと酸味のバランスが絶妙なみかんに仕上がります。
-                        余分な水分がない分、果肉もしっかりとしていて、食べ応えがあります。</p>
-                </div>
+                </figure>
+            </div>
+            <div class="careabout__desc">
+                <h3 class="careabout__subtitle">自然の降雨で育てる</h3>
+                <p class="careabout__text">私たちの園では、できる限り人工的な灌水を行わず、自然の降雨だけを頼りに栽培しています。
+                    自然の水分だけで育つみかんは、必要な水を根からしっかり吸収しようと、地中深くまで根を張るようになります。
+                    その結果、土壌中のミネラル分や栄養をたっぷりと取り込み、味に深みとコクが生まれます。
+                    また、水を絞って育てることで、果実の糖度が高まり、ぎゅっと凝縮された甘みと酸味のバランスが絶妙なみかんに仕上がります。
+                    余分な水分がない分、果肉もしっかりとしていて、食べ応えがあります。</p>
             </div>
         </div>
 
@@ -249,54 +253,58 @@
     <section class="juicycrew">
         <div class="juicycrew__wrapper">
 
-            <div class="careabout__title">
-                <h2 class="careabout__title--jp">育てているみかんたち</h2>
-                <p class="careabout__title--en" lang="en">My juicy crew</p>
-            </div>
+            <header class="section__title">
+                <p class="section__title--en" lang="en">My juicy crew</p>
+                <h2 class="section__title--jp">育てているみかんたち</h2>
+            </header>
 
-            <div class="careabout__gallery">
+            <div class="juicycrew__gallery">
                 <a href="detail-aika.html" class="careabout__mikan--item">
-                    <img class="careabout__gallery--aika" src="aika.jpg" alt="あいか28号" width="350" height="354">
+                    <img class="careabout__gallery--aika" src="./image/aika.png" alt="あいか28号" width="350" height="354"
+                        loading="lazy">
                     <div class="mikan-label">あいか28号</div>
                 </a>
 
                 <a href="detail-aika.html" class="careabout__mikan--item">
-                    <img class="careabout__gallery--setoka" src="setoka.jpg" alt="せとか" width="350" height="354">
+                    <img class="careabout__gallery--setoka" src="./image/setoka.png" alt="せとか" width="350" height="354"
+                        loading="lazy">
                     <div class="mikan-label">せとか</div>
                 </a>
 
                 <a href="detail-aika.html" class="careabout__mikan--item">
-                    <img class="careabout__gallery--harumi" src="harumi.jpg" alt="はるみ" width="400" height="293">
+                    <img class="careabout__gallery--harumi" src="./image/harumi.png" alt="はるみ" width="400" height="293"
+                        loading="lazy">
                     <div class="mikan-label">はるみ</div>
                 </a>
 
                 <a href="detail-aika.html" class="careabout__mikan--item">
-                    <img class="careabout__gallery--kara" src="aika.jpg" alt="カラマンダリン" width="400" height="303">
+                    <img class="careabout__gallery--kara" src="./image/kara.png" alt="カラマンダリン" width="400" height="303"
+                        loading="lazy">
                     <div class="mikan-label">カラマンダリン</div>
                 </a>
             </div>
 
-            <div class="careabout__btn-wrap">
-                <a class="careabout__btn careabout__btn--other" href=".other//index.html">他のみかんを探す</a>
+            <div class="section__cta">
+                <a class="btn btn--outline" href=".other//index.html">他のみかんを探す</a>
             </div>
         </div>
     </section>
     <!-- ここまでMy juicy crew -->
 
 
-    <!-- ここからおいしいをつなぐ -->
+    <!-- ここから風早珈琲焙煎所BOWEN -->
     <section class="cafe-intro">
         <div class="cafe-intro__wrapper">
 
             <div class="cafe-intro__left-column">
-                <div class="cafe-intro__title">
-                    <h2 class="cafe-intro__title--jp">おいしいをつなぐ</h2>
-                    <p class="cafe-intro__title--en" lang="en">Mikan Moments</p>
-                </div>
+                <header class="section__title">
+                    <p class="section__title--en" lang="en">Mikan Moments</p>
+                    <h2 class="section__title--jp">おいしいをつなぐ</h2>
+                </header>
 
                 <figure class="cafe-intro__photo-container">
-                    <img class="cafe-intro__photo" src="./image/top_image/voice_01.png" alt="店頭でコーヒーを入れている女性"
-                        width="714" height="487">
+                    <img class="cafe-intro__photo" src="./image/cafe-intro_01.png" alt="店頭でコーヒーを入れている女性" width="714"
+                        height="487">
                     <figcaption class="cafe-intro__caption">風早珈琲焙煎所BOWEN</figcaption>
                 </figure>
             </div>
@@ -337,47 +345,86 @@
                     </dl>
 
                     <div class="cafe-intro__icon-group">
-                        <img class="cafe-intro__beans-icon" src="./image/top_image/voice_01.png" alt="コーヒー豆" width="81"
+                        <img class="cafe-intro__beans-icon" src="./image/cafe-intro_beans.svg" alt="コーヒー豆" width="81"
                             height="98">
-                        <img class="cafe-intro__mikan-icom" src="./image/top_image/voice_01.png" alt="みかん" width="133"
+                        <img class="cafe-intro__mikan-icom" src="./image/cafe-intro_mikan.svg" alt="みかん" width="133"
                             height="99">
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    <!--ここまで風早珈琲焙煎所BOWEN -->
+
+
+    <!-- ここからオンラインショップ-->
+    <section class="online-shop">
+        <div class="online-shop__wrapper">
+
+            <div class="online-shop__left-column">
+                <header class="section__title">
+                    <p class="section__title--en" lang="en">Online Shop</p>
+                    <h2 class="section__title--jp">オンラインショップ</h2>
+                </header>
+
+                <div class="online-shop__text-column">
+                    <p class="online-shop__description">姉妹で作った、島のちょっと特別なみかん。<br>「おいしい」をお届けするオンラインストアです。</p>
+                    <p>潮風と太陽の光が降り注ぐ、瀬戸内の小さな島で、ひとつひとつ大切に育てました。
+                        松本農園から直送させていただきます。
+                    </p>
+                </div>
+
+                <div class="online-shop__button-wrap">
+                    <a class="online-shop__btn online-shop__btn--salespage" href="./salespage/index.html">通販サイトへ進む</a>
+                </div>
+            </div>
+
+            <div class="online-shop__right-column">
+                <figure class="online-shop__photo-container">
+                    <img class="online-shop__photo" src="./image/online-shop_01.png" alt="愛媛県中島のみかんが山積みになった写真"
+                        width="605" height="477">
+                    <figcaption class="online-shop__comment">
+                        <p class="online-shop__comment-text">コーヒー豆も販売しています！</p>
+                    </figcaption>
+                </figure>
+            </div>
+
+
+        </div>
+    </section>
+
 
 
     <!-- ここからコンタクト -->
     <section class="contact">
         <div class="contact__wrapper">
             <div class="contact__content-container">
-                <div class="contact__title">
-                    <h2 class="contact__title--jp">お問い合わせ</h2>
-                    <p class="cafe-intro__title--en" lang="en">Contact</p>
-                </div>
+                <header class="section__title">
+                    <p class="section__title--en" lang="en">Contact</p>
+                    <h2 class="section__title--jp">お問い合わせ</h2>
+                </header>
 
 
                 <p class="contact__text">松本農園へのお問い合わせはこちらからお気軽にご連絡ください。</p>
 
                 <div class="contact__buttons">
                     <a class="contact__btn" href="./website-link.html"><img class="contact__btn-icon"
-                            src="./image/top_image/contact01.svg" alt="WEBサイトのアイコン" width="30"
+                            src="./image/mail_icon.svg" alt="ウェブサイトからお問い合わせ" width="30"
                             height="30"><span>WEBサイトから</span></a>
 
                     <a class="contact__btn" href="./line-link.html"><img class="contact__btn-icon"
-                            src="./image/top_image/line_icon.svg" alt="公式LINEのアイコン" width="30"
+                            src="./image/line_icon.svg" alt="公式LINEからお問い合わせ" width="30"
                             height="30"><span>公式LINEから</span></a>
                 </div>
 
                 <p class="contact__note">
-                    収穫時期等ご返信まで2-～3日お時間を頂く場合がございます。ご了承くださいませ。
+                    収穫時期等ご返信まで2～3日お時間を頂く場合がございます。ご了承くださいませ。
                 </p>
             </div>
 
             <div class="contact__image">
-                <img class="contact__image-icon" src="./image/top_image/contact__img-icon.png" alt="みかんとスライスみかん"
-                    width="140" height="129">
+                <img class="contact__image-icon" src="./image/contact_mikan.svg" alt="" width="140" height="129"
+                    loading="lazy">
             </div>
         </div>
     </section>
@@ -386,62 +433,41 @@
 
     <!-- ここからフッター -->
     <footer class="footer">
-        <div class="footer_container">
-            <div class="footer_info">
-                <img class="footer_logo" src="./image/top_image/logo_white.png" alt="クリエイト美容専門学校のロゴ" width="313"
-                    height="60">
-                <p>〒150-0041 東京都渋谷区神南1-23-4</p>
-                <p>電話：03-5678-9101</p>
-                <p>メール：<a href="mailto:info@createbeauty.ac.jp">info@createbeauty.ac.jp</a></p>
-                <div class="sosial_icon">
-                    <a href="https://www.line.me/ja/" target="_blank"><img src="./image/top_image/line_icon.png"
-                            alt="ラインのアイコン" width="32" height="32"></a>
-                    <a href="https://www.instagram.com/?locale=ja_JP" target="_blank"><img
-                            src="./image/top_image/Instagram_icon.png" alt="インスタグラムのアイコン" width="32" height="32"></a>
+        <div class="footer__content-wrapper">
+            <div class="footer__left-container">
+                <img class="footer__logo" src="./image/top_image/logo_white.png" alt="松本農園" width="313" height="60">
+                <address class="footer__address">〒150-0041 愛媛県松山市中島</address>
+                <div class="footer__social-icons">
+                    <a href="https://www.instagram.com/?locale=ja_JP" target="_blank" rel="noopener noreferrer"
+                        aria-label="Instagram">
+                        <img src="./image/instagram_icon.svg" alt="インスタグラムのアイコン" width="32" height="32"></a>
+                    <a href="https://www.line.me/ja/" target="_blank" rel="noopener noreferrer" aria-label="LINE">
+                        <img src="./image/line_icon.svg" alt="LINEのアイコン" width="32" height="32"></a>
                 </div>
             </div>
-            <div class="footer_link">
-                <div class="column01">
-                    <p class="column_title"><a href="./aboutus/index.html">学校紹介</a></p>
-                    <ul>
-                        <li><a href="./aboutus/index.html">校長あいさつ</a></li>
-                        <li><a href="./aboutus/index.html">教育方針</a></li>
-                        <li><a href="./aboutus/index.html">講師紹介</a></li>
-                        <li><a href="./aboutus/index.html">施設紹介</a></li>
+
+
+            <div class="footer__center-container">
+                <nav class="footer__nav" aria-label="フッターナビゲーション">
+                    <ul class="footer__nav-list">
+                        <li><a class="footer__nav-item" href="/">ホーム</a></li>
+                        <li><a class="footer__nav-item" href="/aboutus/">松本農園のこと</a></li>
+                        <li><a class="footer__nav-item" href="/mandarins/">育てているみかんたち</a></li>
+                        <li><a class="footer__nav-item" href="/bowen/">風早焙煎所BOWEN</a></li>
+                        <li><a class="footer__nav-item" href="/shop/">オンラインショップ</a></li>
+                        <li><a class="footer__nav-item" href="/contact/">お問い合わせ</a></li>
                     </ul>
-                    <div class="columun_bottom">
-                        <p class="column_title"><a href="./school/index.html">本校の特徴</a></p>
-                    </div>
-                </div>
-                <div class="column02">
-                    <p class="column_title"><a href="./course/index.html">コース</a></p>
-                    <ul>
-                        <li><a href="./course/index.html">ヘアスタイリストコース</a></li>
-                        <li><a href="./course/index.html">夜間・週末コース</a></li>
-                        <li><a href="./course/index.html">メイク・ネイルアートコース</a></li>
-                        <li><a href="./course/index.html">エステティックコース</a></li>
-                    </ul>
-                    <div class="columun_bottom">
-                        <p class="column_title"><a href="./info/index.html">入学案内</a></p>
-                        <ul>
-                            <li><a href="./info/index.html">募集要項</a></li>
-                            <li><a href="./info/index.html">奨学金制度・特待生制度</a></li>
-                            <li><a href="./info/index.html">学費分割納入制度</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="column03">
-                    <p class="column_title"><a href="./interview/index.html">在校生・卒業生の声</a></p>
-                    <p class="column_title"><a href="./faq/index.html">よくあるご質問</a></p>
-                    <p class="column_title"><a href="./news/index.html">ニュース一覧</a></p>
-                    <p class="column_title"><a href="./opencampus/index.html">オープンキャンパス参加申込</a></p>
-                    <p class="column_title"><a href="./request/index.html">資料請求</a></p>
-                    <p class="column_title"><a href="./contact/index.html">お問合せ</a></p>
-                    <p class="column_title"><a href="#">プライバシーポリシー</a></p>
-                </div>
+                </nav>
+            </div>
+
+            <div class="footer__right-container">
+                <img src="./image/footer_map.png" alt="愛媛県中島周辺の地図" class="footer__map-image" width="260" height="238"
+                    loading="lazy">
             </div>
         </div>
-        <small class="copyright">© Create Beauty College. All rights reserved.</small>
+
+
+        <small class="footer__copyright">© Matsumoto farm . ALL RIGHTS RESERVED</small>
     </footer>
     <!-- ここまでフッター -->
 
