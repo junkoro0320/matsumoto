@@ -1,0 +1,14 @@
+// カラー
+$color-primary: #fc8013 // メインのオレンジ
+    $color-secondary: #5d1f0d; // アクセントの茶色
+$color-text: #343333; // 基本の文字色
+$color-background: #fdf5e9; // 背景の薄いベージュ
+$color-white: #fff;
+$color-dark-blue: #0a1f47; // フッターの紺色
+
+// フォント
+$font-family-base: 'Noto Sans JP', sans-serif;
+$font-family-en: 'Lato', sans-serif;
+
+// ブレークポイント（レスポンシブ対応用）
+$breakpoint-md: 768px;

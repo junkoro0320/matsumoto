@@ -1,0 +1,14 @@
+body {
+  color: #333;
+  font-family: sans-serif;
+}
+
+.header {
+  padding: 20px;
+}
+.header__logo a {
+  color: #ff6347;
+}
+.header__logo a:hover {
+  opacity: 0.8;
+}/*# sourceMappingURL=top.css.map */

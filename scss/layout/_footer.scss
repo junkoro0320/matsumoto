@@ -1,0 +1,25 @@
+// 変数を定義
+$main-color: #333;
+$accent-color: #ff6347;
+
+body {
+    color: $main-color;
+    font-family: sans-serif;
+}
+
+// 入れ子（ネスト）で書く
+.header {
+    padding: 20px;
+
+    &__logo {
+
+        // 親セレクタ(&)を参照
+        a {
+            color: $accent-color;
+
+            &:hover {
+                opacity: .8;
+            }
+        }
+    }
+}
