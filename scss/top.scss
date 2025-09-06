@@ -1,25 +1,9 @@
-// 変数を定義
-$main-color: #333;
-$accent-color: #ff6347;
+@use 'base/variables'; //最初に変数を読み込む
+@use 'base/base';
 
-body {
-    color: $main-color;
-    font-family: sans-serif;
-}
+@use 'components/btn';
 
-// 入れ子（ネスト）で書く
-.header {
-    padding: 20px;
+@use 'layout/header';
+@use 'layout/footer';
 
-    &__logo {
-
-        // 親セレクタ(&)を参照
-        a {
-            color: $accent-color;
-
-            &:hover {
-                opacity: .8;
-            }
-        }
-    }
-}
+@use 'page/top';

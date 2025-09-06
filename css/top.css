@@ -1,14 +1,62 @@
-body {
-  color: #333;
-  font-family: sans-serif;
+@charset "UTF-8";
+.furusatotax__btn {
+  position: relative;
+  display: inline-block;
+  padding: 16px 76px 16px 40px;
+  border-radius: 30px;
+  background-color: #fff;
+  text-decoration: none;
+  transition: opacity 0.3s, color 0.3s;
+}
+.furusatotax__btn:hover {
+  color: #0a1f47;
+  opacity: 0.8;
+}
+.furusatotax__btn::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 25px;
+  width: 0;
+  height: 0;
+  border-width: 6px 0 6px 10px;
+  border-style: solid;
+  border-color: transparent transparent transparent #0d2033;
+  transform: translateY(-50%);
 }
 
-.header {
-  padding: 20px;
+/*ふるさと納税セクション
+-----------------------------*/
+.furusatotax {
+  background-color: #fdf5e9;
+  text-align: center;
 }
-.header__logo a {
-  color: #ff6347;
+.furusatotax__wrapper {
+  max-width: 73%;
+  margin: 0 auto;
 }
-.header__logo a:hover {
-  opacity: 0.8;
+.furusatotax__title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 26px;
+  margin-bottom: 27px;
+}
+.furusatotax__subtitle {
+  font-size: 32px;
+}
+.furusatotax__image {
+  position: relative;
+  margin: 0px, 80px, auto;
+}
+.furusatotax__image-bg {
+  width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+.furusatotax__image-mark {
+  position: absolute;
+  left: 5%;
+  bottom: 5%;
+  width: 25%;
 }/*# sourceMappingURL=top.css.map */

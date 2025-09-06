@@ -1,25 +1,49 @@
-// 変数を定義
-$main-color: #333;
-$accent-color: #ff6347;
+// 変数ファイルを使えるようにする
+@use '../base/variables' as var;
 
-body {
-    color: $main-color;
-    font-family: sans-serif;
-}
 
-// 入れ子（ネスト）で書く
-.header {
-    padding: 20px;
+/*ふるさと納税セクション
+-----------------------------*/
+.furusatotax {
+    background-color: var.$color-background;
+    text-align: center;
 
-    &__logo {
-
-        // 親セレクタ(&)を参照
-        a {
-            color: $accent-color;
-
-            &:hover {
-                opacity: .8;
-            }
-        }
+    &__wrapper {
+        max-width: 73%;
+        margin: 0 auto;
     }
+
+    &__title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 26px;
+        margin-bottom: 27px;
+    }
+
+    &__subtitle {
+        font-size: 32px;
+    }
+
+    &__image {
+        position: relative;
+        margin: 0px,
+            80px, auto
+    }
+
+    &__image-bg {
+        width: 100%;
+        height: auto;
+        vertical-align: bottom;
+    }
+
+    &__image-mark {
+        position: absolute;
+        left: 5%;
+        bottom: 5%;
+        width: 25%;
+    }
+
+
+
 }
