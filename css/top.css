@@ -25,38 +25,85 @@
   transform: translateY(-50%);
 }
 
+/*MVスライド - 角丸完全対応版
+-----------------------------*/
+.slider__container {
+  /* アクティブ時の拡大 */
+}
+.slider__container .swiper-slide {
+  position: relative;
+  overflow: hidden;
+  height: 788px;
+  border-radius: 0 0 200px 200px;
+  /* 疑似要素でマスク効果 */
+}
+.slider__container .swiper-slide::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  border-radius: inherit;
+  pointer-events: none;
+}
+.slider__container .swiper-slide img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: transform 4s ease-out;
+  transform: scale(1);
+  /* 画像の角丸は削除 */
+}
+.slider__container .swiper-slide-active img {
+  transform: scale(1.05);
+}
+
 /*ふるさと納税セクション
 -----------------------------*/
-.furusatotax {
-  background-color: #fdf5e9;
-  text-align: center;
+.furusatotax__image {
+  position: relative;
+  height: 379px;
+  border-radius: 100px;
+  background: url("/image/furusatotax_01.png") center/cover no-repeat;
 }
 .furusatotax__wrapper {
-  max-width: 73%;
   margin: 0 auto;
+  max-width: 73%;
 }
 .furusatotax__title {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   gap: 26px;
   margin-bottom: 27px;
+  font-size: 32px;
 }
 .furusatotax__subtitle {
   font-size: 32px;
 }
-.furusatotax__image {
-  position: relative;
-  margin: 0px, 80px, auto;
-}
-.furusatotax__image-bg {
-  width: 100%;
-  height: auto;
-  vertical-align: bottom;
-}
 .furusatotax__image-mark {
   position: absolute;
-  left: 5%;
-  bottom: 5%;
-  width: 25%;
+  top: 50%;
+  left: 3%;
+  display: block;
+  transform: translateY(-50%);
+}
+.furusatotax__content {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  display: block;
+  margin: 0 auto;
+  padding: 40px 27px 37px 28px;
+  width: 39%;
+  border-radius: 50px;
+  background-color: #0a1f47;
+}
+.furusatotax__text {
+  margin-bottom: 28px;
+  color: #fff;
+  line-height: 180%;
 }/*# sourceMappingURL=top.css.map */

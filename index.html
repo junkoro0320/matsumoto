@@ -36,8 +36,13 @@
     <!--基本のスタイルの設置-->
     <link rel="stylesheet" href="./css/top.css" />
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js" defer></script>
+
     <script src="./js/menu.js" defer></script>
     <script src="./js/slider.js" defer></script>
 
@@ -77,15 +82,25 @@
 
         <div class="mv wrapper">
             <!-- スライダー -->
-            <div class="slider__container">
-                <div class="slider__slide">
-                    <img src="./image/mv_01.png" alt="農園と海の風景写真" width="1440" height="770">
-                </div>
-                <div class="slider__slide">
-                    <img src="./image/mv_02.png" alt="みかん畑収穫の様子" width="1440" height="770">
-                </div>
-                <div class="slider__slide">
-                    <img src="./image/mv_03.png" alt="収穫を手伝うおばあちゃん達" width="1440" height="770">
+            <div class="slider__container swiper">
+
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="slide-media">
+                            <img src="./image/mv_01.png" alt="農園と海の風景写真" width="1440" height="770">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="slide-media">
+                            <img src="./image/mv_02.png" alt="みかん畑収穫の様子" width="1440" height="770">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="slide-media">
+                            <img src="./image/mv_03.png" alt="収穫を手伝うおばあちゃん達" width="1440" height="770">
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
                 </div>
             </div>
         </div>
@@ -122,18 +137,20 @@
             </div>
 
             <div class="furusatotax__image">
-                <img class="furusatotax__image-bg" src="./image/furusatotax_01.png" alt="みかんのアップの写真" width="1046"
-                    height="379" loading="lazy">
                 <img class="furusatotax__image-mark" src="./image/furusatotax_02.png" alt="ふるさと納税のマーク" width="244"
                     height="244" loading="lazy">
+
+
+                <div class="furusatotax__content">
+                    <p class="furusatotax__text">愛媛県松山市のふるさと納税で、松本農園のやさしい味をお届けします。
+                        寄付を通じて、地元を応援し、美味しい返礼品でホッとひと息つきませんか</p>
+                    <a class="furusatotax__btn" href="#top">予約ページへすすむ</a>
+
+                    <div>
+                    </div>
+                </div>
             </div>
 
-            <div class="furusatotax__inner">
-                <p class="furusatotax__text">愛媛県松山市のふるさと納税で、松本農園のやさしい味をお届けします。
-                    寄付を通じて、地元を応援し、美味しい返礼品でホッとひと息つきませんか</p>
-                <a class="furusatotax__btn" href="#top">予約ページへすすむ</a>
-            </div>
-        </div>
     </section>
     <!-- ここまでふるさと納税セクション -->
 
