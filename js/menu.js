@@ -1,12 +1,24 @@
 // ここからハンバーガーメニュー
-// ハンバーガーアイコンをクリックした時の処理
-const hamburger = document.getElementById('hamburger');
-const nav = document.getElementById('nav');
+const hamburgerButton = document.querySelector('.header__hamburger');
+const nav = document.querySelector('.header__nav');
+const label = document.querySelector('.header__hamburger--label');
 
-hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active'); // バッテンにする
-    nav.classList.toggle('active'); // メニューを開く
+hamburgerButton.addEventListener('click', () => {
+    const isExpanded = hamburgerButton.getAttribute('aria-expanded') === 'true';
+
+    if (isExpanded) {
+        // メニューを閉じる
+        hamburgerButton.setAttribute('aria-expanded', 'false');
+        nav.setAttribute('aria-hidden', 'true');
+        label.textContent = 'menu';
+    } else {
+        // メニューを開く
+        hamburgerButton.setAttribute('aria-expanded', 'true');
+        nav.setAttribute('aria-hidden', 'false');
+        label.textContent = 'close';
+    }
 });
-// ここまでハンバーガーメニュー
+
+
 
 
