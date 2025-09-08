@@ -6,8 +6,19 @@ $color-background: #fdf5e9; // 背景の薄いベージュ
 $color-white: #fff;
 $color-dark-blue: #0a1f47; // フッターの紺色
 
+// SCSS変数を使ってCSSカスタムプロパティを定義
+:root {
+    --color-primary: #{$color-primary};
+    --color-secondary: #{$color-secondary};
+    --color-text: #{$color-text};
+    --color-background: #{$color-background};
+    --color-white: #{$color-white};
+    --color-dark-blue: #{$color-dark-blue};
+}
+
 //行間
 $line-height-base: 1.8;
+$line-height-sub: 1.5;
 
 // フォント
 $font-family-base: 'Noto Sans JP', sans-serif;

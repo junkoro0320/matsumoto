@@ -1,12 +1,33 @@
 // 変数ファイルを使えるようにする
 @use '../base/variables' as var;
+@use '../base/mixins';
 
 .wrapper {
-  margin: 0 auto;  max-width: 100%;  width: 1360px;
+  margin: 0 auto;
+  max-width: 100%;
+  width: 1440px;
 }
 
 .main__section {
-  position: relative;  margin-bottom: 90px;
+  position: relative;
+  margin-bottom: 80px;
+}
+
+
+.section__title {
+  @include mixins.flex-col(15px);
+  line-height: var.$line-height-sub;
+
+  &--jp {
+    font-weight: 500;
+    font-size: 36px;
+  }
+
+  &--en {
+    color: var(--color-primary);
+    font-weight: normal;
+    font-size: 28px;
+  }
 }
 
 /*MVスライド 
@@ -15,30 +36,47 @@
 $animation-duration: 24s;
 
 .slider__frame {
-  position: relative;  overflow: hidden;  margin: 0 auto;  width: 100%;  height: 788px;  clip-path: inset(0 round 0 0 200px 200px);
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+  width: 100%;
+  height: 680px;
+  clip-path: inset(0 round 0 0 200px 200px);
+
   &--island,
   &--harvest,
   &--farmer {
-    position: absolute;  top: 0;  left: 0;  width: 100%;  height: 100%;  background-position: center;  background-size: cover;  background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
   }
 
   &--island {
-    background-image: url('/image/mv_01.png');  animation: slide-animation-01 $animation-duration infinite;
+    background-image: url('/image/mv_01.png');
+    animation: slide-animation-01 $animation-duration infinite;
   }
 
   &--harvest {
-    background-image: url('/image/mv_02.png');  animation: slide-animation-02 $animation-duration infinite;
+    background-image: url('/image/mv_02.png');
+    animation: slide-animation-02 $animation-duration infinite;
   }
 
   &--farmer {
-    background-image: url('/image/mv_03.png');  animation: slide-animation-03 $animation-duration infinite;
+    background-image: url('/image/mv_03.png');
+    animation: slide-animation-03 $animation-duration infinite;
   }
 }
 
 
 @keyframes slide-animation-01 {
   0% {
-    opacity: 1;  transform: scale(1.0);
+    opacity: 1;
+    transform: scale(1.0);
   }
 
   30% {
@@ -46,7 +84,8 @@ $animation-duration: 24s;
   }
 
   40% {
-    opacity: 0;  transform: scale(1.15);
+    opacity: 0;
+    transform: scale(1.15);
   }
 
   90% {
@@ -54,7 +93,8 @@ $animation-duration: 24s;
   }
 
   100% {
-    opacity: 1;  transform: scale(1.0);
+    opacity: 1;
+    transform: scale(1.0);
   }
 }
 
@@ -64,7 +104,8 @@ $animation-duration: 24s;
   }
 
   30% {
-    opacity: 0;  transform: scale(1.1);
+    opacity: 0;
+    transform: scale(1.1);
   }
 
   40% {
@@ -76,7 +117,8 @@ $animation-duration: 24s;
   }
 
   70% {
-    opacity: 0;  transform: scale(1.0);
+    opacity: 0;
+    transform: scale(1.0);
   }
 
   100% {
@@ -90,7 +132,8 @@ $animation-duration: 24s;
   }
 
   60% {
-    opacity: 0;  transform: scale(1.0);
+    opacity: 0;
+    transform: scale(1.0);
   }
 
   70% {
@@ -102,7 +145,8 @@ $animation-duration: 24s;
   }
 
   100% {
-    opacity: 0;  transform: scale(1.1);
+    opacity: 0;
+    transform: scale(1.1);
   }
 }
 
@@ -111,7 +155,8 @@ $animation-duration: 24s;
 /*ふるさと納税セクション
 -----------------------------*/
 .fade-in-section {
-  opacity: 0;  transition: opacity 2.5s ease;
+  opacity: 0;
+  transition: opacity 2.5s ease;
 }
 
 .fade-in-section.visible {
@@ -120,32 +165,179 @@ $animation-duration: 24s;
 
 .hometown {
   &__image {
-    position: relative;  height: 379px;  border-radius: 100px;  background: url('/image/hometown_01.png')center/cover no-repeat;
+    position: relative;
+    height: 379px;
+    border-radius: 100px;
+    background: url('/image/hometown_01.png')center/cover no-repeat;
   }
 
   &__wrapper {
-    margin: 0 auto;  max-width: 73%;
+    margin: 0 auto;
+    max-width: 73%;
   }
 
   &__title {
-    display: flex;  align-items: center;  justify-content: center;  gap: 26px;  margin-bottom: 27px;  font-size: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 26px;
+    margin-bottom: 27px;
   }
 
   &__subtitle {
-    font-size: 32px;
+    font-size: 28px;
   }
 
   &__image-mark {
-    position: absolute;  top: 50%;  left: 3%;  display: block;  display: block;  transform: translateY(-50%);
+    position: absolute;
+    top: 50%;
+    left: 3%;
+    display: block;
+    width: 23%;
+    height: auto;
+    transform: translateY(-50%);
   }
 
   &__content {
-    position: absolute;  right: 0;  bottom: 0;  display: flex;  align-items: center;  flex-direction: column;  margin: 0 auto;  padding: 40px 27px 37px 28px;  width: 39%;  border-radius: 50px;  background-color: #0a1f47;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    @include mixins.flex-col(10px);
+    align-items: center;
+    margin: 0 auto;
+    padding: 22px 28px 37px 27px;
+    width: 39%;
+    border-radius: 50px;
+    background-color: #0a1f47;
   }
 
 
 
   &__text {
-    margin-bottom: 28px;  color: #fff;  text-align: left;  line-height: 180%;
+    color: #fff;
+    text-align: left;
+    font-size: clamp(14px, 2vw, 20px);
+    line-height: var.$line-height-base;
   }
+}
+
+/*About usセクション
+-----------------------------*/
+.about {
+  margin-top: 108px;
+  background-color: #e8f5ff;
+
+  &__wrapper {
+    margin: 0 auto;
+    width: 87%;
+  }
+
+  &__container {
+    @include mixins.flex-col(58px);
+    margin-top: 57px;
+    padding-top: 26px;
+    padding-bottom: 102px;
+  }
+
+  &__place {
+    display: flex;
+    justify-content: center;
+    gap: 1%;
+
+    &--map {
+      display: block;
+      margin-top: -73px;
+      width: 55%;
+    }
+
+    &--girl {
+      display: block;
+      margin-top: 100px;
+      width: 50%;
+    }
+  }
+
+  &__item {
+    &--upper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 17px;
+    }
+
+    &--bottom {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+    }
+  }
+
+  &__inner {
+    &--upper {
+      position: relative;
+      margin-top: auto;
+      width: 40%;
+    }
+
+    &--bottom {
+      position: relative;
+      margin-top: auto;
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__goal {
+    display: flex;
+    flex-direction: column;
+    gap: 88px;
+    width: 40%;
+  }
+
+  &__subtitle {
+    position: absolute;
+    top: -14px;
+    left: 0;
+    display: inline-block;
+    padding: 10px 16px;
+    border-radius: 20px;
+    background-color: var(--color-primary);
+    color: #fff;
+    font-weight: 500;
+    font-size: 20px;
+  }
+
+  &__text {
+    border-radius: 20px;
+    background-color: #fff;
+    line-height: var.$line-height-base;
+    padding: 35px 50px;
+  }
+
+
+  &__family {
+    display: flex;
+    flex-direction: column;
+    width: 55%;
+
+    &--photo {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin-top: auto;
+    }
+
+  }
+}
+
+
+.lemon-boy {
+  display: block;
+  margin: 0 0 0 auto;
+  width: 84%;
+  height: auto;
 }
