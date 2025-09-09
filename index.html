@@ -36,15 +36,20 @@
     <!--基本のスタイルの設置-->
     <link rel="stylesheet" href="./css/top.css" />
 
+    <!-- Slickスタイルの設置 -->
+    <link rel="stylesheet" href="slick/slick.css">
+    <link rel="stylesheet" href="slick/slick-theme.css">
 
-    <!-- Swiper CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 
-    <!-- Swiper JS -->
+
+
+    <!-- JS -->
 
     <script src="./js/menu.js" defer></script>
     <script src="./js/slider.js" defer></script>
     <script src="./js/main.js" defer></script>
+
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" defer></script>
 
     <title>松本農園 - 愛媛県中島の樹上完熟みかん</title>
     <meta name="description" content="愛媛県松山市の離島中島で100年以上続くみかん農家。樹上完熟にこだわった甘くて濃厚なみかんをお届けします。" />
@@ -93,7 +98,7 @@
 
 
             <!-- スライダー -->
-            <div class="slider__frame">
+            <div class="slider__frame ">
                 <div class="slider__frame--island" role="img" aria-label="農園の風景"></div>
                 <div class="slider__frame--harvest" role="img" aria-label="収穫の様子"></div>
                 <div class="slider__frame--farmer" role="img" aria-label="農家の作業風景"></div>
@@ -162,10 +167,14 @@
                     <div class="about__container">
                         <article class="about__item--upper">
                             <div class="about__place">
-                                <img class="about__place--girl" src="./image/aboutus_01.png" alt="手にみかんを持つ女の子"
-                                    width="326" height="319" loading="lazy">
-                                <img class="about__place--map" src="./image/aboutus_02.png" alt="愛媛県中島町の地図" width="363"
-                                    height="420" loading="lazy">
+                                <div class="about__place--girl">
+                                    <img src="./image/aboutus_01.png" alt="手にみかんを持つ女の子" width="326" height="319"
+                                        loading="lazy">
+                                </div>
+                                <div class="about__place--map">
+                                    <img src="./image/aboutus_02.png" alt="愛媛県中島町の地図" width="363" height="420"
+                                        loading="lazy">
+                                </div>
                             </div>
                             <div class="about__inner--upper">
                                 <p class="about__subtitle">愛媛県中島</p>
@@ -216,22 +225,17 @@
 
 
         <!-- スライダー右から流れ --->
-        <div class="swiper-container">
-            <div class="swiper swiper-top">
-                <div class="swiper__wrapper">
-                    <div class="swiper-slide"><img src="./image/slider_01.png" alt="画像1" width="400" height="300">
-                    </div>
-                    <div class="swiper-slide"><img src="./image/slider_02.png" alt="画像2" width="400" height="400">
-                    </div>
-                    <div class="swiper-slide"><img src="./image/slider_03.png" alt="画像3" width="400" height="400">
-                    </div>
-                    <div class="swiper-slide"><img src="./image/slider_04.png" alt="画像4" width="400" height="400">
-                    </div>
-                    <div class="swiper-slide"><img src="./image/slider_05.png" alt="画像5" width="400" height="400">
-                    </div>
-                </div>
-            </div>
-        </div>
+
+        <section class="slider">
+            <ul class="slider--frame">
+                <li class="slider--introduction slider--scene1"></li>
+                <li class="slider--introduction slider--scene2"></li>
+                <li class="slider--introduction slider--scene3"></li>
+                <li class="slider--introduction slider--scene4"></li>
+                <li class="slider--introduction slider--scene5"></li>
+            </ul>
+        </section>
+
         <!-- ここまでスライダー右から流れ--->
 
         <!-- ここからcare about -->

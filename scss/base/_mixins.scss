@@ -1,15 +1,54 @@
-// よく使う「画像の基本形」
+// 画像の基本形
 @mixin img-block {
     display: block;
     width: 100%;
     height: auto;
 }
 
-// Flexboxを縦並びにする（gapも指定できる）
-@mixin flex-col($gap: 0, $justify: flex-start, $align: stretch) {
+// Flexbox
+@mixin flex-col($gap: 0, $justify: flex-start, $align: center) {
     display: flex;
     align-items: $align;
     flex-direction: column;
     justify-content: $justify;
     gap: $gap;
+}
+
+@mixin flex-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 絶対配置系 */
+@mixin absolute-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin absolute-center-y($left: 0) {
+    position: absolute;
+    top: 50%;
+    left: $left;
+    transform: translateY(-50%);
+}
+
+/* ボックス装飾 */
+@mixin box($bg: #fff, $radius: 20px, $padding: 0) {
+    padding: $padding;
+    border-radius: $radius;
+    background-color: $bg;
+}
+
+/* レスポンシブフォント */
+@mixin fluid-font($min, $vw, $max) {
+    font-size: clamp($min, $vw, $max);
 }

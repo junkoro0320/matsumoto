@@ -1,11 +1,18 @@
 // 変数ファイルを使えるようにする
-@use '../base/variables' as var;
 @use '../base/mixins';
+@use '../base/variables' as var;
+
 
 .wrapper {
   margin: 0 auto;
   max-width: 100%;
   width: 1440px;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 .main__section {
@@ -177,22 +184,17 @@ $animation-duration: 24s;
   }
 
   &__title {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include mixins.flex-center;
     gap: 26px;
     margin-bottom: 27px;
   }
 
   &__subtitle {
-    font-size: 28px;
+    @include mixins.fluid-font(20px, 2vw, 28px);
   }
 
   &__image-mark {
-    position: absolute;
-    top: 50%;
-    left: 3%;
-    display: block;
+    @include mixins.absolute-center-y(3%);
     width: 23%;
     height: auto;
     transform: translateY(-50%);
@@ -203,20 +205,15 @@ $animation-duration: 24s;
     right: 0;
     bottom: 0;
     @include mixins.flex-col(10px);
-    align-items: center;
     margin: 0 auto;
-    padding: 22px 28px 37px 27px;
+    @include mixins.box(#0a1f47, 50px, 22px 28px 37px 27px);
     width: 39%;
-    border-radius: 50px;
-    background-color: #0a1f47;
   }
-
-
 
   &__text {
     color: #fff;
     text-align: left;
-    font-size: clamp(14px, 2vw, 20px);
+    @include mixins.fluid-font(14px, 2vw, 20px);
     line-height: var.$line-height-base;
   }
 }
@@ -240,37 +237,36 @@ $animation-duration: 24s;
   }
 
   &__place {
-    display: flex;
-    justify-content: center;
-    gap: 1%;
+    @include mixins.flex-between;
+    width: 59%;
+
+    &--girl,
+    &--map {
+      flex: 1; // 均等に分ける
+      max-width: 50%;
+    }
 
     &--map {
-      display: block;
       margin-top: -73px;
-      width: 55%;
     }
 
     &--girl {
-      display: block;
       margin-top: 100px;
-      width: 50%;
     }
   }
 
   &__item {
+
     &--upper {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 17px;
+      @include mixins.flex-between;
     }
 
     &--bottom {
       position: relative;
-      display: flex;
-      justify-content: center;
+      @include mixins.flex-center;
       gap: 60px;
     }
+
   }
 
   &__inner {
@@ -287,14 +283,11 @@ $animation-duration: 24s;
   }
 
   &__bottom {
-    display: flex;
-    flex-direction: column;
+    @include mixins.flex-col;
   }
 
   &__goal {
-    display: flex;
-    flex-direction: column;
-    gap: 88px;
+    @include mixins.flex-col(88px);
     width: 40%;
   }
 
@@ -312,22 +305,16 @@ $animation-duration: 24s;
   }
 
   &__text {
-    border-radius: 20px;
-    background-color: #fff;
+    @include mixins.box(#fff, 20px, 35px 50px);
     line-height: var.$line-height-base;
-    padding: 35px 50px;
   }
 
 
   &__family {
-    display: flex;
-    flex-direction: column;
+    @include mixins.flex-col;
     width: 55%;
 
     &--photo {
-      display: block;
-      width: 100%;
-      height: auto;
       margin-top: auto;
     }
 
@@ -340,4 +327,53 @@ $animation-duration: 24s;
   margin: 0 0 0 auto;
   width: 84%;
   height: auto;
+}
+
+/*農園紹介スライドセクション
+-----------------------------*/
+
+.slider {
+  position: relative;
+  z-index: 1;
+  height: 100vh;
+
+
+  & img {
+    width: 100%;
+    height: auto;
+  }
+
+  & .slider--scene1 {
+    background: url('image/slider_scene1.png');
+  }
+
+  & .slider--scene1 {
+    background: url('image/slider_scene2.png');
+  }
+
+  & .slider--scene1 {
+    background: url('image/slider_scene3.png');
+  }
+
+  & .slider--scene1 {
+    background: url('image/slider_scene4.png');
+  }
+
+  & .slider--scene1 {
+    background: url('image/slider_scene5.png');
+  }
+
+
+  &--introduction {
+    width: 100%;
+    height: 100vh;
+  }
+
+
+}
+
+
+
+.slider--introduction .slider--introduction .slick-slide {
+  margin: 0 10px;
 }
