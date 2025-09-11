@@ -208,11 +208,14 @@ img {
 
 .section__title {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: column;
   justify-content: flex-start;
   gap: 15px;
+  /* align-itemsをflex-startに */
   line-height: 1.5;
+  width: 90%;
+  margin: 0 auto;
 }
 .section__title--jp {
   font-weight: 500;
@@ -383,13 +386,21 @@ img {
 
 /*About usセクション
 -----------------------------*/
+.section__title-about {
+  width: 100%;
+}
+
 .about {
   margin-top: 108px;
   background-color: #e8f5ff;
+  margin-bottom: 66px;
 }
 .about__wrapper {
   margin: 0 auto;
   width: 87%;
+}
+.about__content {
+  margin-top: 109px;
 }
 .about__container {
   display: flex;
@@ -417,24 +428,29 @@ img {
 .about__place--girl {
   margin-top: 100px;
 }
-.about__item--upper {
+.about__item-upper {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.about__item--bottom {
+.about__item-bottom {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 60px;
+  gap: 5%;
 }
-.about__inner--upper {
-  position: relative;
+.about__inner-upper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 38px;
+  align-items: flex-start;
   margin-top: auto;
   width: 40%;
 }
-.about__inner--bottom {
+.about__inner-bottom {
   position: relative;
   margin-top: auto;
 }
@@ -455,8 +471,6 @@ img {
 }
 .about__subtitle {
   position: absolute;
-  top: -14px;
-  left: 0;
   display: inline-block;
   padding: 10px 16px;
   border-radius: 20px;
@@ -464,12 +478,23 @@ img {
   color: #fff;
   font-weight: 500;
   font-size: 20px;
+  top: -16px;
+  left: 8%;
+  font-size: clamp(14px, 2vw, 18px);
+}
+.about__box {
+  position: relative;
+  background-color: #fff;
+  border-radius: 20px;
+  border: solid 1px #3D4149;
 }
 .about__text {
-  padding: 35px 50px;
-  border-radius: 20px;
-  background-color: #fff;
+  display: block;
+  margin: 0 auto;
+  text-align: left;
   line-height: 1.8;
+  width: 80%;
+  padding: 35px 0px;
 }
 .about__family {
   display: flex;
@@ -495,32 +520,154 @@ img {
 .slider {
   position: relative;
   z-index: 1;
-  height: 100vh;
+  height: auto;
+  margin-bottom: 88px;
+}
+.slider .slick-slide {
+  margin: 0 10px;
 }
 .slider img {
   width: 100%;
   height: auto;
 }
 .slider .slider--scene1 {
-  background: url("image/slider_scene1.png");
+  background: url("../image/slider_scene1.png");
 }
-.slider .slider--scene1 {
-  background: url("image/slider_scene2.png");
+.slider .slider--scene2 {
+  background: url("../image/slider_scene2.png");
 }
-.slider .slider--scene1 {
-  background: url("image/slider_scene3.png");
+.slider .slider--scene3 {
+  background: url("../image/slider_scene3.png");
 }
-.slider .slider--scene1 {
-  background: url("image/slider_scene4.png");
+.slider .slider--scene4 {
+  background: url("../image/slider_scene4.png");
 }
-.slider .slider--scene1 {
-  background: url("image/slider_scene5.png");
+.slider .slider--scene5 {
+  background: url("../image/slider_scene5.png");
 }
-.slider--introduction {
-  width: 100%;
-  height: 100vh;
+.slider--frame {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.slider--frame li {
+  width: 400px !important;
+  /* 固定幅 */
+  height: 400px !important;
+  /* 固定高さ */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
-.slider--introduction .slider--introduction .slick-slide {
-  margin: 0 10px;
+/*私達のこだわりセクション
+-----------------------------*/
+.care {
+  margin-bottom: 60px;
+}
+.care__box-upper {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  gap: 4%;
+  align-items: flex-start;
+  margin-top: 5%;
+}
+.care__box-bottom {
+  display: flex;
+  align-items: right;
+  justify-content: center;
+  margin-top: 14%;
+  gap: 4%;
+}
+.care__subtitle {
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: 20px;
+  background-color: var(--color-primary);
+  color: #fff;
+  font-weight: 500;
+  font-size: 20px;
+}
+.care__desc {
+  display: flex;
+  flex-direction: column;
+  width: 35%;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+.care__item {
+  display: block;
+  width: 100%;
+  height: auto;
+  width: 53%;
+}
+.care__text {
+  line-height: 1.8;
+}
+.care__img-wrapper {
+  position: relative;
+}
+.care__overlay-upper, .care__overlay-bottom {
+  font-size: clamp(14px, 2vw, 22px);
+  color: #fc8013;
+  background-color: #fff;
+  padding: 15px 26px;
+  border: 1px solid #fc8013;
+  position: absolute;
+  top: 0;
+}
+.care__overlay-upper {
+  right: 0;
+  border-bottom-right-radius: 30px;
+}
+.care__overlay-bottom {
+  left: 0;
+  border-bottom-left-radius: 30px;
+}
+
+/*育てているみかんたちセクション
+-----------------------------*/
+.juicy-crew {
+  background-color: #FDF5E9;
+}
+.juicy-crew__gallery {
+  position: relative;
+  height: 100vh;
+  margin-top: 50px;
+  gap: 2rem;
+}
+.juicy-crew__item {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+.juicy-crew__item img {
+  display: block;
+}
+.juicy-crew__item:nth-child(1) {
+  top: 0;
+  left: -55px;
+  z-index: 4;
+}
+.juicy-crew__item:nth-child(2) {
+  top: 259px;
+  left: 250px;
+  z-index: 3;
+}
+.juicy-crew__item:nth-child(3) {
+  top: 0px;
+  left: 550px;
+  z-index: 2;
+}
+.juicy-crew__item:nth-child(4) {
+  top: 259px;
+  right: 21px;
+  z-index: 1;
+}
+.juicy-crew__label {
+  writing-mode: vertical-rl;
+  margin-top: 0.5rem;
+  font-size: clamp(16px, 2vw, 24px);
 }/*# sourceMappingURL=top.css.map */

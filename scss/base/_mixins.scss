@@ -26,6 +26,18 @@
     justify-content: center;
 }
 
+@mixin flex-right {
+    display: flex;
+    align-items: right;
+    justify-content: center;
+}
+
+@mixin flex-left {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
 /* 絶対配置系 */
 @mixin absolute-center {
     position: absolute;
@@ -51,4 +63,14 @@
 /* レスポンシブフォント */
 @mixin fluid-font($min, $vw, $max) {
     font-size: clamp($min, $vw, $max);
+}
+
+@mixin subtitle {
+    display: inline-block;
+    padding: 10px 16px;
+    border-radius: 20px;
+    background-color: var(--color-primary);
+    color: #fff;
+    font-weight: 500;
+    font-size: 20px;
 }

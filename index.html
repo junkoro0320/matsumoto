@@ -42,14 +42,16 @@
 
 
 
+    <!-- jQuery（必須） -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
 
-    <!-- JS -->
+    <!-- slick本体 -->
+    <script src="slick/slick.min.js" defer></script>
 
+    <!-- 自作スクリプト -->
     <script src="./js/menu.js" defer></script>
     <script src="./js/slider.js" defer></script>
     <script src="./js/main.js" defer></script>
-
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" defer></script>
 
     <title>松本農園 - 愛媛県中島の樹上完熟みかん</title>
     <meta name="description" content="愛媛県松山市の離島中島で100年以上続くみかん農家。樹上完熟にこだわった甘くて濃厚なみかんをお届けします。" />
@@ -155,17 +157,17 @@
         <!-- ここまでふるさと納税セクション -->
 
         <!-- ここからabout us -->
-        <section class="about">
+        <section id="about" class="about fade-in-section">
             <div class="about__wrapper">
                 <div class="about__content">
 
-                    <header class="section__title">
+                    <header class="section__title-about">
                         <p class="section__title--en" lang="en">About us</p>
                         <h2 class="section__title--jp">松本農園のこと</h2>
                     </header>
 
                     <div class="about__container">
-                        <article class="about__item--upper">
+                        <article class="about__item-upper">
                             <div class="about__place">
                                 <div class="about__place--girl">
                                     <img src="./image/aboutus_01.png" alt="手にみかんを持つ女の子" width="326" height="319"
@@ -176,18 +178,20 @@
                                         loading="lazy">
                                 </div>
                             </div>
-                            <div class="about__inner--upper">
-                                <p class="about__subtitle">愛媛県中島</p>
+                            <div id="about__inner-upper" class="about__inner-upper fade-in-section">
+                                <div class="about__box">
+                                    <p class="about__subtitle">愛媛県中島</p>
 
-                                <p class="about__text">松山市からフェリーで約1時間、豊かな自然に囲まれた瀬戸内海の離島です。
-                                    全国でも有数のみかんの産地として知られ、海から吹く潮風が畑にミネラルを運び、温暖な気候と相まって、甘くて濃厚なみかんを育てています。
-                                    かつて15,000人以上が暮らしていたこの島も、いまでは人口が約3,000人と5分の1にまで減少。
-                                    過疎化が進むなかでも、この地で代々みかん作りを続けてきたのが、私たち松本農園です。</p>
+                                    <p class="about__text">松山市からフェリーで約1時間、豊かな自然に囲まれた瀬戸内海の離島です。
+                                        全国でも有数のみかんの産地として知られ、海から吹く潮風が畑にミネラルを運び、温暖な気候と相まって、甘くて濃厚なみかんを育てています。
+                                        かつて15,000人以上が暮らしていたこの島も、いまでは人口が約3,000人と5分の1にまで減少。
+                                        過疎化が進むなかでも、この地で代々みかん作りを続けてきたのが、私たち松本農園です。</p>
+                                </div>
 
                             </div>
                         </article>
 
-                        <article class="about__item--bottom">
+                        <article class="about__item-bottom">
 
 
 
@@ -196,10 +200,11 @@
                                     height="413" loading="lazy">
 
 
-                                <div class="about__inner--bottom">
-                                    <p class="about__subtitle">気軽に買える 美味しいみかんを目指して</p>
-                                    <div class="about__text">
-                                        <p>冬のぬくもりといえば、やっぱり「こたつとみかん」。
+                                <div class="about__inner-bottom">
+                                    <div class="about__box">
+                                        <p class="about__subtitle">こたつにある美味しいみかん</p>
+
+                                        <p class="about__text">冬のぬくもりといえば、やっぱり「こたつとみかん」。
                                             昔ながらの、でもどこか新しい、そんな心温まる時間がそこにあります。
                                             松本農園は、100年以上続くみかん農家。
                                             父から娘へと受け継がれ、今は姉妹ふたりで力を合わせて、みかんづくりに取り組んでいます。
@@ -227,56 +232,63 @@
         <!-- スライダー右から流れ --->
 
         <section class="slider">
-            <ul class="slider--frame">
-                <li class="slider--introduction slider--scene1"></li>
-                <li class="slider--introduction slider--scene2"></li>
-                <li class="slider--introduction slider--scene3"></li>
-                <li class="slider--introduction slider--scene4"></li>
-                <li class="slider--introduction slider--scene5"></li>
+            <ul class="slider--frame slider--introduction">
+                <li class="slider--scene1"></li>
+                <li class="slider--scene2"></li>
+                <li class="slider--scene3"></li>
+                <li class="slider--scene4"></li>
+                <li class="slider--scene5"></li>
             </ul>
         </section>
 
         <!-- ここまでスライダー右から流れ--->
 
         <!-- ここからcare about -->
-        <section class="careabout">
-            <div class="careabout__wrapper">
+        <section class="care">
+            <div class="care__wrapper">
 
                 <header class="section__title">
                     <p class="section__title--en" lang="en">What We Care About</p>
                     <h2 class="section__title--jp">私たちのこだわり</h2>
                 </header>
 
-                <div class="careabout__box">
-                    <figure class="careabout__item">
-                        <img class="careabout__img careabout__img--harvest" src="./image/careabout_01.png"
-                            alt="みかんを収穫している手元のアップ" width="770" height="462" loading="lazy">
-                        <p class="careabout__overlay--title">樹の上でじっくり完熟</p>
+                <div class="care__box-upper">
+                    <figure class="care__item">
+                        <div class="care__img-wrapper">
+                            <img class="care__img care__img--harvest" src="./image/care_01.png" alt="みかんを収穫している手元のアップ"
+                                width="770" height="462" loading="lazy">
+                            <p class="care__overlay-upper">樹の上でじっくり完熟</p>
+                        </div>
+
                     </figure>
 
-                    <div class="careabout__desc">
-                        <h3 class="careabout__subtitle">樹上完熟</h3>
-                        <p class="careabout__text">樹上完熟とは、みかんを木になったまま完熟させてから収穫する方法です。</p>
-                        <p class="careabout__text">一般的なみかんは、市場への出荷を考えて少し早めに収穫されますが、樹上完熟みかんは太陽の光をたっぷり浴び、樹の上でじっくりと甘さを蓄えます。
+                    <div class="care__desc">
+                        <h3 class="care__subtitle">樹上完熟</h3>
+                        <p class="care__text">樹上完熟とは、みかんを木になったまま完熟させてから収穫する方法です。<br>
+                            一般的なみかんは、市場への出荷を考えて少し早めに収穫されますが、樹上完熟みかんは太陽の光をたっぷり浴び、樹の上でじっくりと甘さを蓄えます。
+                            <br>その結果、糖度が高く、酸味とのバランスが絶妙な、濃厚な味わいのみかんが生まれます。
                         </p>
-                        <p class="careabout__text">その結果、糖度が高く、酸味とのバランスが絶妙な、濃厚な味わいのみかんが生まれます。</p>
                     </div>
                 </div>
 
-                <div class="careabout__box">
-                    <figure class="careabout__item">
-                        <img class="careabout__img careabout__img--flower" src="./image/careabout_02.png"
-                            alt="みかんの花のアップ写真" width="770" height="462" loading="lazy">
-                        <p class="careabout__overlay-title">濃縮された甘みと酸味のバランス</p>
+                <div class="care__box-bottom">
+
+                    <div class="care__desc">
+                        <h3 class="care__subtitle">自然の降雨で育てる</h3>
+                        <p class="care__text">私たちの園では、できる限り人工的な灌水を行わず、自然の降雨だけを頼りに栽培しています。
+                            自然の水分だけで育つみかんは、必要な水を根からしっかり吸収しようと、地中深くまで根を張るようになります。
+                            その結果、土壌中のミネラル分や栄養をたっぷりと取り込み、味に深みとコクが生まれます。
+                            また、水を絞って育てることで、果実の糖度が高まり、ぎゅっと凝縮された甘みと酸味のバランスが絶妙なみかんに仕上がります。
+                            余分な水分がない分、果肉もしっかりとしていて、食べ応えがあります。</p>
+                    </div>
+
+                    <figure class="care__item">
+                        <div class="care__img-wrapper">
+                            <img class="care__img care__img--flower" src="./image/care_02.png" alt="みかんの花のアップ写真"
+                                width="770" height="462" loading="lazy">
+                            <p class="care__overlay-bottom">濃縮された甘みと酸味のバランス</p>
+                        </div>
                     </figure>
-                </div>
-                <div class="careabout__desc">
-                    <h3 class="careabout__subtitle">自然の降雨で育てる</h3>
-                    <p class="careabout__text">私たちの園では、できる限り人工的な灌水を行わず、自然の降雨だけを頼りに栽培しています。
-                        自然の水分だけで育つみかんは、必要な水を根からしっかり吸収しようと、地中深くまで根を張るようになります。
-                        その結果、土壌中のミネラル分や栄養をたっぷりと取り込み、味に深みとコクが生まれます。
-                        また、水を絞って育てることで、果実の糖度が高まり、ぎゅっと凝縮された甘みと酸味のバランスが絶妙なみかんに仕上がります。
-                        余分な水分がない分、果肉もしっかりとしていて、食べ応えがあります。</p>
                 </div>
             </div>
 
@@ -284,42 +296,42 @@
         <!-- ここまでcare about -->
 
         <!-- ここからMy juicy crew -->
-        <section class="juicycrew">
-            <div class="juicycrew__wrapper">
+        <section class="juicy-crew">
+            <div class="juicy-crew__wrapper">
 
                 <header class="section__title">
                     <p class="section__title--en" lang="en">My juicy crew</p>
                     <h2 class="section__title--jp">育てているみかんたち</h2>
                 </header>
 
-                <div class="juicycrew__gallery">
-                    <a href="detail-aika.html" class="juicycrew__mikan--item">
-                        <img class="juicycrew__gallery--aika" src="./image/aika.png" alt="あいか28号" width="350"
+                <div class="juicy-crew__gallery">
+                    <a href="detail-aika.html" class="juicy-crew__item">
+                        <img class="juicy-crew__gallery--aika" src="./image/aika.png" alt="あいかの写真（みかんの種類）" width="350"
                             height="354" loading="lazy">
-                        <div class="juicycrew__mikan-label">あいか28号</div>
+                        <div class="juicy-crew__label">あいか28号</div>
                     </a>
 
-                    <a href="detail-aika.html" class="juicycrew__mikan--item">
-                        <img class="juicycrew__gallery--setoka" src="./image/setoka.png" alt="せとか" width="350"
-                            height="354" loading="lazy">
-                        <div class="juicycrew__mikan-label">せとか</div>
+                    <a href="detail-aika.html" class="juicy-crew__item">
+                        <img class="juicy-crew__gallery--setoka" src="./image/setoka.png" alt="せとかの写真（みかんの種類）"
+                            width="350" height="354" loading="lazy">
+                        <div class="juicy-crew__label">せとか</div>
                     </a>
 
-                    <a href="detail-aika.html" class="juicycrew__mikan--item">
-                        <img class="juicycrew__gallery--harumi" src="./image/himekoharu.png" alt="媛小春" width="400"
-                            height="293" loading="lazy">
-                        <div class="juicycrew__mikan-label">はるみ</div>
+                    <a href="detail-aika.html" class="juicy-crew__item">
+                        <img class="juicy-crew__gallery--harumi" src="./image/himekoharu.png" alt="媛小春の写真（みかんの種類）"
+                            width="400" height="293" loading="lazy">
+                        <div class="juicy-crew__label">媛小春</div>
                     </a>
 
-                    <a href="detail-aika.html" class="juicycrew__mikan--item">
-                        <img class="juicycrew__gallery--kara" src="./image/kara.png" alt="カラマンダリン" width="400"
-                            height="303" loading="lazy">
-                        <div class="juicycrew__mikan-label">カラマンダリン</div>
+                    <a href="detail-aika.html" class="juicy-crew__item">
+                        <img class="juicy-crew__gallery--kara" src="./image/kara.png" alt="カラマンダリンの写真（みかんの種類）"
+                            width="400" height="303" loading="lazy">
+                        <div class="juicy-crew__label">カラマンダリン</div>
                     </a>
                 </div>
 
                 <div class="section__cta">
-                    <a class="juicycrew__btn" href=".other//index.html">他のみかんを探す</a>
+                    <a class="juicy-crew__btn" href=".other//index.html">他のみかんを探す</a>
                 </div>
             </div>
         </section>

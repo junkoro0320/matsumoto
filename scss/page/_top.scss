@@ -9,6 +9,7 @@
   width: 1440px;
 }
 
+
 img {
   display: block;
   max-width: 100%;
@@ -22,8 +23,11 @@ img {
 
 
 .section__title {
-  @include mixins.flex-col(15px);
+  @include mixins.flex-col(15px, flex-start, flex-start);
+  /* align-itemsをflex-startに */
   line-height: var.$line-height-sub;
+  width: 90%;
+  margin: 0 auto;
 
   &--jp {
     font-weight: 500;
@@ -220,13 +224,22 @@ $animation-duration: 24s;
 
 /*About usセクション
 -----------------------------*/
+.section__title-about {
+  width: 100%;
+}
+
 .about {
   margin-top: 108px;
   background-color: #e8f5ff;
+  margin-bottom: 66px;
 
   &__wrapper {
     margin: 0 auto;
     width: 87%;
+  }
+
+  &__content {
+    margin-top: 109px;
   }
 
   &__container {
@@ -257,26 +270,27 @@ $animation-duration: 24s;
 
   &__item {
 
-    &--upper {
+    &-upper {
       @include mixins.flex-between;
     }
 
-    &--bottom {
+    &-bottom {
       position: relative;
       @include mixins.flex-center;
-      gap: 60px;
+      gap: 5%;
     }
 
   }
 
   &__inner {
-    &--upper {
-      position: relative;
+    &-upper {
+      @include mixins.flex-col(38px);
+      align-items: flex-start;
       margin-top: auto;
       width: 40%;
     }
 
-    &--bottom {
+    &-bottom {
       position: relative;
       margin-top: auto;
     }
@@ -293,8 +307,6 @@ $animation-duration: 24s;
 
   &__subtitle {
     position: absolute;
-    top: -14px;
-    left: 0;
     display: inline-block;
     padding: 10px 16px;
     border-radius: 20px;
@@ -302,11 +314,26 @@ $animation-duration: 24s;
     color: #fff;
     font-weight: 500;
     font-size: 20px;
+    top: -16px;
+    left: 8%;
+    @include mixins.fluid-font(14px, 2vw, 18px);
   }
 
+  &__box {
+    position: relative;
+    background-color: #fff;
+    border-radius: 20px;
+    border: solid 1px #3D4149;
+  }
+
+
   &__text {
-    @include mixins.box(#fff, 20px, 35px 50px);
+    display: block;
+    margin: 0 auto;
+    text-align: left;
     line-height: var.$line-height-base;
+    width: 80%;
+    padding: 35px 0px;
   }
 
 
@@ -335,7 +362,14 @@ $animation-duration: 24s;
 .slider {
   position: relative;
   z-index: 1;
-  height: 100vh;
+  height: auto;
+  margin-bottom: 88px;
+
+
+  & .slick-slide {
+    margin: 0 10px;
+  }
+
 
 
   & img {
@@ -344,36 +378,177 @@ $animation-duration: 24s;
   }
 
   & .slider--scene1 {
-    background: url('image/slider_scene1.png');
+    background: url('../image/slider_scene1.png');
   }
 
-  & .slider--scene1 {
-    background: url('image/slider_scene2.png');
+  & .slider--scene2 {
+    background: url('../image/slider_scene2.png');
   }
 
-  & .slider--scene1 {
-    background: url('image/slider_scene3.png');
+  & .slider--scene3 {
+    background: url('../image/slider_scene3.png');
   }
 
-  & .slider--scene1 {
-    background: url('image/slider_scene4.png');
+  & .slider--scene4 {
+    background: url('../image/slider_scene4.png');
   }
 
-  & .slider--scene1 {
-    background: url('image/slider_scene5.png');
+  & .slider--scene5 {
+    background: url('../image/slider_scene5.png');
   }
 
+  &--frame {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
 
-  &--introduction {
-    width: 100%;
-    height: 100vh;
+  &--frame li {
+    width: 400px !important;
+    /* 固定幅 */
+    height: 400px !important;
+    /* 固定高さ */
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
   }
 
 
 }
 
+/*私達のこだわりセクション
+-----------------------------*/
+
+.care {
+  margin-bottom: 60px;
+
+  &__box {
+
+    &-upper {
+      @include mixins.flex-left;
+      gap: 4%;
+      align-items: flex-start;
+      margin-top: 5%;
+    }
+
+    &-bottom {
+      @include mixins.flex-right;
+      margin-top: 14%;
+      gap: 4%
+    }
+  }
+
+  &__subtitle {
+    @include mixins.subtitle;
+  }
+
+  &__desc {
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
 
 
-.slider--introduction .slider--introduction .slick-slide {
-  margin: 0 10px;
+  &__item {
+    @include mixins.img-block;
+    width: 53%;
+  }
+
+  &__text {
+    line-height: var.$line-height-base;
+  }
+
+  &__img-wrapper {
+    position: relative;
+  }
+
+
+
+  &__overlay-upper,
+  &__overlay-bottom {
+    @include mixins.fluid-font(14px, 2vw, 22px);
+    color: var.$color-primary;
+    background-color: #fff;
+    padding: 15px 26px;
+    border: 1px solid var.$color-primary;
+    position: absolute;
+    top: 0;
+  }
+
+
+  &__overlay-upper {
+    right: 0;
+    border-bottom-right-radius: 30px;
+  }
+
+  &__overlay-bottom {
+    left: 0;
+    border-bottom-left-radius: 30px;
+  }
+
+}
+
+/*育てているみかんたちセクション
+-----------------------------*/
+
+.juicy-crew {
+
+  background-color: #FDF5E9;
+
+  &__gallery {
+
+    position: relative;
+    height: 100vh;
+    margin-top: 50px;
+    gap: 2rem;
+  }
+
+  &__item {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 22px;
+
+    img {
+      display: block;
+    }
+
+    // 1番目（左上）
+    &:nth-child(1) {
+      top: 0;
+      left: -55px;
+      z-index: 4;
+    }
+
+    // 2番目（右上、少し下）
+    &:nth-child(2) {
+      top: 259px;
+      left: 250px;
+      z-index: 3;
+    }
+
+    // 3番目（左下、1番目と重複）
+    &:nth-child(3) {
+      top: 0px;
+      left: 550px;
+      z-index: 2;
+    }
+
+    // 4番目（右下、2番目と重複）
+    &:nth-child(4) {
+      top: 259px;
+      right: 21px;
+      z-index: 1;
+    }
+
+  }
+
+  &__label {
+    writing-mode: vertical-rl;
+    margin-top: 0.5rem;
+    @include mixins.fluid-font(16px, 2vw, 24px);
+  }
 }
