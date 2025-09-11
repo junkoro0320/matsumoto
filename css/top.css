@@ -8,17 +8,83 @@
   --color-dark-blue: #0a1f47;
 }
 
-.hometown__btn {
+.btn {
   position: relative;
   display: inline-block;
-  padding: 12px 76px 12px 40px;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 0px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.8;
+  cursor: pointer;
+  transition: opacity 0.3s, color 0.3s;
+  text-align: center;
+}
+.btn:hover {
+  opacity: 0.8;
+}
+
+.btn--normal {
+  width: 250px;
+}
+
+.btn--wide {
+  width: 320px;
+}
+
+.btn--primary {
+  background-color: #fc8013;
+  color: #fff;
+}
+
+.btn--secondary {
+  border: 1px solid #343333;
+  background-color: #fff;
+  color: #343333;
+}
+
+.btn--dark {
+  background-color: #fff;
+  color: #0a1f47;
+}
+
+.btn--triangle::after {
+  content: "";
+  display: inline-block;
+  margin-left: 8px;
+  width: 0;
+  height: 0;
+  border-width: 6px 0 6px 10px;
+  border-style: solid;
+  border-color: transparent transparent transparent currentColor;
+}
+
+.btn--chevron::after, .btn--icon-chevron::after {
+  content: "›";
+}
+
+.btn__icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+}
+
+.juicy-crew__btn {
+  position: relative;
+  display: block;
+  padding: 12px 72px 12px 50px;
   width: 250px;
   border-radius: 30px;
-  background-color: #fff;
+  background-color: #fc8013;
+  color: #fff;
   text-decoration: none;
   transition: opacity 0.3s, color 0.3s;
+  margin-inline: auto;
 }
-.hometown__btn::after {
+.juicy-crew__btn::after {
   content: "";
   position: absolute;
   top: 50%;
@@ -28,10 +94,10 @@
   height: 0;
   border-width: 6px 0 6px 10px;
   border-style: solid;
-  border-color: transparent transparent transparent #0d2033;
+  border-color: transparent transparent transparent #fff;
   transform: translateY(-50%);
 }
-.hometown__btn:hover {
+.juicy-crew__btn:hover {
   color: #0a1f47;
   opacity: 0.8;
 }
@@ -630,44 +696,143 @@ img {
 -----------------------------*/
 .juicy-crew {
   background-color: #FDF5E9;
+  padding-bottom: 110px;
 }
 .juicy-crew__gallery {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(4, 1fr);
   position: relative;
-  height: 100vh;
-  margin-top: 50px;
-  gap: 2rem;
+  width: 97%;
+  margin-inline: auto;
+  padding-top: 60px;
 }
 .juicy-crew__item {
-  position: absolute;
   display: flex;
   align-items: center;
   gap: 22px;
+  justify-self: center;
+  align-self: flex-start;
 }
 .juicy-crew__item img {
   display: block;
+  width: 80%;
+  height: auto;
 }
 .juicy-crew__item:nth-child(1) {
-  top: 0;
-  left: -55px;
+  grid-column: 1/4;
+  grid-row: 1/3;
   z-index: 4;
 }
 .juicy-crew__item:nth-child(2) {
-  top: 259px;
-  left: 250px;
+  grid-column: 3/6;
+  grid-row: 3/5;
   z-index: 3;
 }
 .juicy-crew__item:nth-child(3) {
-  top: 0px;
-  left: 550px;
+  grid-column: 5/8;
+  grid-row: 1/3;
   z-index: 2;
 }
 .juicy-crew__item:nth-child(4) {
-  top: 259px;
-  right: 21px;
+  grid-column: 6/9;
+  grid-row: 3/6;
   z-index: 1;
 }
 .juicy-crew__label {
   writing-mode: vertical-rl;
   margin-top: 0.5rem;
   font-size: clamp(16px, 2vw, 24px);
+}
+
+.section__cta {
+  text-align: center;
+}
+
+/*ここから風早珈琲焙煎所BOWEN
+-----------------------------*/
+.cafe-intro__wrapper {
+  width: 88%;
+  margin: 0 auto;
+}
+.cafe-intro__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.cafe-intro__right-column {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 6%;
+}
+.cafe-intro__info-block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cafe-intro__right-column {
+  display: block;
+  width: 37%;
+}
+.cafe-intro__photo-content {
+  display: block;
+  width: 56%;
+  padding-top: 80px;
+}
+.cafe-intro__photo {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.cafe-intro__caption {
+  text-align: right;
+  font-size: clamp(16px, 2vw, 22px);
+}
+.cafe-intro__headline {
+  font-size: clamp(18px, 2vw, 32px);
+}
+.cafe-intro__description {
+  line-height: 1.8;
+}
+.cafe-intro__text-column {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 30px;
+}
+.cafe-intro__info-inner {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 0;
+}
+.cafe-intro__info-title {
+  position: relative;
+  display: inline-block;
+}
+.cafe-intro__info-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #5d1f0d;
+}
+.cafe-intro__info-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+.cafe-intro__info-term {
+  font-weight: 400;
+  width: 100px;
+}
+.cafe-intro__info-description {
+  flex: 1;
 }/*# sourceMappingURL=top.css.map */

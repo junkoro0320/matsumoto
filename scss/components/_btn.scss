@@ -1,17 +1,110 @@
 @use '../base/variables' as var;
 
+// ========================
+// 基本ボタン
+// ======
+
+.btn {
+  position: relative;
+  display: inline-block;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 0px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: var.$line-height-base;
+  cursor: pointer;
+  transition: opacity .3s, color .3s;
+  text-align: center;
+
+  &:hover {
+    opacity: .8;
+  }
+}
+
+// ========================
+// 横padding違い（幅調整用）
+// ========================
+
+.btn--normal {
+  width: 250px;
+}
+
+.btn--wide {
+  width: 320px;
+}
+
+// ========================
+// カラーバリエーション
+// ========================
+.btn--primary {
+  background-color: var.$color-primary;
+  color: var.$color-white;
+}
+
+.btn--secondary {
+  border: 1px solid var.$color-text;
+  background-color: var.$color-white;
+  color: var.$color-text;
+}
+
+.btn--dark {
+  background-color: var.$color-white;
+  color: var.$color-dark-blue;
+}
 
 
-.hometown {
+// ========================
+// 装飾バリエーション
+// ========================
+
+// ▼ 1. 三角矢印
+.btn--triangle::after {
+  content: '';
+  display: inline-block;
+  margin-left: 8px;
+  width: 0;
+  height: 0;
+  border-width: 6px 0 6px 10px;
+  border-style: solid;
+  border-color: transparent transparent transparent currentColor;
+}
+
+// ▼ 2. くの字矢印（CSSでも、SVGでもOK）
+.btn--chevron::after {
+  content: '›'; // シンプルに文字で  display: inline-block;  margin-left: 8px;  font-size: 18px;  line-height: 1;
+}
+
+// ▼ 3. アイコン付き（左側）
+.btn__icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+}
+
+// ▼ 4. アイコン＋文字＋くの字矢印
+.btn--icon-chevron {
+  @extend .btn--chevron;
+  // 左にアイコンはHTML側で <span class="btn__icon"> を挿入
+}
+
+
+
+
+.juicy-crew {
   &__btn {
     position: relative;
-    display: inline-block;
-    padding: 12px 76px 12px 40px;
+    display: block;
+    padding: 12px 72px 12px 50px;
     width: 250px;
     border-radius: 30px;
-    background-color: #fff;
+    background-color: #fc8013;
+    color: #fff;
     text-decoration: none;
     transition: opacity .3s, color .3s;
+    margin-inline: auto;
 
     // ▼ 疑似要素で三角形を追加
     &::after {
@@ -26,7 +119,7 @@
       height: 0;
       border-width: 6px 0 6px 10px;
       border-style: solid;
-      border-color: transparent transparent transparent #0d2033;
+      border-color: transparent transparent transparent #fff;
       transform: translateY(-50%);
     }
 

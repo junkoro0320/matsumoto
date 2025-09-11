@@ -496,59 +496,159 @@ $animation-duration: 24s;
 
 .juicy-crew {
 
+
   background-color: #FDF5E9;
+  padding-bottom: 110px;
 
   &__gallery {
-
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(4, 1fr);
     position: relative;
-    height: 100vh;
-    margin-top: 50px;
-    gap: 2rem;
+    width: 97%;
+    margin-inline: auto;
+    padding-top: 60px;
   }
 
+  // 子要素のSCSS
   &__item {
-    position: absolute;
     display: flex;
     align-items: center;
     gap: 22px;
+    justify-self: center; // 水平方向は中央に
+    align-self: flex-start;
 
     img {
       display: block;
+      width: 80%;
+      height: auto;
     }
 
-    // 1番目（左上）
+    // 1番目
     &:nth-child(1) {
-      top: 0;
-      left: -55px;
+      grid-column: 1 / 4; // 1本目の線から3本目の線まで（2マス分）
+      grid-row: 1 / 3;
       z-index: 4;
     }
 
-    // 2番目（右上、少し下）
+    // 2番目
     &:nth-child(2) {
-      top: 259px;
-      left: 250px;
+      grid-column: 3 / 6;
+      grid-row: 3 / 5;
       z-index: 3;
     }
 
-    // 3番目（左下、1番目と重複）
+    // 3番目
     &:nth-child(3) {
-      top: 0px;
-      left: 550px;
+      grid-column: 5 / 8;
+      grid-row: 1 / 3;
       z-index: 2;
     }
 
-    // 4番目（右下、2番目と重複）
+    // 4番目
     &:nth-child(4) {
-      top: 259px;
-      right: 21px;
+      grid-column: 6 / 9;
+      grid-row: 3 / 6;
       z-index: 1;
     }
-
   }
 
   &__label {
     writing-mode: vertical-rl;
     margin-top: 0.5rem;
     @include mixins.fluid-font(16px, 2vw, 24px);
+  }
+}
+
+.section__cta {
+  text-align: center;
+}
+
+/*ここから風早珈琲焙煎所BOWEN
+-----------------------------*/
+.cafe-intro {
+
+  &__wrapper {
+    width: 88%;
+    margin: 0 auto;
+  }
+
+  &__content {
+    @include mixins.flex-between;
+  }
+
+  &__right-column {
+
+    @include mixins.flex-col(6%)
+  }
+
+  &__info-block {
+    @include mixins.flex-center
+  }
+
+  &__right-column {
+    display: block;
+    width: 37%;
+  }
+
+  &__photo-content {
+    display: block;
+    width: 56%;
+    padding-top: 80px;
+  }
+
+  &__photo {
+    @include mixins.img-block
+  }
+
+  &__caption {
+    text-align: right;
+    @include mixins.fluid-font(16px, 2vw, 22px)
+  }
+
+  &__headline {
+    @include mixins.fluid-font(18px, 2vw, 32px)
+  }
+
+  &__description {
+    line-height: var.$line-height-base ;
+  }
+
+  &__text-column {
+    @include mixins.flex-col(30px)
+  }
+
+  &__info-inner {
+    @include mixins.flex-col
+  }
+
+  &__info-title {
+    position: relative;
+    display: inline-block;
+  }
+
+  &__info-title::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var.$color-secondary;
+  }
+
+  &__info-item {
+    @include mixins.flex-center;
+    margin-bottom: 10px;
+  }
+
+  &__info-term {
+    font-weight: 400;
+    width: 100px;
+  }
+
+  &__info-description {
+    flex: 1;
+
   }
 }
