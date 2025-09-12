@@ -557,6 +557,7 @@ $animation-duration: 24s;
     writing-mode: vertical-rl;
     margin-top: 0.5rem;
     @include mixins.fluid-font(16px, 2vw, 24px);
+
   }
 }
 
@@ -564,9 +565,16 @@ $animation-duration: 24s;
   text-align: center;
 }
 
+.number {
+  text-combine-upright: all;
+  -webkit-text-combine: horizontal;
+  -ms-text-combine-horizontal: all;
+}
+
 /*ここから風早珈琲焙煎所BOWEN
 -----------------------------*/
 .cafe-intro {
+  padding-top: 60px;
 
   &__wrapper {
     width: 88%;
@@ -578,17 +586,15 @@ $animation-duration: 24s;
   }
 
   &__right-column {
-
-    @include mixins.flex-col(6%)
+    display: block;
+    width: 37%;
+    @include mixins.flex-col(6%);
   }
 
   &__info-block {
-    @include mixins.flex-center
-  }
-
-  &__right-column {
-    display: block;
-    width: 37%;
+    @include mixins.flex-center;
+    position: relative;
+    width: 100%;
   }
 
   &__photo-content {
@@ -598,28 +604,39 @@ $animation-duration: 24s;
   }
 
   &__photo {
-    @include mixins.img-block
+    @include mixins.img-block;
   }
 
   &__caption {
     text-align: right;
-    @include mixins.fluid-font(16px, 2vw, 22px)
+    @include mixins.fluid-font(16px, 2vw, 22px);
+    color: var.$color-secondary;
+
   }
 
   &__headline {
-    @include mixins.fluid-font(18px, 2vw, 32px)
+    @include mixins.fluid-font(18px, 2vw, 20px);
+    color: var.$color-white ;
+    background-color: var.$color-secondary;
+    padding: 20px;
+    border-radius: 30px;
+    display: inline-block;
+    margin-right: auto;
   }
 
   &__description {
     line-height: var.$line-height-base ;
+    padding-bottom: 35px;
+    ;
   }
 
   &__text-column {
-    @include mixins.flex-col(30px)
+    @include mixins.flex-col(30px);
   }
 
   &__info-inner {
-    @include mixins.flex-col
+    @include mixins.flex-col;
+    width: 60%;
   }
 
   &__info-title {
@@ -631,7 +648,7 @@ $animation-duration: 24s;
     content: "";
     position: absolute;
     left: 0;
-    bottom: 0;
+    bottom: -5px;
     width: 100%;
     height: 1px;
     background-color: var.$color-secondary;
@@ -649,6 +666,31 @@ $animation-duration: 24s;
 
   &__info-description {
     flex: 1;
+  }
 
+  &__info-list {
+    padding-top: 20px;
+  }
+
+  &__icon-group {
+    display: block;
+    width: 40%;
+
+    & img {
+      display: block;
+      height: auto;
+      position: absolute;
+    }
+  }
+
+  &__beans-icon {
+    left: 0;
+    top: 0;
+  }
+
+  &__orange-icon {
+    bottom: 0;
+    left: 30%;
+    transform: translateX(-50%);
   }
 }

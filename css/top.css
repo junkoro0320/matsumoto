@@ -749,8 +749,17 @@ img {
   text-align: center;
 }
 
+.number {
+  text-combine-upright: all;
+  -webkit-text-combine: horizontal;
+  -ms-text-combine-horizontal: all;
+}
+
 /*ここから風早珈琲焙煎所BOWEN
 -----------------------------*/
+.cafe-intro {
+  padding-top: 60px;
+}
 .cafe-intro__wrapper {
   width: 88%;
   margin: 0 auto;
@@ -761,6 +770,8 @@ img {
   justify-content: space-between;
 }
 .cafe-intro__right-column {
+  display: block;
+  width: 37%;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -771,10 +782,8 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-.cafe-intro__right-column {
-  display: block;
-  width: 37%;
+  position: relative;
+  width: 100%;
 }
 .cafe-intro__photo-content {
   display: block;
@@ -789,12 +798,20 @@ img {
 .cafe-intro__caption {
   text-align: right;
   font-size: clamp(16px, 2vw, 22px);
+  color: #5d1f0d;
 }
 .cafe-intro__headline {
-  font-size: clamp(18px, 2vw, 32px);
+  font-size: clamp(18px, 2vw, 20px);
+  color: #fff;
+  background-color: #5d1f0d;
+  padding: 20px;
+  border-radius: 30px;
+  display: inline-block;
+  margin-right: auto;
 }
 .cafe-intro__description {
   line-height: 1.8;
+  padding-bottom: 35px;
 }
 .cafe-intro__text-column {
   display: flex;
@@ -809,6 +826,7 @@ img {
   flex-direction: column;
   justify-content: flex-start;
   gap: 0;
+  width: 60%;
 }
 .cafe-intro__info-title {
   position: relative;
@@ -818,7 +836,7 @@ img {
   content: "";
   position: absolute;
   left: 0;
-  bottom: 0;
+  bottom: -5px;
   width: 100%;
   height: 1px;
   background-color: #5d1f0d;
@@ -835,4 +853,25 @@ img {
 }
 .cafe-intro__info-description {
   flex: 1;
+}
+.cafe-intro__info-list {
+  padding-top: 20px;
+}
+.cafe-intro__icon-group {
+  display: block;
+  width: 40%;
+}
+.cafe-intro__icon-group img {
+  display: block;
+  height: auto;
+  position: absolute;
+}
+.cafe-intro__beans-icon {
+  left: 0;
+  top: 0;
+}
+.cafe-intro__orange-icon {
+  bottom: 0;
+  left: 30%;
+  transform: translateX(-50%);
 }/*# sourceMappingURL=top.css.map */
