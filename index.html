@@ -40,10 +40,8 @@
     <link rel="stylesheet" href="slick/slick.css">
     <link rel="stylesheet" href="slick/slick-theme.css">
 
-
-
     <!-- jQuery（必須） -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" defer></script>
 
     <!-- slick本体 -->
     <script src="slick/slick.min.js" defer></script>
@@ -58,10 +56,31 @@
 </head>
 
 <body id="top">
+
+    <!-- ローディング画面 -->
+    <div id="loading">
+
+        <!-- 縦書きテキスト -->
+
+
+
+        <div class="wave-container">
+            <div class="overlay-inner">
+                <img class="overlay-mikan--rotate" src="./image/loading-icon.png" alt="みかん" width="389" height="389">
+            </div>
+            <div class="wave"></div>
+        </div>
+
+
+    </div>
+
     <div class="wrapper">
+
         <!-- ここからMVセクション -->
         <section class="main__section">
             <div class="header__container">
+
+
                 <header class="header__inner">
 
                     <div class="header__top">
@@ -98,12 +117,27 @@
 
 
 
-
             <!-- スライダー -->
             <div class="slider__frame ">
+
                 <div class="slider__frame--island" role="img" aria-label="農園の風景"></div>
                 <div class="slider__frame--harvest" role="img" aria-label="収穫の様子"></div>
                 <div class="slider__frame--farmer" role="img" aria-label="農家の作業風景"></div>
+
+
+                <div class="overlay-inner">
+                    <img class="overlay-mikan--slider" src="./image/loading-icon.png" alt="みかん" width="389"
+                        height="389">
+                </div>
+
+                <div class="slider__overlay">
+                    <div class="slider-text">
+                        <p class="line line1">愛媛県中島よりお届けします</p>
+                        <p class="line line2"><span class="small">極上完熟</span><br><span class="big">みかん</span></p>
+                    </div>
+                </div>
+
+
             </div>
 
         </section>
@@ -340,13 +374,14 @@
 
         <!-- ここから風早珈琲焙煎所BOWEN -->
         <section class="cafe-intro">
+            <header class="section__title">
+                <p class="section__title--en" lang="en">Mikan Moments</p>
+                <h2 class="section__title--jp">おいしいをつなぐ</h2>
+            </header>
             <div class="cafe-intro__wrapper">
 
                 <div class="cafe-intro__column">
-                    <header class="section__title">
-                        <p class="section__title--en" lang="en">Mikan Moments</p>
-                        <h2 class="section__title--jp">おいしいをつなぐ</h2>
-                    </header>
+
 
 
                     <div class="cafe-intro__content">
@@ -414,73 +449,86 @@
 
         <!-- ここからオンラインショップ-->
         <section class="online-shop">
+            <header class="section__title">
+                <p class="section__title--en" lang="en">Online Shop</p>
+                <h2 class="section__title--jp">オンラインショップ</h2>
+            </header>
             <div class="online-shop__wrapper">
 
-                <div class="online-shop__left-column">
-                    <header class="section__title">
-                        <p class="section__title--en" lang="en">Online Shop</p>
-                        <h2 class="section__title--jp">オンラインショップ</h2>
-                    </header>
 
-                    <div class="online-shop__text-column">
-                        <p class="online-shop__description">姉妹で作った、島のちょっと特別なみかん。<br>「おいしい」をお届けするオンラインストアです。</p>
-                        <p>潮風と太陽の光が降り注ぐ、瀬戸内の小さな島で、ひとつひとつ大切に育てました。
-                            松本農園から直送させていただきます。
-                        </p>
+
+                <div class="online-shop__column">
+                    <div class="online-shop__column-left">
+                        <div class="online-shop__text-column">
+                            <p class="online-shop__description">姉妹で作った、島のちょっと特別なみかん。<br>「おいしい」をお届けするオンラインストアです。</p>
+                            <p>潮風と太陽の光が降り注ぐ、瀬戸内の小さな島で、ひとつひとつ大切に育てました。
+                                松本農園から直送させていただきます。
+                            </p>
+                        </div>
+
+                        <div class="btn btn--primary btn--normal">
+                            <a class="online-shop__btn online-shop__btn--salespage"
+                                href="./salespage/index.html">通販サイトへ進む</a>
+                            <img class=" btn__icon" src="./image/external link icon.png" alt="" width="25" height="25">
+                        </div>
                     </div>
 
-                    <div class="online-shop__button-wrap">
-                        <a class="online-shop__btn online-shop__btn--salespage"
-                            href="./salespage/index.html">通販サイトへ進む</a>
-                    </div>
-                </div>
+                    <div class="online-shop__column-right">
+                        <div class="online-shop__photo-wrapper">
 
-                <div class="online-shop__right-column">
-                    <figure class="online-shop__photo-container">
-                        <img class="online-shop__photo" src="./image/online-shop_01.png" alt="愛媛県中島のみかんが山積みになった写真"
-                            width="605" height="477">
-                        <figcaption class="online-shop__comment">
-                            <p class="online-shop__comment-text">コーヒー豆も販売しています！</p>
-                        </figcaption>
-                    </figure>
+                            <div class="online-shop__comment">
+                                <p class="online-shop__comment-text">コーヒー豆も販売しています！</p>
+                            </div>
+
+                            <figure class="online-shop__photo-container">
+                                <img class="online-shop__photo" src="./image/online-shop_01.png"
+                                    alt="愛媛県中島のみかんが山積みになった写真" width="605" height="477">
+                            </figure>
+                        </div>
+                    </div>
                 </div>
 
 
             </div>
         </section>
 
-
-
         <!-- ここからコンタクト -->
         <section class="contact">
+            <header class="section__title">
+                <p class="section__title--en" lang="en">Contact</p>
+                <h2 class="section__title--jp">お問い合わせ</h2>
+            </header>
+
             <div class="contact__wrapper">
-                <div class="contact__content-container">
-                    <header class="section__title">
-                        <p class="section__title--en" lang="en">Contact</p>
-                        <h2 class="section__title--jp">お問い合わせ</h2>
-                    </header>
 
+                <div class="contact__content">
+                    <div class="contact__content-container">
+                        <p class="contact__text">松本農園へのお問い合わせはこちらからお気軽にご連絡ください。</p>
 
-                    <p class="contact__text">松本農園へのお問い合わせはこちらからお気軽にご連絡ください。</p>
+                        <div class="contact__buttons">
+                            <div class="contact__buttons-website">
+                                <a class="btn btn--dark btn--wide btn--chevron" href="./website-link.html"><img
+                                        class="contact__btn-icon" src="./image/mail_icon.svg" alt="ウェブサイトからお問い合わせ"
+                                        width="30" height="30"><span>WEBサイトから</span>
+                                    <span class="btn--chevron"></span></a>
+                            </div>
+                            <div class="contact__buttons-line">
+                                <a class="btn btn--dark btn--wide" href="./line-link.html"><img
+                                        class="contact__btn-icon" src="./image/line_icon.svg" alt="公式LINEからお問い合わせ"
+                                        width="30" height="30"><span>公式LINEから</span><span
+                                        class="btn--chevron"></span></a>
+                            </div>
+                        </div>
 
-                    <div class="contact__buttons">
-                        <a class="contact__btn" href="./website-link.html"><img class="contact__btn-icon"
-                                src="./image/mail_icon.svg" alt="ウェブサイトからお問い合わせ" width="30"
-                                height="30"><span>WEBサイトから</span></a>
-
-                        <a class="contact__btn" href="./line-link.html"><img class="contact__btn-icon"
-                                src="./image/line_icon.svg" alt="公式LINEからお問い合わせ" width="30"
-                                height="30"><span>公式LINEから</span></a>
+                        <p class="contact__note">
+                            収穫時期等ご返信まで2～3日お時間を頂く場合がございます。ご了承くださいませ。
+                        </p>
                     </div>
 
-                    <p class="contact__note">
-                        収穫時期等ご返信まで2～3日お時間を頂く場合がございます。ご了承くださいませ。
-                    </p>
-                </div>
-
-                <div class="contact__image">
-                    <img class="contact__image-icon" src="./image/contact_mikan.svg" alt="" width="140" height="129"
-                        loading="lazy">
+                    <div class="contact__image">
+                        <img class="contact__image-icon" src="./image/contact_mikan.svg" alt="" width="140" height="129"
+                            loading="lazy">
+                    </div>
                 </div>
             </div>
         </section>
@@ -489,10 +537,10 @@
 
         <!-- ここからフッター -->
         <footer class="footer">
-            <div class="footer__content-wrapper">
+            <div class="footer__content">
                 <div class="footer__left-container">
                     <img class="footer__logo" src="./image/logo.png" alt="松本農園" width="137" height="64">
-                    <address class="footer__address">〒150-0041 愛媛県松山市中島</address>
+
                     <div class="footer__social-icons">
                         <a href="https://www.instagram.com/?locale=ja_JP" target="_blank" rel="noopener noreferrer"
                             aria-label="Instagram">
@@ -501,7 +549,6 @@
                             <img src="./image/line_icon.svg" alt="LINEのアイコン" width="32" height="32"></a>
                     </div>
                 </div>
-
 
                 <div class="footer__center-container">
                     <nav class="footer__nav" aria-label="フッターナビゲーション">
@@ -517,7 +564,7 @@
                 </div>
 
                 <div class="footer__right-container">
-                    <img src="./image/footer_map.png" alt="愛媛県中島周辺の地図" class="footer__map-image" width="260"
+                    <img src="./image/footer__map-image.png" alt="愛媛県中島周辺の地図" class="footer__map-image" width="260"
                         height="238" loading="lazy">
                 </div>
             </div>

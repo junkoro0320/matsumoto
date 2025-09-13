@@ -10,7 +10,7 @@
 
 .btn {
   position: relative;
-  display: inline-block;
+  display: inline-flex;
   align-items: center;
   gap: 10px;
   padding: 12px 0px;
@@ -22,6 +22,7 @@
   cursor: pointer;
   transition: opacity 0.3s, color 0.3s;
   text-align: center;
+  justify-content: center;
 }
 .btn:hover {
   opacity: 0.8;
@@ -63,7 +64,17 @@
 }
 
 .btn--chevron::after, .btn--icon-chevron::after {
-  content: "›";
+  content: "";
+  margin: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 10%;
+  width: 13px;
+  height: 13px;
+  border-top: 1px solid #0a1f47;
+  border-right: 1px solid #0a1f47;
+  transform: rotate(45deg);
 }
 
 .btn__icon {
@@ -112,6 +123,7 @@
   padding: 20px 17px 29px 16px;
   border-radius: 30px 0 0 30px;
   background-color: #0a1f47;
+  z-index: 100;
 }
 
 .fixed-buttons__item--top {
@@ -255,6 +267,67 @@
 /* 絶対配置系 */
 /* ボックス装飾 */
 /* レスポンシブフォント */
+/* ローディング画面全体 */
+#loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  /* 初期背景 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: rgb(10, 31, 71);
+  opacity: 1;
+  /* 初期透明度 */
+  transition: opacity 1s ease;
+  /* フェード時間 */
+  pointer-events: auto;
+}
+
+/* フェードアウト後の状態 */
+#loading.fade-out {
+  opacity: 0;
+}
+
+/* 波背景 */
+#loading .wave-container .wave {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+#loading .wave-container .wave::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -50%;
+  z-index: 1;
+  width: 200%;
+  aspect-ratio: 1/1;
+  border-radius: 50% 50%/50% 80%;
+  background-image: linear-gradient(90deg, #0083cf 0%, #76e5e1 50%, #bbe6ff 100%);
+  transition: top 2s ease;
+  transform-origin: center center;
+  animation: anime linear 12s infinite;
+}
+#loading .wave-container .wave:hover::before {
+  top: -20%;
+}
+
+@keyframes anime {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 .wrapper {
   margin: 0 auto;
   max-width: 100%;
@@ -327,6 +400,33 @@ img {
   animation: slide-animation-03 24s infinite;
 }
 
+/* みかん画像 */
+.overlay-inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 200;
+}
+
+.overlay-mikan {
+  max-width: 390px;
+  width: 15vw;
+  height: auto;
+}
+.overlay-mikan--rotate {
+  animation: rotateScale 5s linear forwards;
+}
+
+/* みかん回転＋拡大 */
+@keyframes rotateScale {
+  0% {
+    transform: rotate(0deg) scale(0.7);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
 @keyframes slide-animation-01 {
   0% {
     opacity: 1;
@@ -388,6 +488,40 @@ img {
     transform: scale(1.1);
   }
 }
+/* オーバーレイ */
+.slider__overlay {
+  position: absolute;
+  /* スライダーの中で重ねる */
+  top: 0;
+  left: 0;
+  width: 30%;
+  height: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.slider-text {
+  color: #fff;
+  background: rgba(0, 0, 0, 0.4);
+  writing-mode: vertical-rl;
+  text-align: center;
+  font-weight: bold;
+}
+
+.slider-text .line1 {
+  font-size: 20px;
+}
+
+.slider-text .line2 .small {
+  font-size: 24px;
+}
+
+.slider-text .line2.big {
+  font-size: 48px;
+}
+
 /*ふるさと納税セクション
 -----------------------------*/
 .fade-in-section {
@@ -457,16 +591,14 @@ img {
 }
 
 .about {
-  margin-top: 108px;
+  margin-top: 71px;
+  padding-top: 60px;
   background-color: #e8f5ff;
   margin-bottom: 66px;
 }
 .about__wrapper {
   margin: 0 auto;
   width: 87%;
-}
-.about__content {
-  margin-top: 109px;
 }
 .about__container {
   display: flex;
@@ -874,4 +1006,144 @@ img {
   bottom: 0;
   left: 30%;
   transform: translateX(-50%);
+}
+
+/*ここからオンラインショップ
+-----------------------------*/
+.online-shop {
+  padding-top: 150px;
+  padding-bottom: 60px;
+}
+.online-shop__wrapper {
+  width: 80%;
+  margin-left: 5%;
+}
+.online-shop__column {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-top: 60px;
+}
+.online-shop__column-left {
+  width: 33%;
+}
+.online-shop__text-column {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 30px;
+  padding-bottom: 92px;
+}
+.online-shop__photo-wrapper {
+  display: flex;
+  align-items: flex-start;
+}
+.online-shop__comment {
+  width: 23%;
+  aspect-ratio: 1/1;
+  background: url("../image/speech-bubble.png") no-repeat center/contain;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.online-shop__column-right {
+  width: 60%;
+}
+.online-shop__comment-text {
+  position: relative;
+  z-index: 1;
+  width: 75%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: clamp(10px, 2vw, 16px);
+}
+.online-shop__photo-container {
+  flex: 1;
+}
+.online-shop__photo {
+  display: block;
+  width: 79%;
+  height: auto;
+}
+
+/*ここからお問い合わせ
+-----------------------------*/
+.contact {
+  padding-top: 48px;
+  padding-bottom: 60px;
+  background-color: #fdf5e9;
+}
+.contact__wrapper {
+  width: 73%;
+  margin-inline: auto;
+}
+.contact__content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-items: flex-end;
+}
+.contact__content-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 20px;
+  background-color: #fc8013;
+  padding: 30px 0px;
+  border-radius: 300px;
+  margin-top: 30px;
+  width: 100%;
+}
+.contact .btn {
+  gap: 20px;
+}
+.contact__buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8%;
+}
+.contact__btn-icon {
+  display: block;
+  width: 30px;
+  height: 30px;
+}
+.contact__text, .contact__note {
+  color: #fff;
+}
+
+/*ここからお問い合わせ
+-----------------------------*/
+.footer {
+  background-color: #0a1f47;
+  color: #fff;
+  padding-top: 97px;
+  padding-bottom: 112px;
+}
+.footer__center-container {
+  display: block;
+  width: 29%;
+  padding-left: 85px;
+}
+.footer__nav-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  align-items: flex-start;
+}
+.footer__nav-item {
+  writing-mode: vertical-rl;
+}
+.footer__content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 73%;
 }/*# sourceMappingURL=top.css.map */

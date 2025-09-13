@@ -6,7 +6,7 @@
 
 .btn {
   position: relative;
-  display: inline-block;
+  display: inline-flex;
   align-items: center;
   gap: 10px;
   padding: 12px 0px;
@@ -18,6 +18,7 @@
   cursor: pointer;
   transition: opacity .3s, color .3s;
   text-align: center;
+  justify-content: center;
 
   &:hover {
     opacity: .8;
@@ -74,8 +75,21 @@
 
 // ▼ 2. くの字矢印（CSSでも、SVGでもOK）
 .btn--chevron::after {
-  content: '›'; // シンプルに文字で  display: inline-block;  margin-left: 8px;  font-size: 18px;  line-height: 1;
+  content: "";
+  margin: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 10%;
+  width: 13px;
+  height: 13px;
+  $color-dark-blue: #0a1f47; // フッターの紺色
+  $color-dark-blue: #0a1f47; // フッターの紺色
+  border-top: 1px solid var.$color-dark-blue;
+  border-right: 1px solid var.$color-dark-blue;
+  transform: rotate(45deg);
 }
+
 
 // ▼ 3. アイコン付き（左側）
 .btn__icon {
@@ -143,6 +157,7 @@
   padding: 20px 17px 29px 16px;
   border-radius: 30px 0 0 30px;
   background-color: #0a1f47;
+  z-index: 100;
 }
 
 .fixed-buttons__item--top {
