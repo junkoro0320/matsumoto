@@ -86,15 +86,13 @@ $animation-duration: 24s;
 
 /* みかん画像 */
 
-.overlay-inner {
+.overlay-mikan {
   @include mixins.absolute-center;
   z-index: 200;
-}
-
-.overlay-mikan {
   max-width: 390px;
   width: 15vw;
   height: auto;
+
 
   &--rotate {
     animation: rotateScale 5s linear forwards;
@@ -193,12 +191,10 @@ $animation-duration: 24s;
 /* オーバーレイ */
 .slider__overlay {
   position: absolute;
-  /* スライダーの中で重ねる */
-  top: 0;
-  left: 0;
-  width: 30%;
-  height: 30%;
-
+  top: 20%;
+  right: 25%;
+  font-family: 'Shippori Mincho', serif;
+  line-height: 1.17;
   @include mixins.flex-center;
   z-index: 10;
 }
@@ -207,12 +203,20 @@ $animation-duration: 24s;
   color: var.$color-white;
   background: rgba(0, 0, 0, 0.4);
   writing-mode: vertical-rl;
-  text-align: center;
+  text-align: left;
   font-weight: bold;
+  padding: 71px 26px 43px 34px;
+  text-orientation: upright;
+  line-height: 200%;
+
 }
 
 .slider-text .line1 {
   font-size: 20px;
+}
+
+.line2 {
+  display: inline-block;
 }
 
 .slider-text .line2 .small {
