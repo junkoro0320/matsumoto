@@ -347,11 +347,11 @@
                         <div class="juicy-crew__label">あいか<span class="number">28</span>号</div>
                     </a>
 
-                    <a href="detail-aika.html" class="juicy-crew__item">
+                    <button type="button" class="juicy-crew__item modal-trigger" data-modal-id="setoka-modal">
                         <img class="juicy-crew__gallery--setoka" src="./image/setoka.png" alt="せとかの写真（みかんの種類）"
                             width="350" height="354" loading="lazy">
-                        <div class="juicy-crew__label">せとか</div>
-                    </a>
+                        <span class="juicy-crew__label">せとか</span>
+                    </button>
 
                     <a href="detail-aika.html" class="juicy-crew__item">
                         <img class="juicy-crew__gallery--harumi" src="./image/himekoharu.png" alt="媛小春の写真（みかんの種類）"
@@ -371,6 +371,48 @@
                 </div>
             </div>
         </section>
+
+
+        <dialog id="setoka-modal" class="modal" aria-label="せとかについての詳しい説明">
+            <div class="modal__content">
+
+
+                <button type="button" class="modal__close-btn" aria-controls="nav" aria-expanded="true"
+                    aria-label="モーダルを閉じる">
+                    <span class="modal__bar"></span>
+                    <span class="modal__bar"></span>
+                    <span class="modal__bar"></span>
+                </button>
+
+                <img class="modal__illustration" src="./image/modal-image02.png" alt="せとかのスマイルカットのイラスト" width="284"
+                    height="201">
+
+
+                <div class="modal__body">
+                    <img class="modal__bg" src="./image/modal__body-baclground.png" alt="みかんの説明の白い背景" width="819"
+                        height="583">
+                    <div class="modal__image-wrapper">
+                        <img class="juicy-crew__gallery--setoka" src="./image/setoka.png" alt="せとかの写真（みかんの種類）"
+                            width="350" height="354" loading="lazy">
+                        <div class="modal__inner">
+                            <div class="modal__inner-season">収穫時期：2月～3月頃</div>
+                            <div class="modal__inner-cut">スマイルカット</div>
+                        </div>
+                    </div>
+                    <div class="modal__text-wrapper">
+                        <h3 class="modal__title">せとか</h3>
+                        <p class="modal__description">「柑橘の大トロ」と呼ばれるほどの濃厚なコクと甘みが特徴です。<br>
+                            濃厚な甘さと華やかな香り、とろけるような果肉が特徴です。外皮は薄く、薄皮も非常にやわらかいため、果肉ごと丸ごと食べられます。果汁もたっぷりで、口に入れた瞬間にジューシーな甘さが広がります。<br>
+                            紅まどんなと比べると、果肉がややしっかりしており、より柑橘らしい風味を感じられます。
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </dialog>
+
         <!-- ここまでMy juicy crew -->
 
 

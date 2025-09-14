@@ -1,6 +1,7 @@
 // 変数ファイルを使えるようにする
 @use '../base/mixins';
 @use '../base/loading';
+@use '../components/modal';
 @use '../base/variables' as var;
 
 
