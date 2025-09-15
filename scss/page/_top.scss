@@ -1,8 +1,22 @@
-// 変数ファイルを使えるようにする
-@use '../base/mixins';
-@use '../base/loading';
-@use '../components/modal';
+// _top.scss
+
 @use '../base/variables' as var;
+
+// 2. mixins（関数的なもの）
+@use '../base/mixins';
+
+// 3. ベースファイル（基本的なスタイル）
+@use '../base/base';
+
+// 4. レイアウト（大きな構造）
+@use '../layout/header';
+
+// 5. コンポーネント（部品）
+@use '../components/btn';
+@use '../components/modal';
+
+// 6. その他
+@use '../base/loading';
 
 
 .wrapper {

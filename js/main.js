@@ -68,6 +68,19 @@ allModals.forEach(modal => {
 });
 
 
+// モーダルを閉じる処理
+function closeModal() {
+    const modal = document.getElementById('setoka-modal');
+    modal.close();
+
+    // フォーカスを明示的に除去
+    modal.blur();
+
+    // または、body要素にフォーカスを移す
+    document.body.focus();
+}
+
+
 
 
 
