@@ -1,22 +1,13 @@
-// _top.scss
-
+// top.scss
 @use '../base/variables' as var;
-
-// 2. mixins（関数的なもの）
 @use '../base/mixins';
-
-// 3. ベースファイル（基本的なスタイル）
 @use '../base/base';
+@use '../base/loading';
 
-// 4. レイアウト（大きな構造）
-@use '../layout/header';
-
-// 5. コンポーネント（部品）
+// 変数を使用するファイルは後に読み込む
 @use '../components/btn';
 @use '../components/modal';
-
-// 6. その他
-@use '../base/loading';
+@use '../layout/header';
 
 
 .wrapper {
@@ -30,6 +21,7 @@ img {
   display: block;
   max-width: 100%;
   height: auto;
+  width: auto;
 }
 
 .main__section {
@@ -596,6 +588,11 @@ $animation-duration: 24s;
     gap: 22px;
     justify-self: center; // 水平方向は中央に
     align-self: flex-start;
+    outline: none;
+
+    .juicy-crew__item:focus {
+      outline: none;
+    }
 
     img {
       display: block;
