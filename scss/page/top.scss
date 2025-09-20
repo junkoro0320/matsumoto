@@ -4,10 +4,11 @@
 @use '../base/base';
 @use '../base/loading';
 
-// 変数を使用するファイルは後に読み込む
+// 変数を使用するファイル
 @use '../components/btn';
 @use '../components/modal';
 @use '../layout/header';
+@use '../layout/footer';
 
 
 .wrapper {
@@ -97,7 +98,7 @@ $animation-duration: 24s;
   @include mixins.absolute-center;
   z-index: 200;
   max-width: 390px;
-  width: 15vw;
+  width: 27vw;
   height: auto;
 
 
@@ -858,7 +859,7 @@ $animation-duration: 24s;
 
   &__content {
     @include mixins.flex-center;
-    align-items: flex-end
+    align-items: flex-end;
   }
 
   &__content-container {
@@ -868,6 +869,15 @@ $animation-duration: 24s;
     border-radius: 300px;
     margin-top: 30px;
     width: 100%;
+    text-align: center;
+
+    @include mixins.mq(lg) {
+      border-radius: 200px;
+    }
+
+    @include mixins.mq(md) {
+      border-radius: 100px;
+    }
   }
 
   & .btn {
@@ -878,6 +888,17 @@ $animation-duration: 24s;
     @include mixins.flex-center;
     gap: 8%;
 
+    @include mixins.mq(lg) {
+      @include mixins.flex-col(30px);
+    }
+
+  }
+
+  &__note,
+  &__text {
+    @include mixins.mq(lg) {
+      width: 78%;
+    }
   }
 
   &__btn-icon {
@@ -889,36 +910,5 @@ $animation-duration: 24s;
   &__text,
   &__note {
     color: var.$color-white;
-  }
-}
-
-/*ここからお問い合わせ
------------------------------*/
-.footer {
-  background-color: var.$color-dark-blue;
-  color: var.$color-white;
-  padding-top: 97px;
-  padding-bottom: 112px;
-
-  &__center-container {
-    display: block;
-    width: 29%;
-    padding-left: 85px;
-  }
-
-  &__nav-list {
-    @include mixins.flex-center;
-    gap: 30px;
-    align-items: flex-start;
-
-  }
-
-  &__nav-item {
-    writing-mode: vertical-rl;
-  }
-
-  &__content {
-    @include mixins.flex-center;
-    width: 73%;
   }
 }

@@ -6,7 +6,7 @@
 }
 
 .header__top {
-  z-index: 10001;  display: flex;  align-items: center;  justify-content: space-between;
+  z-index: 10001;  display: flex;  align-items: center;  justify-content: space-between;  width: 137px;  height: auto;
 }
 
 .header__logo {
@@ -53,7 +53,7 @@
 }
 
 .header__hamburger[aria-expanded='true'] .header__hamburger--bar:nth-child(3) {
-  transform: rotate(-30deg) translate(0px, 11px);
+  transform: rotate(-30deg) translate(0px, -10px);
 }
 
 .header__inner {

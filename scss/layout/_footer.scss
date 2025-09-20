@@ -1,0 +1,53 @@
+@use '../base/variables' as var;
+@use '../base/mixins';
+
+.footer {
+    background-color: var.$color-dark-blue;
+    color: var.$color-white;
+    text-align: center;
+    height: 447px;
+
+
+
+    &__center-container {
+        display: block;
+        width: 29%;
+    }
+
+    &__nav-list {
+        @include mixins.flex-center;
+        gap: 30px;
+        align-items: flex-start;
+
+    }
+
+    &__nav-item {
+        writing-mode: vertical-rl;
+    }
+
+    &__content {
+        @include mixins.flex-between;
+        width: 72%;
+        margin-bottom: 58px;
+        margin: 0 auto;
+        padding: 97px 0 58px 0;
+    }
+
+    &__social-icons {
+        @include mixins.flex-left;
+        gap: 15px;
+    }
+
+    &__left-container {
+        @include mixins.flex-col(23px);
+        width: 13%;
+    }
+
+    &__right-container {
+        width: 28%;
+        margin-left: 24%;
+    }
+
+
+
+}

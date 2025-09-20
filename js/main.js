@@ -34,53 +34,52 @@ window.addEventListener("load", () => {
 });
 
 
-// モーダル機能
-const modalTriggers = document.querySelectorAll('.modal-trigger');
-const modalCloseBtns = document.querySelectorAll('.modal__close-btn');
-modalTriggers.forEach(trigger => {
+// ========================
+// モーダル処理
+// ========================
+
+// モーダルを開く
+document.querySelectorAll('.modal-trigger').forEach(trigger => {
     trigger.addEventListener('click', () => {
         const modalId = trigger.dataset.modalId;
         const targetModal = document.getElementById(modalId);
-
-
         if (targetModal) {
             targetModal.showModal();
+            document.body.style.overflow = 'hidden'; // ここで実行
         }
     });
 });
 
-modalCloseBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-        const targetModal = btn.closest('.modal');
-        if (targetModal) {
-            targetModal.close();
-        }
-    });
-});
-
-const allModals = document.querySelectorAll('.modal');
-allModals.forEach(modal => {
+// モーダルを閉じる（背景クリック・×ボタン）
+document.querySelectorAll('.modal').forEach(modal => {
+    // 背景クリック
     modal.addEventListener('click', (e) => {
         if (e.target === modal) {
             modal.close();
+            document.body.style.overflow = ''; // ここで実行
         }
     });
+
+    // ×ボタン
+    const closeBtn = modal.querySelector('.modal__close-btn');
+    if (closeBtn) {
+        closeBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            modal.close();
+            document.body.style.overflow = ''; // ここで実行
+        });
+    }
 });
 
-
-// モーダルを閉じる処理
-function closeModal() {
-    const modal = document.getElementById('setoka-modal');
-    modal.close();
-
-    // フォーカスを明示的に除去
-    modal.blur();
-
-    // または、body要素にフォーカスを移す
-    document.body.focus();
+// 必要なら明示的に閉じる関数
+function closeModalById(modalId) {
+    const modal = document.getElementById(modalId);
+    if (modal) {
+        modal.close();
+        modal.blur();
+        document.body.focus();
+        document.body.style.overflow = ''; // ここで実行
+    }
 }
-
-
-
 
 

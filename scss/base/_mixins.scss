@@ -1,3 +1,6 @@
+@use 'variables' as var;
+@use "sass:map";
+
 // 画像の基本形
 @mixin img-block {
     display: block;
@@ -73,4 +76,11 @@
     color: #fff;
     font-weight: 500;
     font-size: 20px;
+}
+
+// 2. ブレークポイントの定義
+@mixin mq($breakpoint) {
+    @media (max-width: map.get(var.$breakpoints, $breakpoint)) {
+        @content;
+    }
 }
