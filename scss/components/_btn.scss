@@ -1,4 +1,5 @@
 @use '../base/variables' as var;
+@use '../base/mixins';
 
 // ========================
 // 基本ボタン
@@ -35,6 +36,10 @@
 
 .btn--wide {
   width: 320px;
+
+  @include mixins.mq(sm) {
+    width: 250px;
+  }
 }
 
 // ========================

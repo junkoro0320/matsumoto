@@ -41,12 +41,15 @@ img {
   &--jp {
     font-weight: 500;
     font-size: 36px;
+    @include mixins.fluid-font(24px, 2vw, 36px);
   }
+
 
   &--en {
     color: var(--color-primary);
     font-weight: normal;
     font-size: 28px;
+    @include mixins.fluid-font(20px, 2vw, 28px);
   }
 }
 
@@ -96,9 +99,13 @@ $animation-duration: 24s;
 
 .overlay-mikan {
   @include mixins.absolute-center;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   z-index: 200;
   max-width: 390px;
-  width: 27vw;
+  width: 23vw;
   height: auto;
 
 
@@ -502,13 +509,24 @@ $animation-duration: 24s;
       gap: 4%;
       align-items: flex-start;
       margin-top: 5%;
+
+      @include mixins.mq(md) {
+        @include mixins.flex-col(20px);
+      }
     }
 
     &-bottom {
       @include mixins.flex-right;
       margin-top: 14%;
-      gap: 4%
+      gap: 4%;
+
+      @include mixins.mq(md) {
+        @include mixins.flex-col(20px);
+        flex-direction: column-reverse
+      }
     }
+
+
   }
 
   &__subtitle {
@@ -521,12 +539,20 @@ $animation-duration: 24s;
     width: 35%;
     align-items: flex-start;
     gap: 1.5rem;
+
+    @include mixins.mq(md) {
+      width: 89%
+    }
   }
 
 
   &__item {
     @include mixins.img-block;
     width: 53%;
+
+    @include mixins.mq(md) {
+      width: 89%
+    }
   }
 
   &__text {
@@ -855,11 +881,21 @@ $animation-duration: 24s;
   &__wrapper {
     width: 73%;
     margin-inline: auto;
+
+
+    @include mixins.mq(sm) {
+      width: 89%;
+    }
   }
 
   &__content {
     @include mixins.flex-center;
     align-items: flex-end;
+
+    @include mixins.mq(sm) {
+      @include mixins.flex-col;
+      flex-direction: column-reverse
+    }
   }
 
   &__content-container {
@@ -869,7 +905,7 @@ $animation-duration: 24s;
     border-radius: 300px;
     margin-top: 30px;
     width: 100%;
-    text-align: center;
+    text-align: left;
 
     @include mixins.mq(lg) {
       border-radius: 200px;
@@ -877,6 +913,7 @@ $animation-duration: 24s;
 
     @include mixins.mq(md) {
       border-radius: 100px;
+      padding: 60px 0px;
     }
   }
 
@@ -910,5 +947,19 @@ $animation-duration: 24s;
   &__text,
   &__note {
     color: var.$color-white;
+  }
+
+  &__image-icon {
+    @include mixins.mq(sm) {
+      position: absolute;
+      max-width: 80px;
+
+    }
+  }
+
+  &.section__title {
+    display: block;
+    position: relative;
+
   }
 }
