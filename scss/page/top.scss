@@ -257,11 +257,9 @@ $animation-duration: 24s;
 }
 
 .hometown {
-  &__image {
+  &__image--inner {
     position: relative;
-    height: 379px;
     border-radius: 100px;
-    background: url('/image/hometown_01.png')center/cover no-repeat;
   }
 
   &__wrapper {
@@ -279,11 +277,33 @@ $animation-duration: 24s;
     @include mixins.fluid-font(20px, 2vw, 28px);
   }
 
-  &__image-mark {
+  &__image-inner {
+    border-radius: 100px;
+    position: relative;
+    min-width: 135px;
+  }
+
+  &__image-logo {
     @include mixins.absolute-center-y(3%);
     width: 23%;
     height: auto;
-    transform: translateY(-50%);
+
+
+    @include mixins.mq(lg) {
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+  }
+
+  &__box {
+    position: relative;
+
+    @include mixins.mq(lg) {
+      position: static;
+      @include mixins.flex-col(20px);
+    }
   }
 
   &__content {
@@ -292,15 +312,35 @@ $animation-duration: 24s;
     bottom: 0;
     @include mixins.flex-col(10px);
     margin: 0 auto;
-    @include mixins.box(#0a1f47, 50px, 22px 28px 37px 27px);
+    @include mixins.box(#0a1f47, 100px);
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
     width: 39%;
+    height: 100%;
+    justify-content: center;
+
+
+
+    @include mixins.mq(lg) {
+      position: static;
+      @include mixins.box(#0a1f47, 80px, 25px 28px 23px 31px);
+      width: 100%;
+      gap: 20px;
+    }
+
+    @include mixins.mq(md) {
+      border-radius: 50px;
+      gap: 30px;
+    }
+
+
   }
 
   &__text {
     color: #fff;
-    text-align: left;
     @include mixins.fluid-font(14px, 2vw, 20px);
     line-height: var.$line-height-base;
+    width: 80%;
   }
 }
 
@@ -332,18 +372,33 @@ $animation-duration: 24s;
     @include mixins.flex-between;
     width: 59%;
 
+    @include mixins.mq(md) {
+      width: 100%;
+    }
+
+    @include mixins.mq(sm) {
+      @include mixins.flex-col;
+    }
+
+
     &--girl,
     &--map {
       flex: 1; // 均等に分ける
       max-width: 50%;
-    }
 
-    &--map {
-      margin-top: -73px;
+      @include mixins.mq(sm) {}
+
+      &--map {
+        margin-top: -73px;
+      }
     }
 
     &--girl {
       margin-top: 100px;
+
+      @include mixins.mq(md) {
+        margin-top: 0;
+      }
     }
   }
 
@@ -351,12 +406,23 @@ $animation-duration: 24s;
 
     &-upper {
       @include mixins.flex-between;
+
+      @include mixins.mq(md) {
+        @include mixins.flex-col(50px);
+
+      }
     }
 
     &-bottom {
       position: relative;
       @include mixins.flex-center;
       gap: 5%;
+
+
+      @include mixins.mq(md) {
+        @include mixins.flex-col(50px);
+
+      }
     }
 
   }
@@ -367,6 +433,11 @@ $animation-duration: 24s;
       align-items: flex-start;
       margin-top: auto;
       width: 40%;
+
+
+      @include mixins.mq(md) {
+        width: 89%;
+      }
     }
 
     &-bottom {
@@ -382,6 +453,10 @@ $animation-duration: 24s;
   &__goal {
     @include mixins.flex-col(88px);
     width: 40%;
+
+    @include mixins.mq(md) {
+      width: 89%;
+    }
   }
 
   &__subtitle {
@@ -413,6 +488,8 @@ $animation-duration: 24s;
     line-height: var.$line-height-base;
     width: 80%;
     padding: 35px 0px;
+
+
   }
 
 
@@ -682,21 +759,42 @@ $animation-duration: 24s;
   &__wrapper {
     width: 88%;
     margin: 0 auto;
+
+
+    @include mixins.mq(sm) {
+      width: 93%;
+    }
+
+    @include mixins.mq(sm) {
+      width: 100%;
+    }
   }
 
   &__content {
     @include mixins.flex-between;
+
+    @include mixins.mq(lg) {
+      @include mixins.flex-col(38px);
+    }
   }
 
   &__right-column {
-    display: block;
     width: 37%;
     @include mixins.flex-col(6%);
+
+    @include mixins.mq(lg) {
+      @include mixins.flex-center;
+      width: 70%;
+    }
+
+    @include mixins.mq(sm) {
+      width: 89%;
+    }
   }
 
   &__info-block {
     @include mixins.flex-center;
-    position: relative;
+
     width: 100%;
   }
 
@@ -704,6 +802,18 @@ $animation-duration: 24s;
     display: block;
     width: 56%;
     padding-top: 80px;
+
+    @include mixins.mq(lg) {
+      width: 80%;
+    }
+
+    @include mixins.mq(sm) {
+      width: 90%;
+    }
+
+    @include mixins.mq(sm) {
+      width: 100%;
+    }
   }
 
   &__photo {
@@ -778,10 +888,9 @@ $animation-duration: 24s;
   &__icon-group {
     display: block;
     width: 40%;
+    position: relative;
 
     & img {
-      display: block;
-      height: auto;
       position: absolute;
     }
   }
@@ -789,12 +898,14 @@ $animation-duration: 24s;
   &__beans-icon {
     left: 0;
     top: 0;
+    transform: translateY(-100%);
+
   }
 
   &__orange-icon {
-    bottom: 0;
-    left: 30%;
-    transform: translateX(-50%);
+    right: 0;
+
+
   }
 }
 
@@ -808,22 +919,45 @@ $animation-duration: 24s;
   &__wrapper {
     width: 80%;
     margin-left: 5%;
+
+    @include mixins.mq(md) {
+      margin: 0 auto;
+      width: 89%;
+    }
   }
 
   &__column {
     @include mixins.flex-between;
     align-items: flex-start;
     padding-top: 60px;
+
+    @include mixins.mq(sm) {
+      @include mixins.flex-col(45px);
+      flex-direction: column-reverse;
+    }
   }
 
   &__column-left {
     width: 33%;
+
+    @include mixins.mq(md) {
+      width: 50%;
+    }
+
+    @include mixins.mq(sm) {
+      width: 89%;
+      text-align: center;
+    }
 
   }
 
   &__text-column {
     @include mixins.flex-col(30px);
     padding-bottom: 92px;
+    align-items: first baseline;
+    text-align: left;
+
+
   }
 
 
@@ -840,12 +974,20 @@ $animation-duration: 24s;
     display: flex;
     justify-content: center;
     align-items: center;
+
+    @include mixins.mq(md) {
+      width: 30%;
+    }
   }
 
 
 
   &__column-right {
     width: 60%;
+
+    @include mixins.mq(sm) {
+      width: 89%;
+    }
   }
 
 
@@ -867,6 +1009,10 @@ $animation-duration: 24s;
     display: block;
     width: 79%;
     height: auto;
+
+    @include mixins.mq(md) {
+      width: 100%;
+    }
   }
 }
 
