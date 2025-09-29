@@ -82,4 +82,27 @@ function closeModalById(modalId) {
     }
 }
 
+const floatingButtons = document.querySelector('.floating-buttons');
+const targetSection = document.querySelector('#hometown');
+const footer = document.querySelector('footer');
+
+window.addEventListener('scroll', () => {
+    const scrollPosition = window.scrollY;
+    const windowHeight = window.innerHeight;
+
+    const sectionTop = targetSection ? targetSection.offsetTop : 0;
+    const footerTop = footer ? footer.offsetTop : document.body.scrollHeight;
+
+    // セクションに到達 && フッター前
+    if (scrollPosition + windowHeight > sectionTop &&
+        scrollPosition + windowHeight < footerTop) {
+        floatingButtons.classList.add('visible');
+    } else {
+        floatingButtons.classList.remove('visible');
+    }
+});
+
+
+
+
 

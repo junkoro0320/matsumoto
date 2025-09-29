@@ -200,7 +200,7 @@ img {
 
 .floating-buttons {
   position: fixed;
-  top: 48px;
+  top: 400px;
   right: 0;
   display: flex;
   flex-direction: column;
@@ -209,6 +209,12 @@ img {
   border-radius: 30px 0 0 30px;
   background-color: #0a1f47;
   z-index: 100;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+.floating-buttons.visible {
+  opacity: 1;
+  visibility: visible;
 }
 
 .fixed-buttons__item--top {
@@ -221,6 +227,7 @@ img {
   border-radius: 50%;
   background: #fff;
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+  position: relative;
 }
 
 /* 棒 */
@@ -231,6 +238,7 @@ img {
   width: 2px;
   height: 20px;
   background: #0a1f47;
+  pointer-events: none;
 }
 
 /* 左の羽 */
@@ -243,6 +251,7 @@ img {
   height: 6px;
   border-top: 2px solid #0a1f47;
   transform: translateX(-50%) rotate(-45deg);
+  pointer-events: none;
 }
 
 /* 右の羽（追加要素） */
@@ -254,6 +263,7 @@ img {
   height: 4px;
   border-top: 2px solid #0a1f47;
   transform: translateX(-50%) rotate(45deg);
+  pointer-events: none;
 }
 
 .modal {
@@ -449,7 +459,7 @@ img {
 }
 
 .header__container {
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   left: 0;
@@ -483,10 +493,14 @@ img {
   border: none;
   border-radius: 60px;
   background: #fff;
-  /* 白背景を指定 */
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
   cursor: pointer;
-  cursor: pointer;
+}
+@media (max-width: 600px) {
+  .header__hamburger {
+    width: 60px;
+    height: 60px;
+  }
 }
 .header__hamburger--bar {
   margin: 2.5px 0;
@@ -494,6 +508,17 @@ img {
   height: 5px;
   background-color: #fc8013;
   transition: all 0.3s ease;
+}
+@media (max-width: 600px) {
+  .header__hamburger--bar {
+    width: 35px;
+    height: 4px;
+  }
+}
+@media (max-width: 600px) {
+  .header__hamburger--label {
+    display: none;
+  }
 }
 
 .header__nav {
@@ -510,13 +535,13 @@ img {
   transition: all 0.8s ease;
   /* 余分なセミコロンを削除 */
 }
-.header__nav--list {
+.header__nav-list {
   display: flex;
   flex-direction: row;
   justify-content: center;
   gap: 40px;
 }
-.header__nav--item {
+.header__nav-item {
   writing-mode: vertical-lr;
   text-orientation: upright;
 }
@@ -541,6 +566,8 @@ img {
 .header__inner {
   display: flex;
   justify-content: space-between;
+  width: 97%;
+  margin: 0 auto;
 }
 
 .footer {
@@ -593,8 +620,8 @@ img {
 
 .wrapper {
   margin: 0 auto;
-  max-width: 100%;
-  width: 1440px;
+  max-width: 1440px;
+  width: 100%;
 }
 
 img {
@@ -609,7 +636,7 @@ img {
   margin-bottom: 80px;
 }
 
-.section__title {
+.section-title {
   display: flex;
   align-items: flex-start;
   flex-direction: column;
@@ -620,12 +647,12 @@ img {
   width: 90%;
   margin: 0 auto;
 }
-.section__title--jp {
+.section-title__jp {
   font-weight: 500;
   font-size: 36px;
   font-size: clamp(24px, 2vw, 36px);
 }
-.section__title--en {
+.section-title__en {
   color: var(--color-primary);
   font-weight: normal;
   font-size: 28px;
@@ -642,6 +669,12 @@ img {
   width: 100%;
   height: 680px;
   clip-path: inset(0 round 0 0 200px 200px);
+}
+@media (max-width: 600px) {
+  .slider__frame {
+    height: 467px;
+    clip-path: inset(0 round 0 0 100px 100px);
+  }
 }
 .slider__frame--island, .slider__frame--harvest, .slider__frame--farmer {
   position: absolute;
@@ -767,6 +800,16 @@ img {
   justify-content: center;
   z-index: 10;
 }
+@media (max-width: 1280px) {
+  .slider__overlay {
+    right: 15%;
+  }
+}
+@media (max-width: 960px) {
+  .slider__overlay {
+    right: 10%;
+  }
+}
 
 .slider-text {
   color: #fff;
@@ -776,11 +819,17 @@ img {
   font-weight: bold;
   padding: 71px 26px 43px 34px;
   text-orientation: upright;
-  line-height: 200%;
+  line-height: 400%;
+}
+@media (max-width: 600px) {
+  .slider-text {
+    padding: 13px 14px;
+    line-height: 200%;
+  }
 }
 
 .slider-text .line1 {
-  font-size: 20px;
+  font-size: clamp(20px, 2vw, 36px);
 }
 
 .line2 {
@@ -788,11 +837,11 @@ img {
 }
 
 .slider-text .line2 .small {
-  font-size: 24px;
+  font-size: clamp(20px, 2vw, 48px);
 }
 
-.slider-text .line2.big {
-  font-size: 48px;
+.slider-text .line2 .big {
+  font-size: clamp(20px, 2vw, 55px);
 }
 
 /*ふるさと納税セクション
@@ -804,6 +853,10 @@ img {
 
 .fade-in-section.visible {
   opacity: 1;
+}
+
+.hometown.wrapper {
+  width: 73%;
 }
 
 .hometown__image--inner {
@@ -819,7 +872,7 @@ img {
   align-items: center;
   justify-content: center;
   gap: 26px;
-  margin-bottom: 27px;
+  margin: 80px 0 27px 0;
 }
 .hometown__subtitle {
   font-size: clamp(20px, 2vw, 28px);
@@ -905,15 +958,16 @@ img {
   width: 100%;
 }
 
+.about.wrapper {
+  margin: 0 auto;
+  width: 88%;
+}
+
 .about {
   margin-top: 71px;
   padding-top: 60px;
   background-color: #e8f5ff;
   margin-bottom: 66px;
-}
-.about__wrapper {
-  margin: 0 auto;
-  width: 87%;
 }
 .about__container {
   display: flex;
@@ -938,26 +992,37 @@ img {
 }
 @media (max-width: 600px) {
   .about__place {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: flex-start;
-    gap: 0;
+    position: relative;
   }
 }
 .about__place--girl, .about__place--map {
   flex: 1;
   max-width: 50%;
 }
-.about__place--girl--map, .about__place--map--map {
+@media (max-width: 600px) {
+  .about__place--girl, .about__place--map {
+    flex-shrink: 0;
+    position: absolute;
+  }
+}
+.about__place--map {
   margin-top: -73px;
+}
+@media (max-width: 600px) {
+  .about__place--map {
+    top: 0;
+    left: 0;
+    width: 100vw;
+  }
 }
 .about__place--girl {
   margin-top: 100px;
 }
-@media (max-width: 960px) {
+@media (max-width: 600px) {
   .about__place--girl {
-    margin-top: 0;
+    margin: 0px;
+    top: 100%;
+    right: 0;
   }
 }
 .about__item-upper {
@@ -1042,11 +1107,16 @@ img {
   left: 8%;
   font-size: clamp(14px, 2vw, 18px);
 }
-.about__box {
+.about__box-upper, .about__box-bottom {
   position: relative;
   background-color: #fff;
   border-radius: 20px;
   border: solid 1px #3D4149;
+}
+@media (max-width: 600px) {
+  .about__box-upper {
+    margin-top: 300px;
+  }
 }
 .about__text {
   display: block;
@@ -1064,15 +1134,29 @@ img {
   gap: 0;
   width: 55%;
 }
+@media (max-width: 960px) {
+  .about__family {
+    width: 84%;
+  }
+}
+@media (max-width: 600px) {
+  .about__family {
+    width: 100%;
+  }
+}
 .about__family--photo {
   margin-top: auto;
 }
-
-.lemon-boy {
+.about .lemon-boy {
   display: block;
   margin: 0 0 0 auto;
   width: 84%;
   height: auto;
+}
+@media (max-width: 600px) {
+  .about .lemon-boy {
+    width: 100%;
+  }
 }
 
 /*農園紹介スライドセクション
@@ -1082,6 +1166,16 @@ img {
   z-index: 1;
   height: auto;
   margin-bottom: 88px;
+}
+@media (max-width: 960px) {
+  .slider {
+    margin-bottom: 60px;
+  }
+}
+@media (max-width: 600px) {
+  .slider {
+    margin-bottom: 40px;
+  }
 }
 .slider .slick-slide {
   margin: 0 10px;
@@ -1111,17 +1205,27 @@ img {
   padding: 0;
 }
 .slider--frame li {
-  width: 400px !important;
-  /* 固定幅 */
-  height: 400px !important;
-  /* 固定高さ */
+  width: 400px;
+  height: 400px;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
+@media (max-width: 960px) {
+  .slider--frame li {
+    width: 300px;
+    height: 300px;
+  }
+}
 
 /*私達のこだわりセクション
 -----------------------------*/
+.care .section__title {
+  display: inline-block;
+  width: 84%;
+  padding-left: 8%;
+}
+
 .care {
   margin-bottom: 60px;
 }
@@ -1131,7 +1235,7 @@ img {
   justify-content: left;
   gap: 4%;
   align-items: flex-start;
-  margin-top: 5%;
+  margin-top: 60px;
 }
 @media (max-width: 960px) {
   .care__box-upper {
@@ -1230,6 +1334,16 @@ img {
   margin-inline: auto;
   padding-top: 60px;
 }
+@media (max-width: 600px) {
+  .juicy-crew__gallery {
+    padding-bottom: 60px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 50px;
+  }
+}
 .juicy-crew__item {
   display: flex;
   align-items: center;
@@ -1238,13 +1352,17 @@ img {
   align-self: flex-start;
   outline: none;
 }
+@media (max-width: 600px) {
+  .juicy-crew__item {
+    width: 90%;
+  }
+}
 .juicy-crew__item .juicy-crew__item:focus {
   outline: none;
 }
 .juicy-crew__item img {
-  display: block;
   width: 80%;
-  height: auto;
+  margin: 0 auto;
 }
 .juicy-crew__item:nth-child(1) {
   grid-column: 1/4;
@@ -1284,6 +1402,10 @@ img {
 
 /*ここから風早珈琲焙煎所BOWEN
 -----------------------------*/
+.cafe-intro.wrapper {
+  width: 88%;
+}
+
 .cafe-intro {
   padding-top: 60px;
 }
@@ -1449,8 +1571,12 @@ img {
 /*ここからオンラインショップ
 -----------------------------*/
 .online-shop {
-  padding-top: 150px;
-  padding-bottom: 60px;
+  padding: 150px 0 60px 0;
+}
+@media (max-width: 600px) {
+  .online-shop {
+    padding: 90px 0 50px 0;
+  }
 }
 .online-shop__wrapper {
   width: 80%;
@@ -1460,6 +1586,11 @@ img {
   .online-shop__wrapper {
     margin: 0 auto;
     width: 89%;
+  }
+}
+@media (max-width: 600px) {
+  .online-shop__wrapper {
+    width: 98%;
   }
 }
 .online-shop__column {
@@ -1475,7 +1606,7 @@ img {
     align-items: center;
     flex-direction: column;
     justify-content: flex-start;
-    gap: 45px;
+    gap: 30px;
     flex-direction: column-reverse;
   }
 }
@@ -1502,6 +1633,11 @@ img {
   padding-bottom: 92px;
   align-items: first baseline;
   text-align: left;
+}
+@media (max-width: 600px) {
+  .online-shop__text-column {
+    padding-bottom: 40px;
+  }
 }
 .online-shop__photo-wrapper {
   display: flex;

@@ -13,8 +13,8 @@
 
 .wrapper {
   margin: 0 auto;
-  max-width: 100%;
-  width: 1440px;
+  max-width: 1440px;
+  width: 100%;
 }
 
 
@@ -31,21 +31,21 @@ img {
 }
 
 
-.section__title {
+.section-title {
   @include mixins.flex-col(15px, flex-start, flex-start);
   /* align-itemsをflex-startに */
   line-height: var.$line-height-sub;
   width: 90%;
   margin: 0 auto;
 
-  &--jp {
+  &__jp {
     font-weight: 500;
     font-size: 36px;
     @include mixins.fluid-font(24px, 2vw, 36px);
   }
 
 
-  &--en {
+  &__en {
     color: var(--color-primary);
     font-weight: normal;
     font-size: 28px;
@@ -65,6 +65,12 @@ $animation-duration: 24s;
   width: 100%;
   height: 680px;
   clip-path: inset(0 round 0 0 200px 200px);
+
+  @include mixins.mq(sm) {
+    height: 467px;
+    clip-path: inset(0 round 0 0 100px 100px);
+
+  }
 
   &--island,
   &--harvest,
@@ -212,6 +218,16 @@ $animation-duration: 24s;
   line-height: 1.17;
   @include mixins.flex-center;
   z-index: 10;
+
+  @include mixins.mq(lg) {
+    right: 15%
+  }
+
+  @include mixins.mq(md) {
+    right: 10%
+  }
+
+  ;
 }
 
 .slider-text {
@@ -222,25 +238,31 @@ $animation-duration: 24s;
   font-weight: bold;
   padding: 71px 26px 43px 34px;
   text-orientation: upright;
-  line-height: 200%;
+  line-height: 400%;
+
+  @include mixins.mq(sm) {
+    padding: 13px 14px;
+    line-height: 200%;
+  }
 
 }
 
 .slider-text .line1 {
-  font-size: 20px;
+  @include mixins.fluid-font(20px, 2vw, 36px);
 }
 
 .line2 {
   display: inline-block;
+
 }
+
 
 .slider-text .line2 .small {
-  font-size: 24px;
+  @include mixins.fluid-font(20px, 2vw, 48px);
 }
 
-.slider-text .line2.big {
-  font-size: 48px;
-
+.slider-text .line2 .big {
+  @include mixins.fluid-font(20px, 2vw, 55px);
 }
 
 
@@ -254,6 +276,10 @@ $animation-duration: 24s;
 
 .fade-in-section.visible {
   opacity: 1;
+}
+
+.hometown.wrapper {
+  width: 73%;
 }
 
 .hometown {
@@ -270,7 +296,7 @@ $animation-duration: 24s;
   &__title {
     @include mixins.flex-center;
     gap: 26px;
-    margin-bottom: 27px;
+    margin: 80px 0 27px 0;
   }
 
   &__subtitle {
@@ -350,16 +376,18 @@ $animation-duration: 24s;
   width: 100%;
 }
 
+.about.wrapper {
+  margin: 0 auto;
+  width: 88%;
+}
+
 .about {
   margin-top: 71px;
   padding-top: 60px;
   background-color: #e8f5ff;
   margin-bottom: 66px;
 
-  &__wrapper {
-    margin: 0 auto;
-    width: 87%;
-  }
+
 
   &__container {
     @include mixins.flex-col(58px);
@@ -377,8 +405,10 @@ $animation-duration: 24s;
     }
 
     @include mixins.mq(sm) {
-      @include mixins.flex-col;
+      position: relative;
+
     }
+
 
 
     &--girl,
@@ -386,30 +416,46 @@ $animation-duration: 24s;
       flex: 1; // 均等に分ける
       max-width: 50%;
 
-      @include mixins.mq(sm) {}
 
-      &--map {
-        margin-top: -73px;
+      @include mixins.mq(sm) {
+        flex-shrink: 0;
+        position: absolute;
       }
     }
+
+    &--map {
+      margin-top: -73px;
+
+      @include mixins.mq(sm) {
+        top: 0;
+        left: 0;
+        width: 100vw;
+      }
+    }
+
+
 
     &--girl {
       margin-top: 100px;
 
-      @include mixins.mq(md) {
-        margin-top: 0;
+
+      @include mixins.mq(sm) {
+        margin: 0px;
+        top: 100%;
+        right: 0;
       }
     }
   }
 
-  &__item {
 
+
+
+  &__item {
     &-upper {
       @include mixins.flex-between;
 
       @include mixins.mq(md) {
         @include mixins.flex-col(50px);
-
       }
     }
 
@@ -424,7 +470,6 @@ $animation-duration: 24s;
 
       }
     }
-
   }
 
   &__inner {
@@ -473,12 +518,21 @@ $animation-duration: 24s;
     @include mixins.fluid-font(14px, 2vw, 18px);
   }
 
-  &__box {
+  &__box-upper,
+  &__box-bottom {
     position: relative;
     background-color: #fff;
     border-radius: 20px;
     border: solid 1px #3D4149;
   }
+
+
+  &__box-upper {
+    @include mixins.mq(sm) {
+      margin-top: 300px;
+    }
+  }
+
 
 
   &__text {
@@ -488,8 +542,6 @@ $animation-duration: 24s;
     line-height: var.$line-height-base;
     width: 80%;
     padding: 35px 0px;
-
-
   }
 
 
@@ -497,19 +549,34 @@ $animation-duration: 24s;
     @include mixins.flex-col;
     width: 55%;
 
+    @include mixins.mq(md) {
+      width: 84%;
+    }
+
+    @include mixins.mq(sm) {
+      width: 100%;
+
+    }
+
     &--photo {
       margin-top: auto;
     }
 
   }
-}
 
 
-.lemon-boy {
-  display: block;
-  margin: 0 0 0 auto;
-  width: 84%;
-  height: auto;
+
+  .lemon-boy {
+    display: block;
+    margin: 0 0 0 auto;
+    width: 84%;
+    height: auto;
+
+    @include mixins.mq(sm) {
+      width: 100%;
+
+    }
+  }
 }
 
 /*農園紹介スライドセクション
@@ -520,6 +587,14 @@ $animation-duration: 24s;
   z-index: 1;
   height: auto;
   margin-bottom: 88px;
+
+  @include mixins.mq(md) {
+    margin-bottom: 60px;
+  }
+
+  @include mixins.mq(sm) {
+    margin-bottom: 40px;
+  }
 
 
   & .slick-slide {
@@ -560,14 +635,18 @@ $animation-duration: 24s;
   }
 
   &--frame li {
-    width: 400px !important;
-    /* 固定幅 */
-    height: 400px !important;
-    /* 固定高さ */
+    width: 400px;
+    height: 400px;
 
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+
+
+    @include mixins.mq(md) {
+      width: 300px;
+      height: 300px;
+    }
   }
 
 
@@ -575,6 +654,13 @@ $animation-duration: 24s;
 
 /*私達のこだわりセクション
 -----------------------------*/
+
+.care .section__title {
+  display: inline-block;
+  width: 84%;
+  padding-left: 8%;
+
+}
 
 .care {
   margin-bottom: 60px;
@@ -585,7 +671,7 @@ $animation-duration: 24s;
       @include mixins.flex-left;
       gap: 4%;
       align-items: flex-start;
-      margin-top: 5%;
+      margin-top: 60px;
 
       @include mixins.mq(md) {
         @include mixins.flex-col(20px);
@@ -683,6 +769,12 @@ $animation-duration: 24s;
     width: 97%;
     margin-inline: auto;
     padding-top: 60px;
+
+    @include mixins.mq(sm) {
+      padding-bottom: 60px;
+      @include mixins.flex-col(50px);
+    }
+
   }
 
   // 子要素のSCSS
@@ -694,15 +786,23 @@ $animation-duration: 24s;
     align-self: flex-start;
     outline: none;
 
+    @include mixins.mq(sm) {
+      width: 90%;
+    }
+
+
     .juicy-crew__item:focus {
       outline: none;
     }
 
     img {
-      display: block;
       width: 80%;
-      height: auto;
+      margin: 0 auto;
     }
+
+
+
+
 
     // 1番目
     &:nth-child(1) {
@@ -731,13 +831,14 @@ $animation-duration: 24s;
       grid-row: 3 / 6;
       z-index: 1;
     }
+
+
   }
 
   &__label {
     writing-mode: vertical-rl;
     margin-top: 0.5rem;
     @include mixins.fluid-font(16px, 2vw, 24px);
-
   }
 }
 
@@ -753,6 +854,13 @@ $animation-duration: 24s;
 
 /*ここから風早珈琲焙煎所BOWEN
 -----------------------------*/
+
+
+
+.cafe-intro.wrapper {
+  width: 88%;
+}
+
 .cafe-intro {
   padding-top: 60px;
 
@@ -913,8 +1021,11 @@ $animation-duration: 24s;
 -----------------------------*/
 
 .online-shop {
-  padding-top: 150px;
-  padding-bottom: 60px;
+  padding: 150px 0 60px 0;
+
+  @include mixins.mq(sm) {
+    padding: 90px 0 50px 0;
+  }
 
   &__wrapper {
     width: 80%;
@@ -924,6 +1035,10 @@ $animation-duration: 24s;
       margin: 0 auto;
       width: 89%;
     }
+
+    @include mixins.mq(sm) {
+      width: 98%;
+    }
   }
 
   &__column {
@@ -932,7 +1047,7 @@ $animation-duration: 24s;
     padding-top: 60px;
 
     @include mixins.mq(sm) {
-      @include mixins.flex-col(45px);
+      @include mixins.flex-col(30px);
       flex-direction: column-reverse;
     }
   }
@@ -956,6 +1071,10 @@ $animation-duration: 24s;
     padding-bottom: 92px;
     align-items: first baseline;
     text-align: left;
+
+    @include mixins.mq(sm) {
+      padding-bottom: 40px;
+    }
 
 
   }
