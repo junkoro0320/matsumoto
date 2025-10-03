@@ -196,7 +196,7 @@
 
     <!-- ここからabout us -->
     <section id="about" class="about fade-in-section">
-        <div class="about wrapper">
+        <div class="wrapper">
             <div class="about__content">
 
                 <div class="section__title-about">
@@ -335,7 +335,7 @@
 
     <!-- ここからMy juicy crew -->
     <section id="juicy-crew" class="juicy-crew">
-        <div class="juicy-crew wrapper">
+        <div class="wrapper">
 
             <div class="section__title">
                 <p class="section-title__en" lang="en">My juicy crew</p>
@@ -376,23 +376,17 @@
 
 
     <dialog id="setoka-modal" class="modal" aria-label="せとかについての詳しい説明">
+
+        <button type="button" class="modal__close-btn" aria-label="モーダルを閉じる">
+            <span class="modal__bar"></span>
+            <span class="modal__bar"></span>
+            <span class="modal__bar"></span>
+        </button>
+
         <div class="modal__content">
-
-
-            <button type="button" class="modal__close-btn" aria-label="モーダルを閉じる">
-                <span class="modal__bar"></span>
-                <span class="modal__bar"></span>
-                <span class="modal__bar"></span>
-            </button>
-
-            <img class="modal__illustration" src="./image/modal-image02.png" alt="せとかのスマイルカットのイラスト" width="284"
-                height="201">
-
-
             <div class="modal__body">
-
-                <img class="modal__bg" src="./image/modal__body-baclground.png" alt="みかんの説明の白い背景" width="819"
-                    height="583">
+                <img class="modal__illustration" src="./image/modal-image02.png" alt="せとかのスマイルカットのイラスト" width="284"
+                    height="201">
 
                 <div class="modal__image-wrapper">
                     <img class="juicy-crew__gallery--setoka" src="./image/setoka.png" alt="せとかの写真（みかんの種類）" width="350"
@@ -502,29 +496,28 @@
 
     <!-- ここからオンラインショップ-->
     <section id="shop" class="online-shop">
-        <div class="section__title">
-            <p class="section-title__en" lang="en">Online Shop</p>
-            <h2 class="section-title__jp">オンラインショップ</h2>
-        </div>
-        <div class="online-shop wrapper">
 
+        <div class="wrapper">
 
+            <div class="section__title-sp">
+                <p class="section-title__en" lang="en">Online Shop</p>
+                <h2 class="section-title__jp">オンラインショップ</h2>
+            </div>
 
             <div class="online-shop__column">
                 <div class="online-shop__column-left">
+                    <div class="section__title-pc">
+                        <p class="section-title__en" lang="en">Online Shop</p>
+                        <h2 class="section-title__jp">オンラインショップ</h2>
+                    </div>
                     <div class="online-shop__text-column">
                         <p class="online-shop__description">姉妹で作った、島のちょっと特別なみかん。<br>「おいしい」をお届けするオンラインストアです。</p>
                         <p>潮風と太陽の光が降り注ぐ、瀬戸内の小さな島で、ひとつひとつ大切に育てました。
                             松本農園から直送させていただきます。
                         </p>
                     </div>
-
-                    <div class="btn btn--primary btn--normal">
-                        <a class="online-shop__btn online-shop__btn--salespage"
-                            href="./salespage/index.html">通販サイトへ進む</a>
-                        <img class=" btn__icon" src="./image/external_link _icon.png" alt="" width="25" height="25">
-                    </div>
                 </div>
+
 
                 <div class="online-shop__column-right">
                     <div class="online-shop__photo-wrapper">
@@ -541,25 +534,28 @@
                 </div>
             </div>
 
-
-        </div>
+            <div class="btn btn--primary btn--normal">
+                <a class="online-shop__btn online-shop__btn--salespage" href="./salespage/index.html">通販サイトへ進む</a>
+                <img class=" btn__icon" src="./image/external_link _icon.png" alt="" width="25" height="25">
+            </div>
     </section>
 
     <!-- ここからコンタクト -->
     <section id="contact" class="contact">
-        <div class="section__title">
-            <p class="section-title__en" lang="en">Contact</p>
-            <h2 class="section-title__jp">お問い合わせ</h2>
+        <div class="wrapper">
+            <div class="section__title">
+                <p class="section-title__en" lang="en">Contact</p>
+                <h2 class="section-title__jp">お問い合わせ</h2>
 
-            <!-- sp -->
-            <div class="contact__image image-sp">
-                <img class="contact__image-icon" src="./image/contact_mikan.svg" alt="" width="140" height="129"
-                    loading="lazy">
+                <!-- sp -->
+                <div class="contact__image image-sp">
+                    <img class="contact__image-icon" src="./image/contact_mikan.svg" alt="" width="140" height="129"
+                        loading="lazy">
+                </div>
+
             </div>
 
-        </div>
 
-        <div class="contact wrapper">
 
             <div class="contact__content">
                 <div class="contact__content-container">
@@ -591,6 +587,7 @@
                 </div>
             </div>
         </div>
+
     </section>
 
     <!-- ここまでコンタクト -->

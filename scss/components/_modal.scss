@@ -10,6 +10,11 @@
     @include mixins.flex-center;
     pointer-events: auto;
 
+    @include mixins.mq(sm) {
+        padding: 1rem;
+    }
+
+
     &:not([open]) {
         display: none;
     }
@@ -19,6 +24,12 @@
     }
 
 
+    &__title {
+        font-size: 24px;
+        color: #f39c12;
+        font-weight: bold;
+    }
+
 
     // モーダルの内側
     &__content {
@@ -26,17 +37,34 @@
         border-radius: 100px;
         background-color: #fdf5e9;
         box-shadow: 0 4px 15px rgba(0, 0, 0, .2);
-        padding: 20px 40px;
+        padding: 144px 113px;
         overflow: hidden;
         width: 65%;
         height: 75vh;
         border-radius: 100px;
         pointer-events: auto; // 必要に応じて調整
+        background-image: url(../image/modal__body-background.png);
+        background-size: 80% 60%;
+
+        background-repeat: no-repeat;
+
+        background-position: center;
+
 
         @include mixins.mq(lg) {
             width: 85%;
             height: 90vh;
-            padding: 40px 50px;
+            padding: 100px 90px;
+        }
+
+        @include mixins.mq(md) {
+            background-image: none;
+        }
+
+        @include mixins.mq(sm) {
+            padding: 87px 64px;
+            height: 850px;
+            background-image: none;
         }
     }
 
@@ -47,15 +75,15 @@
         width: 28%;
         height: auto;
         position: absolute;
-        right: 0;
-        bottom: 10%;
+        right: -40px;
+        bottom: 0;
         z-index: 100;
-
         max-width: 300px;
 
         @include mixins.mq(md) {
-            right: 5%;
-            bottom: 3%;
+            width: 149px;
+            height: 106px;
+            bottom: 60px;
         }
     }
 
@@ -68,8 +96,13 @@
         z-index: 0;
         height: 100%;
 
+
         @include mixins.mq(md) {
             @include mixins.flex-col(30px)
+        }
+
+        @include mixins.mq(sm) {
+            gap: 35px;
         }
     }
 
@@ -82,6 +115,12 @@
         @include mixins.mq(md) {
             width: 50%;
         }
+
+        @include mixins.mq(sm) {
+            width: 73%;
+        }
+
+
     }
 
     &__inner {
@@ -119,20 +158,25 @@
 
         @include mixins.mq(md) {
             width: 65%;
+
+            @include mixins.mq(sm) {
+                width: 100%;
+                gap: 10px;
+            }
+
         }
 
-    }
+        &__title {
+            margin-bottom: 15px;
+            color: #f39c12;
+            font-weight: bold;
+            font-size: 24px;
+        }
 
-    &__title {
-        margin-bottom: 15px;
-        color: #f39c12;
-        font-weight: bold;
-        font-size: 24px;
-    }
-
-    &__description {
-        font-size: 16px;
-        line-height: 1.8;
+        &__description {
+            font-size: 16px;
+            line-height: 1.8;
+        }
     }
 
 
@@ -167,8 +211,8 @@
 
     &__close-btn {
         position: absolute;
-        top: 8%;
-        right: 10%;
+        top: 9%;
+        right: 21%;
         width: 80px;
         height: 80px;
         display: flex;
@@ -192,8 +236,14 @@
         left: 0;
         transform-origin: center;
         z-index: 300;
+
+        @include mixins.mq(sm) {
+            width: 50px;
+        }
+
     }
 }
+
 
 
 /* バツ表示 */
