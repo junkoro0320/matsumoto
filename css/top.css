@@ -280,7 +280,7 @@ img {
 }
 @media (max-width: 600px) {
   .modal {
-    padding: 1rem;
+    padding: 0;
   }
 }
 .modal:not([open]) {
@@ -306,25 +306,25 @@ img {
   border-radius: 100px;
   pointer-events: auto;
   background-image: url(../image/modal__body-background.png);
-  background-size: 80% 60%;
+  background-size: 90% 85%;
   background-repeat: no-repeat;
   background-position: center;
 }
 @media (max-width: 1280px) {
   .modal__content {
     width: 85%;
-    height: 90vh;
+    height: 95vh;
     padding: 100px 90px;
   }
 }
 @media (max-width: 960px) {
   .modal__content {
     background-image: none;
+    padding: 87px 64px;
   }
 }
 @media (max-width: 600px) {
   .modal__content {
-    padding: 87px 64px;
     height: 850px;
     background-image: none;
   }
@@ -333,16 +333,24 @@ img {
   width: 28%;
   height: auto;
   position: absolute;
-  right: -40px;
-  bottom: 0;
+  right: -100px;
+  bottom: -60px;
   z-index: 100;
   max-width: 300px;
 }
 @media (max-width: 960px) {
   .modal__illustration {
+    width: 40%;
+    right: -80px;
+    bottom: 30px;
+  }
+}
+@media (max-width: 600px) {
+  .modal__illustration {
     width: 149px;
     height: 106px;
-    bottom: 60px;
+    bottom: -20px;
+    right: -70px;
   }
 }
 .modal__body {
@@ -371,9 +379,14 @@ img {
 .modal__image-wrapper {
   width: 33%;
 }
+@media (max-width: 1280px) {
+  .modal__image-wrapper {
+    width: 40%;
+  }
+}
 @media (max-width: 960px) {
   .modal__image-wrapper {
-    width: 50%;
+    width: 65%;
   }
 }
 @media (max-width: 600px) {
@@ -389,6 +402,11 @@ img {
   justify-content: flex-start;
   gap: 15px;
 }
+@media (max-width: 600px) {
+  .modal__inner {
+    padding-top: 30px;
+  }
+}
 .modal__inner-season, .modal__inner-cut {
   display: inline-block;
   padding: 15px 0px;
@@ -399,10 +417,12 @@ img {
 }
 .modal__inner-season {
   border: 1px solid #f39c12;
+  white-space: nowrap;
 }
 .modal__inner-cut {
   background-color: #f39c12;
   color: #fff;
+  white-space: nowrap;
 }
 .modal__text-wrapper {
   width: 47%;
@@ -416,7 +436,7 @@ img {
 }
 @media (max-width: 960px) {
   .modal__text-wrapper {
-    width: 65%;
+    width: 95%;
   }
 }
 @media (max-width: 960px) and (max-width: 600px) {
@@ -476,6 +496,12 @@ img {
   outline: none;
   z-index: 200;
   outline: none;
+}
+@media (max-width: 600px) {
+  .modal__close-btn {
+    top: 5%;
+    right: 15%;
+  }
 }
 .modal__bar {
   position: absolute;

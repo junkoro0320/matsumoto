@@ -11,7 +11,7 @@
     pointer-events: auto;
 
     @include mixins.mq(sm) {
-        padding: 1rem;
+        padding: 0;
     }
 
 
@@ -44,7 +44,7 @@
         border-radius: 100px;
         pointer-events: auto; // 必要に応じて調整
         background-image: url(../image/modal__body-background.png);
-        background-size: 80% 60%;
+        background-size: 90% 85%;
 
         background-repeat: no-repeat;
 
@@ -53,16 +53,16 @@
 
         @include mixins.mq(lg) {
             width: 85%;
-            height: 90vh;
+            height: 95vh;
             padding: 100px 90px;
         }
 
         @include mixins.mq(md) {
             background-image: none;
+            padding: 87px 64px;
         }
 
         @include mixins.mq(sm) {
-            padding: 87px 64px;
             height: 850px;
             background-image: none;
         }
@@ -75,15 +75,23 @@
         width: 28%;
         height: auto;
         position: absolute;
-        right: -40px;
-        bottom: 0;
+        right: -100px;
+        bottom: -60px;
         z-index: 100;
         max-width: 300px;
 
         @include mixins.mq(md) {
+            width: 40%;
+            right: -80px;
+            bottom: 30px;
+        }
+
+
+        @include mixins.mq(sm) {
             width: 149px;
             height: 106px;
-            bottom: 60px;
+            bottom: -20px;
+            right: -70px;
         }
     }
 
@@ -112,8 +120,12 @@
     &__image-wrapper {
         width: 33%;
 
+        @include mixins.mq(lg) {
+            width: 40%;
+        }
+
         @include mixins.mq(md) {
-            width: 50%;
+            width: 65%;
         }
 
         @include mixins.mq(sm) {
@@ -126,6 +138,10 @@
     &__inner {
         padding-top: 44px;
         @include mixins.flex-col(15px);
+
+        @include mixins.mq(sm) {
+            padding-top: 30px;
+        }
 
         &-season,
         &-cut {
@@ -140,11 +156,14 @@
 
         &-season {
             border: 1px solid #f39c12;
+            white-space: nowrap;
+
         }
 
         &-cut {
             background-color: #f39c12;
             color: #fff;
+            white-space: nowrap;
         }
     }
 
@@ -157,7 +176,7 @@
         position: relative;
 
         @include mixins.mq(md) {
-            width: 65%;
+            width: 95%;
 
             @include mixins.mq(sm) {
                 width: 100%;
@@ -225,6 +244,11 @@
         outline: none;
         z-index: 200;
         outline: none;
+
+        @include mixins.mq(sm) {
+            top: 5%;
+            right: 15%;
+        }
     }
 
     &__bar {
