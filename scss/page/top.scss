@@ -31,25 +31,23 @@ img {
 }
 
 
-.section-title {
-  @include mixins.flex-col(15px, flex-start, flex-start);
-  /* align-itemsをflex-startに */
-  line-height: var.$line-height-sub;
-  width: 90%;
+.section__title {
+  @include mixins.flex-col;
+  align-items: flex-start;
   margin: 0 auto;
 
-  &__jp {
+  &-jp {
     font-weight: 500;
     font-size: 36px;
-    @include mixins.fluid-font(24px, 2vw, 36px);
+    line-height: var.$line-height-sub;
   }
 
 
-  &__en {
+  &-en {
     color: var(--color-primary);
     font-weight: normal;
     font-size: 28px;
-    @include mixins.fluid-font(20px, 2vw, 28px);
+    line-height: var.$line-height-sub;
   }
 }
 
@@ -61,9 +59,9 @@ $animation-duration: 24s;
 .slider__frame {
   position: relative;
   overflow: hidden;
-  margin: 0 auto;
+  margin-top: -57px;
   width: 100%;
-  height: 788px;
+  height: 798px;
   clip-path: inset(0 round 0 0 200px 200px);
 
   @include mixins.mq(sm) {
@@ -104,14 +102,13 @@ $animation-duration: 24s;
 /* みかん画像 */
 
 .overlay-mikan {
-  @include mixins.absolute-center;
   position: absolute;
-  top: 60%;
+  top: 70%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 200;
   max-width: 390px;
-  width: 23vw;
+  width: 26vw;
   height: auto;
 
 
@@ -212,7 +209,7 @@ $animation-duration: 24s;
 /* オーバーレイ */
 .slider__overlay {
   position: absolute;
-  top: 20%;
+  top: 10%;
   right: 25%;
   font-family: 'Shippori Mincho', serif;
   line-height: 1.17;
@@ -280,25 +277,31 @@ $animation-duration: 24s;
   opacity: 1;
 }
 
-.hometown.wrapper {
-  width: 73%;
-}
+
 
 .hometown {
+  margin: 80px 0 27px 0;
+
+
   &__image--inner {
     position: relative;
     border-radius: 100px;
+    margin: 80px 0 27px 0;
   }
 
-  &__wrapper {
+  & .wrapper {
     margin: 0 auto;
     max-width: 73%;
+
+    @include mixins.mq(sm) {
+      width: 100%;
+    }
   }
 
   &__title {
     @include mixins.flex-center;
     gap: 26px;
-    margin: 80px 0 27px 0;
+
   }
 
   &__subtitle {
@@ -374,23 +377,22 @@ $animation-duration: 24s;
 
 /*About usセクション
 -----------------------------*/
-.section__title-about {
-  width: 100%;
-}
-
 
 
 .about {
   margin-top: 71px;
-  padding-top: 60px;
+  padding: 60px 0px 100px 0px;
   background-color: #e8f5ff;
-  margin-bottom: 66px;
+
+  @include mixins.mq(sm) {
+    margin-top: 40px 0px 50px 0px;
+    padding: 20px 0px 50px 0px;
+  }
 
 
 
   &__container {
     @include mixins.flex-col(58px);
-    padding-bottom: 102px;
   }
 
   &__place {
@@ -403,16 +405,15 @@ $animation-duration: 24s;
 
     @include mixins.mq(sm) {
       position: relative;
+      margin-top: 100px;
 
     }
 
 
 
-    &--girl,
-    &--map {
-      flex: 1; // 均等に分ける
-      max-width: 50%;
-
+    &--girl {
+      width: 44%;
+      padding-top: 100px;
 
       @include mixins.mq(sm) {
         flex-shrink: 0;
@@ -421,28 +422,40 @@ $animation-duration: 24s;
     }
 
     &--map {
-      margin-top: -73px;
-
-      @include mixins.mq(sm) {
-        top: 0;
-        left: 0;
-        width: 100vw;
-      }
-    }
-
-
-
-    &--girl {
-      margin-top: 100px;
-
-
-      @include mixins.mq(sm) {
-        margin: 0px;
-        top: 100%;
-        right: 0;
-      }
+      width: 49%;
     }
   }
+
+
+
+
+
+
+  &--map {
+    margin-top: -73px;
+
+    @include mixins.mq(sm) {
+      top: 0;
+      left: 0;
+      width: 100vw;
+    }
+
+    @include mixins.mq(sm) {
+      margin: 0px;
+      top: 100%;
+      right: 0;
+    }
+
+
+  }
+
+
+
+
+
+
+
+
 
 
 
@@ -450,6 +463,7 @@ $animation-duration: 24s;
   &__item {
     &-upper {
       @include mixins.flex-between;
+      align-items: flex-end;
 
       @include mixins.mq(md) {
         @include mixins.flex-col(50px);
@@ -459,6 +473,7 @@ $animation-duration: 24s;
     &-bottom {
       position: relative;
       @include mixins.flex-center;
+      align-items: flex-end;
       gap: 5%;
 
 
@@ -471,9 +486,6 @@ $animation-duration: 24s;
 
   &__inner {
     &-upper {
-      @include mixins.flex-col(38px);
-      align-items: flex-start;
-      margin-top: auto;
       width: 40%;
 
 
@@ -506,7 +518,7 @@ $animation-duration: 24s;
     display: inline-block;
     padding: 10px 16px;
     border-radius: 20px;
-    background-color: var(--color-primary);
+    background-color: var.$color-primary;
     color: #fff;
     font-weight: 500;
     font-size: 20px;
@@ -521,12 +533,13 @@ $animation-duration: 24s;
     background-color: #fff;
     border-radius: 20px;
     border: solid 1px #3D4149;
+
   }
 
 
   &__box-upper {
     @include mixins.mq(sm) {
-      margin-top: 300px;
+      margin-top: 130px;
     }
   }
 
@@ -539,11 +552,11 @@ $animation-duration: 24s;
     line-height: var.$line-height-base;
     width: 80%;
     padding: 35px 0px;
+    height: 76%;
   }
 
 
   &__family {
-    @include mixins.flex-col;
     width: 55%;
 
     @include mixins.mq(md) {
@@ -583,6 +596,7 @@ $animation-duration: 24s;
   position: relative;
   z-index: 1;
   height: auto;
+  margin: 80px 0px 88px 0px;
   margin-bottom: 88px;
 
   @include mixins.mq(md) {
@@ -653,12 +667,17 @@ $animation-duration: 24s;
 -----------------------------*/
 
 .care .section__title {
-  display: inline-block;
-  width: 84%;
+  display: block;
+  width: 89%;
+  margin: 0 auto;
 }
 
 .care {
   margin-bottom: 60px;
+
+  & .wrapper {
+    width: 100%;
+  }
 
   &__box {
 
@@ -667,6 +686,7 @@ $animation-duration: 24s;
       gap: 4%;
       align-items: flex-start;
       margin-top: 60px;
+      justify-content: flex-start;
 
       @include mixins.mq(md) {
         @include mixins.flex-col(20px);
@@ -675,6 +695,7 @@ $animation-duration: 24s;
 
     &-bottom {
       @include mixins.flex-center;
+      justify-content: flex-end;
       align-items: flex-start;
       margin-top: 14%;
       gap: 4%;
@@ -702,6 +723,10 @@ $animation-duration: 24s;
     @include mixins.mq(md) {
       width: 89%
     }
+
+    @include mixins.mq(sm) {
+      width: 100%
+    }
   }
 
 
@@ -712,6 +737,11 @@ $animation-duration: 24s;
     @include mixins.mq(md) {
       width: 89%
     }
+
+    @include mixins.mq(sm) {
+      width: 100%
+    }
+
   }
 
   &__text {
@@ -753,18 +783,25 @@ $animation-duration: 24s;
 
 .juicy-crew {
 
+  & .wrapper {
+    width: 98%;
+  }
+
 
   background-color: #FDF5E9;
   padding-bottom: 110px;
 
   & .section__title {
+    display: block;
+    width: 89%;
     padding-top: 50px;
+    margin: 0 auto;
   }
 
   &__gallery {
     display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(18, 32px);
     position: relative;
     width: 97%;
     margin-inline: auto;
@@ -786,6 +823,7 @@ $animation-duration: 24s;
     align-self: flex-start;
     outline: none;
 
+
     @include mixins.mq(sm) {
       width: 90%;
       gap: 10px;
@@ -795,9 +833,6 @@ $animation-duration: 24s;
 
 
     img {
-      width: 80%;
-      margin: 0 auto;
-
       @include mixins.mq(sm) {
         margin-right: 10px;
       }
@@ -815,22 +850,22 @@ $animation-duration: 24s;
 
     // 2番目
     &:nth-child(2) {
-      grid-column: 3 / 6;
-      grid-row: 3 / 5;
+      grid-column: 4 / 7;
+      grid-row: 10 / 18;
       z-index: 3;
     }
 
     // 3番目
     &:nth-child(3) {
-      grid-column: 5 / 8;
-      grid-row: 1 / 3;
+      grid-column: 6 / 9;
+      grid-row: 1 / 12;
       z-index: 2;
     }
 
     // 4番目
     &:nth-child(4) {
-      grid-column: 6 / 9;
-      grid-row: 3 / 6;
+      grid-column: 9 / 12;
+      grid-row: 9 / 18;
       z-index: 1;
     }
 
@@ -862,9 +897,10 @@ $animation-duration: 24s;
 
 
 .cafe-intro {
+
   padding-top: 60px;
 
-  @include mixins.mq(sm) {
+  @include mixins.mq(md) {
     width: 93%;
   }
 
@@ -872,6 +908,18 @@ $animation-duration: 24s;
     width: 100%;
   }
 
+  & .wrapper {
+    @include mixins.mq(sm) {
+      width: 100%;
+    }
+  }
+
+  & .section__title {
+
+    @include mixins.mq(sm) {
+      width: 89%;
+    }
+  }
 
   &__content {
     @include mixins.flex-between;
@@ -879,6 +927,11 @@ $animation-duration: 24s;
 
     @include mixins.mq(md) {
       @include mixins.flex-col(38px);
+
+      @include mixins.mq(sm) {
+        gap: 33px;
+      }
+
     }
   }
 
@@ -898,8 +951,12 @@ $animation-duration: 24s;
 
   &__info-block {
     @include mixins.flex-center;
-
     width: 100%;
+
+    @include mixins.mq(sm) {
+      @include mixins.flex-col(17px);
+      width: 75%;
+    }
   }
 
   &__photo-content {
@@ -908,8 +965,9 @@ $animation-duration: 24s;
     padding-top: 80px;
 
 
-    @include mixins.mq(sm) {
+    @include mixins.mq(md) {
       width: 100%;
+      padding-top: 36px;
     }
   }
 
@@ -943,11 +1001,19 @@ $animation-duration: 24s;
   &__text-column {
     @include mixins.flex-col(30px);
 
+    @include mixins.mq(sm) {
+      gap: 20px;
+    }
+
   }
 
   &__info-inner {
     @include mixins.flex-col;
     width: 60%;
+
+    @include mixins.mq(sm) {
+      width: 100%;
+    }
   }
 
   &__info-title {
@@ -990,6 +1056,15 @@ $animation-duration: 24s;
 
     & img {
       position: absolute;
+
+      @include mixins.mq(sm) {
+        position: static;
+      }
+    }
+
+    @include mixins.mq(sm) {
+      position: static;
+      @include mixins.flex-between
     }
   }
 
@@ -998,12 +1073,14 @@ $animation-duration: 24s;
     top: 0;
     transform: translateY(-100%);
 
+    @include mixins.mq(sm) {
+      transform: translateY(0%);
+    }
+
   }
 
   &__orange-icon {
     right: 0;
-
-
   }
 }
 
@@ -1015,24 +1092,29 @@ $animation-duration: 24s;
   margin-top: 131px;
   margin-bottom: 60px;
 
+
   @include mixins.mq(sm) {
+    position: relative;
     margin-top: 90px;
 
   }
 
-  & .wrapper {
-    width: 80%;
-    margin-left: 5%;
-
-    @include mixins.mq(md) {
-      margin: 0 auto;
-      width: 89%;
-    }
+  & .section__title {
+    width: 100%;
 
     @include mixins.mq(sm) {
-      width: 98%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+
+      margin-bottom: 0;
+      width: 89%;
+      margin-left: auto;
+      margin-right: auto;
     }
   }
+
 
   &__column {
     @include mixins.flex-between;
@@ -1108,7 +1190,7 @@ $animation-duration: 24s;
 
     @include mixins.mq(sm) {
       width: 89%;
-      margin-top: 43px;
+      margin-top: 86px;
     }
   }
 
@@ -1153,20 +1235,7 @@ $animation-duration: 24s;
 
 }
 
-.section__title-pc {
-  @include mixins.mq(sm) {
-    display: none;
-  }
-}
 
-
-.section__title-sp {
-  display: none;
-
-  @include mixins.mq(sm) {
-    display: block;
-  }
-}
 
 
 /*ここからお問い合わせ
@@ -1185,7 +1254,7 @@ $animation-duration: 24s;
   }
 
   &.section__title p,
-  .section title h2 {
+  .section__title h2 {
     display: inline-block;
     white-space: nowrap;
   }

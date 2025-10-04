@@ -29,6 +29,9 @@
 
 
 .header__hamburger {
+  position: fixed;
+  top: 20px;
+  right: 20px;
   z-index: 10002;
   display: flex;
   align-items: center;
@@ -88,12 +91,24 @@
   transition: all .8s ease;
   /* 余分なセミコロンを削除 */
 
+  @include mixins.mq(sm) {
+    border-radius: 0 0 100px 100px;
+    padding-top: 80px;
+    height: 387px;
+  }
+
+
+
   &-list {
     display: flex;
     flex-direction: row;
     justify-content: center;
     gap: 40px;
     letter-spacing: 0.5em;
+
+    @include mixins.mq(sm) {
+      gap: 20px;
+    }
   }
 
   &-item {
