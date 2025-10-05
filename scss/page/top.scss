@@ -38,8 +38,10 @@ img {
 
   &-jp {
     font-weight: 500;
-    font-size: 36px;
+    @include mixins.fluid-font(24px, 2vw, 36px);
     line-height: var.$line-height-sub;
+
+
   }
 
 
@@ -47,6 +49,7 @@ img {
     color: var(--color-primary);
     font-weight: normal;
     font-size: 28px;
+    @include mixins.fluid-font(18px, 2vw, 28px);
     line-height: var.$line-height-sub;
   }
 }
@@ -405,19 +408,18 @@ $animation-duration: 24s;
 
     @include mixins.mq(sm) {
       position: relative;
-      margin-top: 100px;
+      margin-top: 40px;
 
     }
 
 
-
     &--girl {
       width: 44%;
-      padding-top: 100px;
 
       @include mixins.mq(sm) {
-        flex-shrink: 0;
         position: absolute;
+        right: 0;
+        bottom: 0;
       }
     }
 
@@ -450,37 +452,31 @@ $animation-duration: 24s;
   }
 
 
-
-
-
-
-
-
-
-
-
-
   &__item {
     &-upper {
       @include mixins.flex-between;
       align-items: flex-end;
 
-      @include mixins.mq(md) {
+      @include mixins.mq(lg) {
         @include mixins.flex-col(50px);
       }
     }
 
     &-bottom {
-      position: relative;
       @include mixins.flex-center;
       align-items: flex-end;
       gap: 5%;
 
+      @include mixins.mq(lg) {
+        position: relative;
+      }
+
 
       @include mixins.mq(md) {
         @include mixins.flex-col(50px);
-
       }
+
+
     }
   }
 
@@ -489,14 +485,19 @@ $animation-duration: 24s;
       width: 40%;
 
 
-      @include mixins.mq(md) {
-        width: 89%;
+      @include mixins.mq(lg) {
+        width: 100%;
       }
     }
 
     &-bottom {
-      position: relative;
-      margin-top: auto;
+      width: 100%;
+
+      @include mixins.mq(lg) {
+        margin-top: 46px;
+      }
+
+
     }
   }
 
@@ -505,11 +506,20 @@ $animation-duration: 24s;
   }
 
   &__goal {
-    @include mixins.flex-col(88px);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 88px;
     width: 40%;
 
-    @include mixins.mq(md) {
-      width: 89%;
+    @include mixins.mq(lg) {
+      flex-direction: row;
+      width: 100%;
+      gap: 179px;
+    }
+
+    @include mixins.mq(sm) {
+      flex-direction: column;
+      gap: 0px;
     }
   }
 
@@ -534,14 +544,14 @@ $animation-duration: 24s;
     border-radius: 20px;
     border: solid 1px #3D4149;
 
-  }
-
-
-  &__box-upper {
     @include mixins.mq(sm) {
-      margin-top: 130px;
+      margin-top: 61px;
     }
+
   }
+
+
+
 
 
 
@@ -557,15 +567,21 @@ $animation-duration: 24s;
 
 
   &__family {
-    width: 55%;
+    width: 48%;
 
-    @include mixins.mq(md) {
-      width: 84%;
+
+    @include mixins.mq(lg) {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 56%;
     }
 
-    @include mixins.mq(sm) {
-      width: 100%;
 
+
+    @include mixins.mq(sm) {
+      width: 80%;
+      position: static;
     }
 
     &--photo {
@@ -577,16 +593,19 @@ $animation-duration: 24s;
 
 
   .lemon-boy {
-    display: block;
-    margin: 0 0 0 auto;
     width: 84%;
-    height: auto;
+    margin-left: auto;
+
+    @include mixins.mq(lg) {
+      margin: 0;
+      width: 39%;
+    }
 
     @include mixins.mq(sm) {
-      width: 100%;
-
+      width: 91%;
     }
   }
+
 }
 
 /*農園紹介スライドセクション
@@ -666,18 +685,11 @@ $animation-duration: 24s;
 /*私達のこだわりセクション
 -----------------------------*/
 
-.care .section__title {
-  display: block;
-  width: 89%;
-  margin: 0 auto;
-}
+
 
 .care {
   margin-bottom: 60px;
 
-  & .wrapper {
-    width: 100%;
-  }
 
   &__box {
 
@@ -688,7 +700,7 @@ $animation-duration: 24s;
       margin-top: 60px;
       justify-content: flex-start;
 
-      @include mixins.mq(md) {
+      @include mixins.mq(sm) {
         @include mixins.flex-col(20px);
       }
     }
@@ -700,7 +712,7 @@ $animation-duration: 24s;
       margin-top: 14%;
       gap: 4%;
 
-      @include mixins.mq(md) {
+      @include mixins.mq(sm) {
         @include mixins.flex-col(20px);
         flex-direction: column-reverse
       }
@@ -716,7 +728,7 @@ $animation-duration: 24s;
   &__desc {
     display: flex;
     flex-direction: column;
-    width: 35%;
+    width: 40%;
     align-items: flex-start;
     gap: 1.5rem;
 
@@ -729,16 +741,24 @@ $animation-duration: 24s;
     }
   }
 
+  &__img-wrapper-01 {
+    margin-left: -6.25vw;
+    width: calc(100% + 6.25vw);
+  }
+
+  &__img-wrapper-02 {
+    border-radius: 5px;
+    margin-right: -6.25vw;
+    width: calc(100% + 6.25vw);
+  }
 
   &__item {
     @include mixins.img-block;
     width: 53%;
 
-    @include mixins.mq(md) {
-      width: 89%
-    }
 
-    @include mixins.mq(sm) {
+
+    @include mixins.mq(md) {
       width: 100%
     }
 
