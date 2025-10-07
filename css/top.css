@@ -773,7 +773,8 @@ img {
 }
 .section__title-jp {
   font-weight: 500;
-  font-size: clamp(24px, 2vw, 36px);
+  font-size: 36px;
+  letter-spacing: 150%;
   line-height: 1.5;
 }
 .section__title-en {
@@ -1104,6 +1105,7 @@ img {
   align-items: center;
   justify-content: space-between;
   width: 59%;
+  align-items: flex-end;
 }
 @media (max-width: 960px) {
   .about__place {
@@ -1163,10 +1165,9 @@ img {
 }
 .about__item-bottom {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: flex-end;
-  gap: 5%;
+  gap: 68px;
 }
 @media (max-width: 1280px) {
   .about__item-bottom {
@@ -1258,7 +1259,7 @@ img {
   height: 76%;
 }
 .about__family {
-  width: 48%;
+  width: 55%;
 }
 @media (max-width: 1280px) {
   .about__family {
@@ -1299,8 +1300,7 @@ img {
   position: relative;
   z-index: 1;
   height: auto;
-  margin: 80px 0px 88px 0px;
-  margin-bottom: 88px;
+  margin: 70px 0px 80px 0px;
 }
 @media (max-width: 960px) {
   .slider {
@@ -1362,9 +1362,9 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 4%;
+  gap: 70px;
   align-items: flex-start;
-  margin-top: 60px;
+  margin-top: 51px;
   justify-content: flex-start;
 }
 @media (max-width: 600px) {
@@ -1382,8 +1382,8 @@ img {
   justify-content: center;
   justify-content: flex-end;
   align-items: flex-start;
-  margin-top: 14%;
-  gap: 4%;
+  margin-top: 180px;
+  gap: 70px;
 }
 @media (max-width: 600px) {
   .care__box-bottom {
@@ -1409,7 +1409,7 @@ img {
   flex-direction: column;
   width: 40%;
   align-items: flex-start;
-  gap: 1.5rem;
+  gap: 30px;
 }
 @media (max-width: 960px) {
   .care__desc {
@@ -1422,13 +1422,15 @@ img {
   }
 }
 .care__img-wrapper-01 {
-  margin-left: -6.25vw;
-  width: calc(100% + 6.25vw);
+  position: relative;
+  margin-left: -5.8vw;
+  width: calc(100% + 6.5vw);
 }
 .care__img-wrapper-02 {
+  position: relative;
   border-radius: 5px;
-  margin-right: -6.25vw;
-  width: calc(100% + 6.25vw);
+  margin-right: -5.8vw;
+  width: calc(100% + 6.5vw);
 }
 .care__item {
   display: block;
@@ -1468,8 +1470,9 @@ img {
 /*育てているみかんたちセクション
 -----------------------------*/
 .juicy-crew {
+  padding-top: 60px;
   background-color: #FDF5E9;
-  padding-bottom: 110px;
+  padding-bottom: 100px;
 }
 .juicy-crew .wrapper {
   width: 98%;
@@ -1477,27 +1480,26 @@ img {
 .juicy-crew .section__title {
   display: block;
   width: 89%;
-  padding-top: 50px;
   margin: 0 auto;
 }
 .juicy-crew__gallery {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(18, 32px);
-  position: relative;
-  width: 97%;
-  margin-inline: auto;
-  padding-top: 60px;
+  margin: 90px 0px 30px 0px;
 }
-@media (max-width: 600px) {
-  .juicy-crew__gallery {
-    padding-bottom: 60px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: flex-start;
-    gap: 50px;
-  }
+.juicy-crew__gallery-01 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 76%;
+  gap: 270px;
+}
+.juicy-crew__gallery-02 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  gap: 300px;
+  margin-top: -65px;
+  margin-left: auto;
 }
 .juicy-crew__item {
   display: flex;
@@ -1519,29 +1521,10 @@ img {
     margin-right: 10px;
   }
 }
-.juicy-crew__item:nth-child(1) {
-  grid-column: 1/4;
-  grid-row: 1/3;
-  z-index: 4;
-}
-.juicy-crew__item:nth-child(2) {
-  grid-column: 4/7;
-  grid-row: 10/18;
-  z-index: 3;
-}
-.juicy-crew__item:nth-child(3) {
-  grid-column: 6/9;
-  grid-row: 1/12;
-  z-index: 2;
-}
-.juicy-crew__item:nth-child(4) {
-  grid-column: 9/12;
-  grid-row: 9/18;
-  z-index: 1;
-}
 .juicy-crew__label {
   writing-mode: vertical-rl;
   margin-top: 0.5rem;
+  letter-spacing: 0.5em;
   font-size: clamp(16px, 2vw, 24px);
 }
 
@@ -1558,7 +1541,7 @@ img {
 /*ここから風早珈琲焙煎所BOWEN
 -----------------------------*/
 .cafe-intro {
-  padding-top: 60px;
+  padding-top: 67px;
 }
 @media (max-width: 960px) {
   .cafe-intro {
@@ -1602,6 +1585,7 @@ img {
 }
 .cafe-intro__right-column {
   width: 37%;
+  padding-top: 20px;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -1659,7 +1643,7 @@ img {
   color: #5d1f0d;
 }
 .cafe-intro__headline {
-  font-size: clamp(18px, 2vw, 20px);
+  font-size: clamp(18px, 2vw, 32px);
   color: #fff;
   background-color: #5d1f0d;
   padding: 20px;
@@ -1669,14 +1653,20 @@ img {
 }
 .cafe-intro__description {
   line-height: 1.8;
-  padding-bottom: 35px;
+  padding-bottom: 77px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 30px;
+  align-items: flex-start;
 }
 .cafe-intro__text-column {
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: flex-start;
-  gap: 30px;
+  gap: 15px;
 }
 @media (max-width: 600px) {
   .cafe-intro__text-column {
@@ -1699,6 +1689,7 @@ img {
 .cafe-intro__info-title {
   position: relative;
   display: inline-block;
+  font-size: 14px;
 }
 .cafe-intro__info-title::after {
   content: "";
@@ -1724,6 +1715,7 @@ img {
 }
 .cafe-intro__info-list {
   padding-top: 20px;
+  font-size: 12px;
 }
 .cafe-intro__icon-group {
   display: block;
@@ -1790,7 +1782,7 @@ img {
 .online-shop__column {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   align-items: flex-start;
 }
 @media (max-width: 600px) {
@@ -1804,7 +1796,7 @@ img {
   }
 }
 .online-shop__column-left {
-  width: 33%;
+  width: 30%;
 }
 @media (max-width: 960px) {
   .online-shop__column-left {
@@ -1822,11 +1814,11 @@ img {
   align-items: center;
   flex-direction: column;
   justify-content: flex-start;
-  gap: 30px;
+  gap: 54px;
   padding-top: 50px;
-  padding-bottom: 78px;
   align-items: first baseline;
   text-align: left;
+  line-height: 180%;
 }
 @media (max-width: 1280px) {
   .online-shop__text-column {
@@ -1886,7 +1878,7 @@ img {
 }
 .online-shop__photo {
   display: block;
-  width: 79%;
+  width: 88%;
   height: auto;
 }
 @media (max-width: 960px) {
