@@ -549,6 +549,11 @@ img {
   width: 137px;
   height: auto;
 }
+@media (max-width: 600px) {
+  .header__top {
+    width: 80px;
+  }
+}
 
 .header__logo {
   z-index: 10002;
@@ -577,6 +582,7 @@ img {
   .header__hamburger {
     width: 60px;
     height: 60px;
+    padding-top: 17px;
   }
 }
 .header__hamburger--bar {
@@ -692,6 +698,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  align-items: flex-start;
   width: 72%;
   margin-bottom: 58px;
   margin: 0 auto;
@@ -714,6 +721,7 @@ img {
   align-items: center;
   justify-content: left;
   gap: 15px;
+  width: 57%;
 }
 .footer__left-container {
   display: flex;
@@ -721,6 +729,7 @@ img {
   flex-direction: column;
   justify-content: flex-start;
   gap: 23px;
+  align-items: flex-start;
   width: 13%;
 }
 @media (max-width: 600px) {
@@ -770,19 +779,18 @@ img {
   gap: 0;
   align-items: flex-start;
   margin: 0 auto;
+  line-height: 1.5;
 }
 .section__title-jp {
   font-weight: 500;
-  font-size: 36px;
+  font-size: clamp(26px, 2vw, 36px);
   letter-spacing: 150%;
-  line-height: 1.5;
 }
 .section__title-en {
   color: var(--color-primary);
   font-weight: normal;
   font-size: 28px;
   font-size: clamp(18px, 2vw, 28px);
-  line-height: 1.5;
 }
 
 /*MVスライド 
@@ -800,6 +808,7 @@ img {
   .slider__frame {
     height: 467px;
     clip-path: inset(0 round 0 0 100px 100px);
+    margin-top: -35px;
   }
 }
 .slider__frame--island, .slider__frame--harvest, .slider__frame--farmer {
@@ -932,6 +941,11 @@ img {
     right: 10%;
   }
 }
+@media (max-width: 600px) {
+  .slider__overlay {
+    right: 5%;
+  }
+}
 
 .slider-text {
   color: #fff;
@@ -982,6 +996,11 @@ img {
 .hometown {
   margin: 80px 0 27px 0;
 }
+@media (max-width: 600px) {
+  .hometown {
+    margin: 30px 0 46px 0;
+  }
+}
 .hometown__image--inner {
   position: relative;
   border-radius: 100px;
@@ -993,7 +1012,7 @@ img {
 }
 @media (max-width: 600px) {
   .hometown .wrapper {
-    width: 100%;
+    max-width: 87%;
   }
 }
 .hometown__title {
@@ -1001,14 +1020,28 @@ img {
   align-items: center;
   justify-content: center;
   gap: 26px;
+  margin-bottom: 12px;
+}
+@media (max-width: 600px) {
+  .hometown__title {
+    margin-bottom: 20px;
+  }
 }
 .hometown__subtitle {
-  font-size: clamp(20px, 2vw, 28px);
+  font-size: clamp(18px, 2vw, 28px);
 }
 .hometown__image-inner {
   border-radius: 100px;
   position: relative;
   min-width: 135px;
+}
+@media (max-width: 600px) {
+  .hometown__image--orange {
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: center;
+       object-position: center;
+  }
 }
 .hometown__image-logo {
   position: absolute;
@@ -1073,11 +1106,25 @@ img {
     gap: 30px;
   }
 }
+@media (max-width: 600px) {
+  .hometown__content {
+    padding: 39px 20px 23px 19px;
+    border-radius: 50px;
+    background-color: #0a1f47;
+    gap: 21px;
+  }
+}
 .hometown__text {
   color: #fff;
-  font-size: clamp(14px, 2vw, 20px);
+  font-size: clamp(16px, 2vw, 20px);
   line-height: 1.8;
   width: 80%;
+}
+@media (max-width: 600px) {
+  .hometown__text {
+    width: 100%;
+    font-size: 16px;
+  }
 }
 
 /*About usセクション
@@ -1089,7 +1136,8 @@ img {
 }
 @media (max-width: 600px) {
   .about {
-    margin-top: 40px 0px 50px 0px;
+    margin-top: 0px;
+    margin-bottom: 50px;
     padding: 20px 0px 50px 0px;
   }
 }
@@ -1099,6 +1147,13 @@ img {
   flex-direction: column;
   justify-content: flex-start;
   gap: 58px;
+  margin-top: 10px;
+}
+@media (max-width: 600px) {
+  .about__container {
+    margin-top: 45px;
+    gap: 33px;
+  }
 }
 .about__place {
   display: flex;
@@ -1115,7 +1170,6 @@ img {
 @media (max-width: 600px) {
   .about__place {
     position: relative;
-    margin-top: 40px;
   }
 }
 .about__place--girl {
@@ -1125,26 +1179,18 @@ img {
   .about__place--girl {
     position: absolute;
     right: 0;
-    bottom: 0;
+    bottom: -170px;
+    width: 76%;
   }
 }
 .about__place--map {
   width: 49%;
-}
-.about--map {
-  margin-top: -73px;
+  align-items: flex-end;
 }
 @media (max-width: 600px) {
-  .about--map {
-    top: 0;
-    left: 0;
-    width: 100vw;
-  }
-}
-@media (max-width: 600px) {
-  .about--map {
+  .about__place--map {
     margin: 0px;
-    top: 100%;
+    top: 0;
     right: 0;
   }
 }
@@ -1199,6 +1245,11 @@ img {
     margin-top: 46px;
   }
 }
+@media (max-width: 600px) {
+  .about__inner-bottom {
+    margin-top: 60px;
+  }
+}
 .about__bottom {
   display: flex;
   align-items: center;
@@ -1246,7 +1297,17 @@ img {
 }
 @media (max-width: 600px) {
   .about__box-upper, .about__box-bottom {
-    margin-top: 61px;
+    margin-top: 190px;
+  }
+}
+@media (max-width: 600px) {
+  .about__box-upper {
+    margin-top: 190px;
+  }
+}
+@media (max-width: 600px) {
+  .about__box-bottom {
+    margin-top: 0px;
   }
 }
 .about__text {
@@ -1257,6 +1318,11 @@ img {
   width: 80%;
   padding: 35px 0px;
   height: 76%;
+}
+@media (max-width: 600px) {
+  .about__text {
+    width: 92%;
+  }
 }
 .about__family {
   width: 55%;
@@ -1271,7 +1337,7 @@ img {
 }
 @media (max-width: 600px) {
   .about__family {
-    width: 80%;
+    width: 100%;
     position: static;
   }
 }
@@ -1290,7 +1356,7 @@ img {
 }
 @media (max-width: 600px) {
   .about .lemon-boy {
-    width: 91%;
+    width: 100%;
   }
 }
 
@@ -1436,7 +1502,7 @@ img {
   display: block;
   width: 100%;
   height: auto;
-  width: 53%;
+  width: 54%;
 }
 @media (max-width: 960px) {
   .care__item {
@@ -1470,12 +1536,17 @@ img {
 /*育てているみかんたちセクション
 -----------------------------*/
 .juicy-crew {
-  padding-top: 60px;
   background-color: #FDF5E9;
+  padding-top: 67px;
   padding-bottom: 100px;
 }
 .juicy-crew .wrapper {
   width: 98%;
+}
+@media (max-width: 960px) {
+  .juicy-crew .wrapper {
+    width: 89%;
+  }
 }
 .juicy-crew .section__title {
   display: block;
@@ -1483,23 +1554,43 @@ img {
   margin: 0 auto;
 }
 .juicy-crew__gallery {
-  margin: 90px 0px 30px 0px;
+  margin: 90px 0px 50px 0px;
+}
+@media (max-width: 960px) {
+  .juicy-crew__gallery {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 0;
+  }
 }
 .juicy-crew__gallery-01 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 76%;
+  width: 78%;
   gap: 270px;
+}
+@media (max-width: 960px) {
+  .juicy-crew__gallery-01 {
+    gap: 50px;
+  }
 }
 .juicy-crew__gallery-02 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 80%;
+  width: 78%;
   gap: 300px;
-  margin-top: -65px;
+  margin-top: -90px;
   margin-left: auto;
+}
+@media (max-width: 960px) {
+  .juicy-crew__gallery-02 {
+    margin-top: 50px;
+    gap: 50px;
+  }
 }
 .juicy-crew__item {
   display: flex;
@@ -1541,7 +1632,7 @@ img {
 /*ここから風早珈琲焙煎所BOWEN
 -----------------------------*/
 .cafe-intro {
-  padding-top: 67px;
+  padding-top: 55px;
 }
 @media (max-width: 960px) {
   .cafe-intro {
@@ -1568,6 +1659,7 @@ img {
   align-items: center;
   justify-content: space-between;
   align-items: flex-start;
+  margin-top: 15px;
 }
 @media (max-width: 960px) {
   .cafe-intro__content {
@@ -1585,7 +1677,6 @@ img {
 }
 .cafe-intro__right-column {
   width: 37%;
-  padding-top: 20px;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -1623,8 +1714,8 @@ img {
 }
 .cafe-intro__photo-content {
   display: block;
-  width: 56%;
-  padding-top: 80px;
+  width: 57%;
+  padding-top: 68px;
 }
 @media (max-width: 960px) {
   .cafe-intro__photo-content {
@@ -1636,14 +1727,15 @@ img {
   display: block;
   width: 100%;
   height: auto;
+  margin-bottom: 10px;
 }
 .cafe-intro__caption {
   text-align: right;
-  font-size: clamp(16px, 2vw, 22px);
+  font-size: 28px;
   color: #5d1f0d;
 }
 .cafe-intro__headline {
-  font-size: clamp(18px, 2vw, 32px);
+  font-size: 32px;
   color: #fff;
   background-color: #5d1f0d;
   padding: 20px;
@@ -1740,7 +1832,7 @@ img {
 }
 .cafe-intro__beans-icon {
   left: 0;
-  top: 0;
+  top: 30px;
   transform: translateY(-100%);
 }
 @media (max-width: 600px) {
@@ -1749,14 +1841,15 @@ img {
   }
 }
 .cafe-intro__orange-icon {
-  right: 0;
+  right: -30px;
+  top: -10px;
 }
 
 /*ここからオンラインショップ
 -----------------------------*/
 .online-shop {
-  margin-top: 131px;
-  margin-bottom: 60px;
+  margin-top: 122px;
+  margin-bottom: 80px;
 }
 @media (max-width: 600px) {
   .online-shop {
@@ -1815,7 +1908,7 @@ img {
   flex-direction: column;
   justify-content: flex-start;
   gap: 54px;
-  padding-top: 50px;
+  padding: 50px 0px 100px 0px;
   align-items: first baseline;
   text-align: left;
   line-height: 180%;
@@ -1841,12 +1934,13 @@ img {
   align-items: flex-start;
 }
 .online-shop__comment {
-  width: 23%;
+  width: 20%;
   aspect-ratio: 1/1;
   background: url("../image/speech-bubble.png") no-repeat center/contain;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 75px;
 }
 @media (max-width: 960px) {
   .online-shop__comment {
@@ -1854,7 +1948,7 @@ img {
   }
 }
 .online-shop__column-right {
-  width: 67%;
+  width: 70%;
 }
 @media (max-width: 600px) {
   .online-shop__column-right {
@@ -1875,10 +1969,11 @@ img {
 }
 .online-shop__photo-container {
   flex: 1;
+  margin-top: 23px;
 }
 .online-shop__photo {
   display: block;
-  width: 88%;
+  width: 85%;
   height: auto;
 }
 @media (max-width: 960px) {
@@ -1901,8 +1996,7 @@ img {
 /*ここからお問い合わせ
 -----------------------------*/
 .contact {
-  padding-top: 48px;
-  padding-bottom: 60px;
+  padding: 48px 0px 100px 0px;
   background-color: #fdf5e9;
 }
 .contact .section__title {
@@ -1945,7 +2039,7 @@ img {
 }
 .contact__content {
   position: relative;
-  width: 73%;
+  width: 83%;
   margin-inline: auto;
 }
 @media (max-width: 600px) {
@@ -1970,9 +2064,9 @@ img {
   justify-content: flex-start;
   gap: 20px;
   background-color: #fc8013;
-  padding: 30px 0px;
+  padding: 32px 0px;
   border-radius: 300px;
-  margin-top: 30px;
+  margin-top: 37px;
   width: 100%;
   text-align: left;
 }
@@ -1994,7 +2088,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8%;
+  gap: 85px;
 }
 @media (max-width: 1280px) {
   .contact__buttons {
@@ -2014,6 +2108,9 @@ img {
   display: block;
   width: 30px;
   height: 30px;
+}
+.contact__text {
+  font-size: 18px;
 }
 .contact__text, .contact__note {
   color: #fff;

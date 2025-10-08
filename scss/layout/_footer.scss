@@ -34,6 +34,7 @@
 
     &__content {
         @include mixins.flex-between;
+        align-items: flex-start;
         width: 72%;
         margin-bottom: 58px;
         margin: 0 auto;
@@ -50,10 +51,12 @@
     &__social-icons {
         @include mixins.flex-left;
         gap: 15px;
+        width: 57%;
     }
 
     &__left-container {
         @include mixins.flex-col(23px);
+        align-items: flex-start;
         width: 13%;
 
         @include mixins.mq(sm) {

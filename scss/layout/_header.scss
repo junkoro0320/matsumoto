@@ -21,6 +21,10 @@
   justify-content: space-between;
   width: 137px;
   height: auto;
+
+  @include mixins.mq(sm) {
+    width: 80px;
+  }
 }
 
 .header__logo {
@@ -51,6 +55,7 @@
   @include mixins.mq(sm) {
     width: 60px;
     height: 60px;
+    padding-top: 17px;
   }
 
 
