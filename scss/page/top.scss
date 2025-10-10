@@ -326,12 +326,13 @@ $animation-duration: 24s;
   }
 
   &__image-inner {
-    border-radius: 100px;
     position: relative;
     min-width: 135px;
   }
 
   &__image--orange {
+    border-radius: 100px;
+
     @include mixins.mq(sm) {
       object-fit: cover;
       object-position: center;
@@ -422,7 +423,7 @@ $animation-duration: 24s;
 
   @include mixins.mq(sm) {
     margin-top: 0px;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
     padding: 20px 0px 50px 0px;
   }
 
@@ -433,7 +434,7 @@ $animation-duration: 24s;
     margin-top: 10px;
 
     @include mixins.mq(sm) {
-      margin-top: 45px;
+      margin-top: 40px;
       gap: 33px
     }
 
@@ -459,8 +460,8 @@ $animation-duration: 24s;
       @include mixins.mq(sm) {
         position: absolute;
         right: 0;
-        bottom: -170px;
-        width: 76%;
+        bottom: -185px;
+        width: 78%;
       }
     }
 
@@ -567,7 +568,13 @@ $animation-duration: 24s;
     font-size: 20px;
     top: -16px;
     left: 8%;
-    @include mixins.fluid-font(14px, 2vw, 18px);
+    font-size: 18px;
+
+    @include mixins.mq(sm) {
+      padding: 8px 19px;
+      top: -20px;
+      left: 30%;
+    }
   }
 
   &__box-upper,
@@ -675,6 +682,7 @@ $animation-duration: 24s;
 
   @include mixins.mq(sm) {
     margin-bottom: 40px;
+    margin-top: 0px;
   }
 
 
@@ -753,6 +761,7 @@ $animation-duration: 24s;
 
       @include mixins.mq(sm) {
         @include mixins.flex-col(20px);
+        margin-top: 31px;
       }
     }
 
@@ -765,7 +774,8 @@ $animation-duration: 24s;
 
       @include mixins.mq(sm) {
         @include mixins.flex-col(20px);
-        flex-direction: column-reverse
+        margin-top: 36px;
+
       }
     }
 
@@ -774,6 +784,15 @@ $animation-duration: 24s;
 
   &__subtitle {
     @include mixins.subtitle;
+
+    @include mixins.mq(sm) {
+      order: 1;
+    }
+
+    @include mixins.mq(sm) {
+      padding: 4px 41px;
+      ;
+    }
   }
 
   &__desc {
@@ -788,6 +807,7 @@ $animation-duration: 24s;
     }
 
     @include mixins.mq(sm) {
+      display: contents;
       width: 100%
     }
   }
@@ -796,6 +816,13 @@ $animation-duration: 24s;
     position: relative;
     margin-left: -5.8vw;
     width: calc(100% + 6.5vw);
+
+    @include mixins.mq(sm) {
+      margin: 0 auto;
+      width: 100%;
+
+    }
+
   }
 
   &__img-wrapper-02 {
@@ -803,6 +830,11 @@ $animation-duration: 24s;
     border-radius: 5px;
     margin-right: -5.8vw;
     width: calc(100% + 6.5vw);
+
+    @include mixins.mq(sm) {
+      margin: 0 auto;
+      width: 100%;
+    }
   }
 
   &__item {
@@ -811,14 +843,21 @@ $animation-duration: 24s;
 
 
 
-    @include mixins.mq(md) {
-      width: 100%
+    @include mixins.mq(sm) {
+      width: 100%;
+      order: 2;
     }
+
+
 
   }
 
   &__text {
     line-height: var.$line-height-base;
+
+    @include mixins.mq(sm) {
+      order: 3;
+    }
   }
 
   &__img-wrapper {
@@ -859,6 +898,13 @@ $animation-duration: 24s;
   padding-top: 67px;
   padding-bottom: 100px;
 
+  @include mixins.mq(sm) {
+    padding-top: 31px;
+    padding-bottom: 45px;
+  }
+
+
+
   & .wrapper {
     width: 98%;
 
@@ -878,7 +924,13 @@ $animation-duration: 24s;
     margin: 90px 0px 50px 0px;
 
     @include mixins.mq(md) {
-      @include mixins.flex-col
+      @include mixins.flex-col;
+      margin-bottom: 33px;
+    }
+
+    @include mixins.mq(sm) {
+      margin-top: 25px;
+      margin-bottom: 35px;
     }
   }
 
@@ -891,6 +943,12 @@ $animation-duration: 24s;
     @include mixins.mq(md) {
       gap: 50px
     }
+
+    @include mixins.mq(sm) {
+      @include mixins.flex-col(50px);
+      width: 100%;
+    }
+
   }
 
   &__gallery-02 {
@@ -903,6 +961,11 @@ $animation-duration: 24s;
     @include mixins.mq(md) {
       margin-top: 50px;
       gap: 50px
+    }
+
+    @include mixins.mq(sm) {
+      @include mixins.flex-col(50px);
+      width: 100%;
     }
   }
 
@@ -925,6 +988,10 @@ $animation-duration: 24s;
       width: 90%;
       gap: 10px;
       align-items: center;
+
+      @include mixins.mq(sm) {
+        width: 93%;
+      }
     }
 
 
@@ -944,7 +1011,7 @@ $animation-duration: 24s;
     writing-mode: vertical-rl;
     margin-top: 0.5rem;
     letter-spacing: 0.5em;
-    @include mixins.fluid-font(16px, 2vw, 24px);
+    @include mixins.fluid-font(20px, 2vw, 24px);
 
   }
 }
@@ -976,6 +1043,7 @@ $animation-duration: 24s;
 
   @include mixins.mq(sm) {
     width: 100%;
+    padding-top: 29px;
   }
 
   & .wrapper {
@@ -988,6 +1056,7 @@ $animation-duration: 24s;
 
     @include mixins.mq(sm) {
       width: 89%;
+
     }
   }
 
@@ -1001,6 +1070,7 @@ $animation-duration: 24s;
 
       @include mixins.mq(sm) {
         gap: 33px;
+        margin-top: 0px;
       }
 
     }
@@ -1043,25 +1113,34 @@ $animation-duration: 24s;
   }
 
   &__photo {
-    @include mixins.img-block;
     margin-bottom: 10px;
+
+    @include mixins.mq(sm) {
+      height: 288px;
+      width: auto;
+    }
   }
 
   &__caption {
     text-align: right;
     font-size: 28px;
     color: var.$color-secondary;
-
+    @include mixins.fluid-font(18px, 2vw, 28px);
   }
 
   &__headline {
-    font-size: 32px;
+    @include mixins.fluid-font(20px, 2vw, 32px);
     color: var.$color-white ;
     background-color: var.$color-secondary;
     padding: 20px;
     border-radius: 30px;
     display: inline-block;
     margin-right: auto;
+
+    @include mixins.mq(sm) {
+      padding: 12px 30px;
+    }
+
   }
 
   &__description {
@@ -1069,6 +1148,12 @@ $animation-duration: 24s;
     padding-bottom: 77px;
     @include mixins.flex-col(30px);
     align-items: flex-start;
+    color: var.$color-secondary;
+
+    @include mixins.mq(sm) {
+      gap: 0px;
+      padding-bottom: 25px;
+    }
   }
 
   &__text-column {
@@ -1108,6 +1193,10 @@ $animation-duration: 24s;
   &__info-item {
     @include mixins.flex-center;
     margin-bottom: 10px;
+
+    @include mixins.mq(sm) {
+      width: 100%;
+    }
   }
 
   &__info-term {
@@ -1139,7 +1228,9 @@ $animation-duration: 24s;
 
     @include mixins.mq(sm) {
       position: static;
-      @include mixins.flex-between
+      @include mixins.flex-between;
+      width: 100%;
+      flex-direction: row-reverse;
     }
   }
 
@@ -1150,13 +1241,18 @@ $animation-duration: 24s;
 
     @include mixins.mq(sm) {
       transform: translateY(0%);
+      width: 25%;
     }
 
   }
 
   &__orange-icon {
     right: -30px;
-    top: -10px
+    top: -10px;
+
+    @include mixins.mq(sm) {
+      width: 25%;
+    }
   }
 }
 
@@ -1172,6 +1268,7 @@ $animation-duration: 24s;
   @include mixins.mq(sm) {
     position: relative;
     margin-top: 90px;
+    margin-bottom: 60px;
 
   }
 
@@ -1242,6 +1339,10 @@ $animation-duration: 24s;
   &__photo-wrapper {
     display: flex;
     align-items: flex-start;
+
+    @include mixins.mq(sm) {
+      flex: content;
+    }
   }
 
 
