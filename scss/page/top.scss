@@ -60,7 +60,6 @@ $animation-duration: 24s;
 .slider__frame {
   position: relative;
   overflow: hidden;
-  margin-top: -57px;
   width: 100%;
   height: 798px;
   clip-path: inset(0 round 0 0 200px 200px);
@@ -68,8 +67,6 @@ $animation-duration: 24s;
   @include mixins.mq(sm) {
     height: 467px;
     clip-path: inset(0 round 0 0 100px 100px);
-    margin-top: -35px;
-
   }
 
   &--island,
@@ -1178,9 +1175,20 @@ $animation-duration: 24s;
     position: relative;
     display: inline-block;
     font-size: 14px;
+    width: 100%;
   }
 
   &__info-title::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 1px;
+    background-color: var.$color-secondary;
+  }
+
+  &__info-term::after {
     content: "";
     position: absolute;
     left: 0;
@@ -1196,21 +1204,42 @@ $animation-duration: 24s;
 
     @include mixins.mq(sm) {
       width: 100%;
+      margin-bottom: 7px;
     }
   }
 
   &__info-term {
+    font-size: 12px;
     font-weight: 400;
     width: 100px;
+
+    @include mixins.mq(sm) {
+      width: 80px;
+    }
   }
+
+
+
+  &__info-list::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 1px;
+    background-color: var.$color-secondary;
+  }
+
 
   &__info-description {
     flex: 1;
   }
 
   &__info-list {
+    position: relative;
     padding-top: 20px;
-    font-size: 12px;
+    font-size: 14px;
+    width: 100%;
   }
 
   &__icon-group {
@@ -1252,6 +1281,7 @@ $animation-duration: 24s;
 
     @include mixins.mq(sm) {
       width: 25%;
+      top: 0;
     }
   }
 }
@@ -1265,10 +1295,16 @@ $animation-duration: 24s;
   margin-bottom: 80px;
 
 
-  @include mixins.mq(sm) {
+  @include mixins.mq(md) {
     position: relative;
     margin-top: 90px;
     margin-bottom: 60px;
+
+    @include mixins.mq(sm) {
+      margin-top: 60px;
+      margin-bottom: 0px;
+      padding-bottom: 23px;
+    }
 
   }
 
@@ -1308,7 +1344,7 @@ $animation-duration: 24s;
     }
 
     @include mixins.mq(sm) {
-      width: 89%;
+      width: 100%;
       text-align: center;
     }
 
@@ -1330,8 +1366,8 @@ $animation-duration: 24s;
     }
 
     @include mixins.mq(sm) {
-      padding-top: 33px;
-      padding-bottom: 37px;
+      padding: 28px 0px;
+      gap: 0;
     }
   }
 
@@ -1341,7 +1377,7 @@ $animation-duration: 24s;
     align-items: flex-start;
 
     @include mixins.mq(sm) {
-      flex: content;
+      @include mixins.flex-col;
     }
   }
 
@@ -1358,6 +1394,13 @@ $animation-duration: 24s;
     @include mixins.mq(md) {
       width: 30%;
     }
+
+    @include mixins.mq(sm) {
+      margin-top: 0px;
+      position: absolute;
+      top: 12%;
+      left: 0;
+    }
   }
 
 
@@ -1368,7 +1411,7 @@ $animation-duration: 24s;
 
     @include mixins.mq(sm) {
       width: 89%;
-      margin-top: 86px;
+      margin: 120px 0 0 auto;
     }
   }
 
@@ -1386,6 +1429,11 @@ $animation-duration: 24s;
   &__photo-container {
     flex: 1;
     margin-top: 23px;
+
+    @include mixins.mq(sm) {
+      position: relative;
+      margin-top: 40px;
+    }
   }
 
   &__photo {
@@ -1396,6 +1444,8 @@ $animation-duration: 24s;
     @include mixins.mq(md) {
       width: 100%;
     }
+
+
   }
 
   & .btn {
@@ -1423,6 +1473,11 @@ $animation-duration: 24s;
 .contact {
   padding: 48px 0px 100px 0px;
   background-color: var.$color-background;
+
+  @include mixins.mq(sm) {
+    padding: 21px 0px 60px 0px;
+  }
+
 
   & .section__title {
     display: inline-block;
@@ -1511,6 +1566,7 @@ $animation-duration: 24s;
 
     @include mixins.mq(lg) {
       @include mixins.flex-col(30px);
+      flex-direction: column-reverse;
     }
 
   }

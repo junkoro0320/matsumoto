@@ -43,8 +43,9 @@
 
         @include mixins.mq(sm) {
             @include mixins.flex-col(60px);
-            padding: 46px 0 40px 0;
+            padding: 60px 0 40px 0;
             width: 82%;
+            gap: 50px;
         }
     }
 
@@ -61,10 +62,12 @@
 
         @include mixins.mq(sm) {
             width: 25%;
+            gap: 10px;
         }
 
         @include mixins.mq(sm) {
-            width: 37%;
+            width: 43%;
+            align-items: center;
         }
     }
 

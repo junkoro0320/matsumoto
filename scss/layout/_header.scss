@@ -5,15 +5,6 @@
 //ハンバーガーメニュー
 
 
-.header__container {
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  z-index: 1000;
-  padding: 20px;
-}
-
 .header__top {
   z-index: 10001;
   display: flex;
@@ -21,9 +12,14 @@
   justify-content: space-between;
   width: 137px;
   height: auto;
+  position: absolute;
+  top: 4%;
+  left: 3%;
 
   @include mixins.mq(sm) {
     width: 80px;
+    top: 4%;
+    left: 3%;
   }
 }
 
@@ -56,6 +52,8 @@
     width: 60px;
     height: 60px;
     padding-top: 17px;
+    top: 12px;
+    right: 5px;
   }
 
 
