@@ -16,3 +16,13 @@ ol {
 img {
   max-width: 100%;  height: auto;
 }
+
+
+body { color: #343333; 
+  font-family: $font-family-base;  line-height: 1.8;
+}
+
+// 英語フォントを使う要素
+[lang='en'] {
+  font-family: $font-family-en;
+}

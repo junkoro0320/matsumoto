@@ -3,5 +3,20 @@
         "Matsumoto",
         "mikan",
         "setoka",
+        "Shippori"
+    ]
+}
+
+{
+    "liveSassCompile.settings.formats": [
+        {
+            "format": "expanded",
+            "extensionName": ".css",
+            "savePath": "/css"
+        }
+    ],
+    "liveSassCompile.settings.includeItems": [
+        "scss/page/top.scss",
+        "scss/page/contact.scss"
     ]
 }

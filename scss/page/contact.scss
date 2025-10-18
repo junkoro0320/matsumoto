@@ -1,0 +1,79 @@
+// ============================================
+// お問い合わせページ用のメインSCSS
+// ============================================
+
+// 1. 変数を読み込む
+@import '../base/variables';
+
+// 2. 基本設定を読み込む
+@import '../base/base';
+@import '../base/mixins';
+
+// 3. レイアウトを読み込む
+@import '../layout/header';
+@import '../layout/footer';
+
+// 4. 共通コンポーネントを読み込む
+@import '../components/btn';
+
+.page-header {
+  padding: 60px 20px;  background-color: #0a1f47;  text-align: center;
+  .page-title {
+    display: flex;  align-items: center;  flex-direction: column;  gap: 8px;
+    .en {
+      color: #fff;  letter-spacing: .05em;  font-weight: normal;  font-size: 2.8rem;
+    }
+
+    .ja {
+      color: #fff;  letter-spacing: .1em;  font-weight: normal;  font-size: 1.4rem;
+    }
+  }
+}
+
+
+/* メインセクション */
+.contact-form-section {
+  margin: 80px auto;  padding: 60px 40px;  max-width: 720px;  width: 90%;  background-color: $color-background;
+  p {
+    margin-bottom: 1em;  text-align: left;
+  }
+
+  form {
+    display: flex;  flex-direction: column;  gap: 24px;  margin-top: 40px;
+  }
+
+  .form-group {
+    display: flex;  flex-direction: column;
+  }
+
+  label {
+    margin-bottom: 8px;  font-weight: 600;
+    .required {
+      margin-left: 8px;  padding: 2px 6px;  border-radius: 4px;  color: #fff;  font-size: .8rem;
+    }
+  }
+
+  input[type='text'],
+  input[type='email'],
+  input[type='tel'],
+  textarea {
+    padding: 12px;  border: 1px solid #ccc;  border-radius: 6px;  font-size: 1rem;  font-family: inherit;  transition: border-color .3s ease;
+    &:focus {
+      outline: none;
+    }
+  }
+
+  textarea {
+    min-height: 160px;  resize: vertical;
+  }
+
+  /* 送信ボタン */
+  input[type='submit'] {
+    align-self: center;  padding: 14px 0;  width: 200px;  border: none;  border-radius: 30px;  color: #fff;  font-weight: 600;  font-size: 1rem;  cursor: pointer;  transition: background .3s ease;
+    &:hover {
+      opacity: .85;
+    }
+  }
+}
+
+/* footer部分は layout/_footer.scss で管理 */
